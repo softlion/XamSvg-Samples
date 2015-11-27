@@ -7,6 +7,7 @@ using Cirrious.MvvmCross.Binding.Bindings.Target.Construction;
 using Cirrious.MvvmCross.Binding.Droid.Target;
 using XamSvg;
 
+
 /*
  * 
  * Register this binding from your mvvmcross Setup class
@@ -23,6 +24,7 @@ using XamSvg;
         }
     }
 */
+
 
 namespace XamSvg.Droid
 {
@@ -60,7 +62,7 @@ namespace XamSvg.Droid
 
             try
             {
-                Drawable drawable;
+                SvgBitmapDrawable drawable;
                 if (!GetDrawable((string)value, out drawable))
                     return;
                 imageView.ImageDrawable = drawable;
@@ -72,7 +74,7 @@ namespace XamSvg.Droid
             }
         }
 
-        protected virtual bool GetDrawable(string rawSvg, out Drawable drawable)
+        protected virtual bool GetDrawable(string rawSvg, out SvgBitmapDrawable drawable)
         {
             drawable = null;
             var resourceId = ImageView.Resources.GetIdentifier(rawSvg, "raw", ImageView.Context.PackageName);
