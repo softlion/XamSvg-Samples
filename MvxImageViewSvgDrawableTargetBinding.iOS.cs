@@ -27,7 +27,7 @@ using XamSvg;
 
 namespace XamSvg.iOS
 {
-    public class MvxImageViewSvgDrawableTargetBinding : MvxTargetBinding
+    public class MvxImageViewSvgDrawableTargetBinding : MvxTargetBinding2
     {
         protected UIImageView ImageView
         {
@@ -85,4 +85,5 @@ namespace XamSvg.iOS
             return drawable != null;
         }
     }
+    
 }
