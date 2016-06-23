@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D8AC967E-1B7A-472A-A4B2-7DB081837390}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XamSvgDemo.Shared</RootNamespace>
+    <AssemblyName>XamSvgDemo.Shared</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <EmbeddedResource Include="images\Facebook.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\Google.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\LeftArrow.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\LinkedIn.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\MSLive.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\Password.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\PayPal.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\RightArrow.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\Twitter.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\User.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\linearGradient.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\8h.svg" />
+    <EmbeddedResource Include="images\8s.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\menu_corps.svg" />
+    <EmbeddedResource Include="images\menu_fav.svg" />
+    <EmbeddedResource Include="images\menu_home.svg" />
+    <EmbeddedResource Include="images\menu_pref.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\star.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\GoldMirror.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\hand.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\modejour.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\bike.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\bike_separator.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\ic_lock.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\loupe.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\map.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\oeuil.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\pin.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\star_depressed.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\star_off.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\star_on.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\tiger.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\red_circle1.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\red_circle2.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\e_letter.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\1test.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\gradientTransform.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\CercleDegrade.svg" />
+    <EmbeddedResource Include="images\DisqueGris.svg" />
+    <EmbeddedResource Include="images\pointrempli.svg" />
+    <EmbeddedResource Include="images\pointvide.svg" />
+    <EmbeddedResource Include="images\refresh.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\vshade.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\edittoolbar32.svg" />
+    <EmbeddedResource Include="images\homeglobal32.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\01.svg" />
+    <None Include="images\2uses.svg" />
+    <EmbeddedResource Include="images\deliveryicon.svg" />
+    <EmbeddedResource Include="images\pickup.svg" />
+    <EmbeddedResource Include="images\logo_auchan.svg" />
+    <EmbeddedResource Include="images\Nineball.svg" />
+    <EmbeddedResource Include="images\Nav_Reciprocity-active.svg" />
+    <EmbeddedResource Include="images\reciprocity.svg" />
+    <EmbeddedResource Include="images\download.svg" />
+    <EmbeddedResource Include="images\atom.svg">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\bozo.svg" />
+    <None Include="images\2clippath.svg" />
+    <EmbeddedResource Include="images\icn_geoloc.svg" />
+    <EmbeddedResource Include="images\bird.svg" />
+    <EmbeddedResource Include="images\icn_fleche_dn.svg">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="images\icn_fleche_up.svg" />
+    <EmbeddedResource Include="images\settings.svg" />
+    <EmbeddedResource Include="images\colors.svg">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="images\iOSNav_Reciprocity-active.svg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

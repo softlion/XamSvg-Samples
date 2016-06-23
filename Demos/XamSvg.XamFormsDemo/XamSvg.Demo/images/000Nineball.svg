@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g fill="#000000">
+            <g transform="translate(255.000000, 116.000000)">
+                <path d="M257,159.421184 C300.935392,159.421184 336.552065,123.804511 336.552065,79.8691193 C336.552065,35.9337272 300.935392,0.317054677 257,0.317054677 C213.064608,0.317054677 177.447935,35.9337272 177.447935,79.8691193 C177.447935,123.804511 213.064608,159.421184 257,159.421184 Z" id="Oval-1" ></path>
+                <ellipse id="Oval-2" sketch:type="MSShapeGroup" cx="257" cy="396.289691" rx="79.5520646" ry="79.5520646"></ellipse>
+                <ellipse id="Oval-4" sketch:type="MSShapeGroup" cx="433.980998" cy="396.289691" rx="79.5520646" ry="79.5520646"></ellipse>
+                <ellipse id="Oval-3" sketch:type="MSShapeGroup" cx="80.0190023" cy="396.289691" rx="79.5520646" ry="79.5520646"></ellipse>
+                <ellipse id="Oval-9" sketch:type="MSShapeGroup" cx="344.596655" cy="237.185562" rx="79.5520646" ry="79.5520646"></ellipse>
+                <ellipse id="Oval-8" sketch:type="MSShapeGroup" cx="167.615658" cy="237.185562" rx="79.5520646" ry="79.5520646"></ellipse>
+                <ellipse id="Oval-7" sketch:type="MSShapeGroup" cx="167.615658" cy="555.39382" rx="79.5520646" ry="79.5520646"></ellipse>
+                <ellipse id="Oval-5" sketch:type="MSShapeGroup" cx="344.596655" cy="555.39382" rx="79.5520646" ry="79.5520646"></ellipse>
+                <path d="M257,791.682945 C300.935392,791.682945 336.552065,756.066273 336.552065,712.130881 C336.552065,668.195489 300.935392,632.578816 257,632.578816 C213.064608,632.578816 177.447935,668.195489 177.447935,712.130881 C177.447935,756.066273 213.064608,791.682945 257,791.682945 Z" id="Oval-10" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

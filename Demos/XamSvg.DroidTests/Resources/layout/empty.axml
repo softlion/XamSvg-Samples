@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#9000">
+<!--back-->
+    <ImageView
+        android:id="@+id/bk"
+        android:scaleType="centerCrop"
+        android:tint="#9000"
+        android:adjustViewBounds="true"
+        android:layout_width="fill_parent"
+        android:layout_height="340dp" />
+    <LinearLayout
+        android:id="@+id/zone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center_horizontal">
+        <!--photo-->
+            <ImageView
+                android:id="@+id/medaillon"
+                android:scaleType="centerCrop"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+        <!--camera-->
+            <XamSvg.SvgImageView
+                local:svg="@raw/edit_camera"
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_gravity="left|bottom"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp" />
+        </FrameLayout>
+    <!--name and co-->
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            style="@style/TextFont1Bold"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal" />
+        <TextView
+            android:text="My Job"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            style="@style/TextFont3Light"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:minLines="2"
+            android:maxLines="2"
+            android:ellipsize="end" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+            <XamSvg.SvgImageView
+                local:svg="@raw/location"
+                android:id="@+id/imageView6"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+            <TextView
+                android:text="location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                style="@style/TextFont4Bold"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:gravity="center_horizontal|center_vertical"
+                android:layout_marginLeft="5dp" />
+        </LinearLayout>
+    </LinearLayout>
+<!--btn holder-->
+    <LinearLayout
+        android:layout_below="@+id/zone"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="3dp">
+        <FrameLayout
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:id="@+id/btn_lvl1"
+            android:layout_gravity="center_vertical">
+            <XamSvg.SvgImageView
+                android:layout_marginLeft="20dp"
+                local:svg="@raw/buddycheck"
+                android:id="@+id/mail"
+                local:colorMapping="ffb9c5cf=ffffff;f46732=ffffff"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical" />
+            <TextView
+                android:text="btn_lvl1"
+                style="@style/TextFont3Medium"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="10dp" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:id="@+id/btn_lvl2"
+            android:layout_gravity="center_vertical">
+            <XamSvg.SvgImageView
+                android:layout_marginLeft="20dp"
+                local:svg="@raw/buddyadd"
+                android:id="@+id/mail"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical" />
+            <TextView
+                android:text="btn_lvl2"
+                style="@style/TextFont3Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_marginLeft="10dp" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical">
+            <XamSvg.SvgImageView
+                android:layout_marginLeft="20dp"
+                local:svg="@raw/buddycheck"
+                android:layout_width="wrap_content"
+                local:colorMapping="ffb9c5cf=ffffff;f46732=ffffff"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical" />
+            <TextView
+                android:text="Invited"
+                style="@style/TextFont3Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_marginLeft="10dp" />
+        </FrameLayout>
+        <FrameLayout
+            android:visibility="gone"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:id="@+id/btn_msg"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp">
+            <XamSvg.SvgImageView
+                local:svg="@raw/mail"
+                android:id="@+id/mail"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_gravity="center" />
+        </FrameLayout>
+    </LinearLayout>
+<!--edit-->
+    <XamSvg.SvgImageView
+        local:svg="@raw/edit_edit"
+        android:id="@+id/imageView6"
+        local:colorMapping="ffb9c5cf=ffFFFFFF"
+        android:layout_marginRight="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="12dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true" />
+</RelativeLayout>

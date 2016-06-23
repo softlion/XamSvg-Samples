@@ -1,0 +1,170 @@
+//Comment this line to disable autolayout and use Frame positioning instead
+#define USEAUTOLAYOUT
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net.Http;
+using System.Reflection;
+using Cirrious.FluentLayouts.Touch;
+using CoreGraphics;
+using CoreText;
+using Foundation;
+using UIKit;
+using XamSvg.Shared.Cross;
+using XamSvgDemo.Shared;
+
+
+namespace XamSvg.Ios2Tests
+{
+    public class MyViewController : UIViewController
+    {
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            View.BackgroundColor = UIColor.Blue;
+
+            //Enumerate SVG with BundleResource action in the Resources/svg folder
+            //var path = Path.Combine(NSBundle.MainBundle.BundlePath,"svg");
+            var bundleSvgs = new List<string>(); //Directory.EnumerateFiles(path, "*.svg").Select(Path.GetFileName).OrderBy(s => s).ToList();
+
+            //Enumerate SVG with EmbeddedResource action in the XamSvgDemo.Shared project, in the images folder.
+            var assembly = typeof (App).GetTypeInfo().Assembly;
+            var sharedSvgs = assembly.GetManifestResourceNames().Where(n => n.EndsWith(".svg")).OrderBy(n => n).ToArray();
+
+            //Combine both lists
+            var svgNames = bundleSvgs.Select(s => "svg/" + s).Concat(
+                            sharedSvgs.Select(s => "res:" + s)
+                            ).ToList();
+
+            var index = 0;
+#if !USEAUTOLAYOUT
+            //Fix width, let height be changed by UISvgImageView
+            var bounds = UIScreen.MainScreen.Bounds;
+            var image = new UISvgImageView(svgNames[index], bounds.Width, 0) { Frame = new CGRect(0,0,bounds.Width, bounds.Height) };
+#else
+            var image = new UISvgImageView(svgNames[index]);
+#endif
+
+            image.Layer.BorderWidth = 1;
+            image.Layer.BorderColor = UIColor.Green.CGColor;
+            View.Add(image);
+
+            var title = new UILabel
+            {
+                TextColor=UIColor.White,
+                Font = UIFont.SystemFontOfSize(14f),
+                LineBreakMode = UILineBreakMode.CharacterWrap,
+                Lines = 0,
+#if !USEAUTOLAYOUT
+                Frame = new CGRect(0,30,320,100),
+#endif
+            };
+            View.Add(title);
+
+#if USEAUTOLAYOUT
+            var back = new UIView {BackgroundColor = UIColor.DarkGray.ColorWithAlpha(.6f)};
+            var inputUrl = new UITextField
+            {
+                TextColor = UIColor.White, Font = UIFont.SystemFontOfSize(14f),
+
+                AttributedPlaceholder = new NSMutableAttributedString("Enter url of svg file, or tap anywhere for demo",
+                    foregroundColor: UIColor.Gray, font: UIFont.ItalicSystemFontOfSize(12)),
+                KeyboardType = UIKeyboardType.Url, AutocorrectionType = UITextAutocorrectionType.No,
+                AutocapitalizationType = UITextAutocapitalizationType.None,
+                //ReturnKeyType = UIReturnKeyType.Go,
+                //EnablesReturnKeyAutomatically = true, ShouldReturn = 
+            };
+            var inputOk = new UISvgImageView("res:images.download", 25, colorMapping: "000000=FF546D", colorMappingSelected: "000000=00FF59")
+            {
+                UserInteractionEnabled = true
+            };
+            //var inputOk = new UISvgImageView("", 25); //for debug
+            View.Add(back);
+            View.SendSubviewToBack(back);
+            View.SendSubviewToBack(image); //image behind back
+            View.Add(inputUrl);
+            View.Add(inputOk);
+
+            inputOk.AddGestureRecognizer(new UITapGestureRecognizer(async tap =>
+            {
+                title.Text = $"Loading {inputUrl.Text}";
+                title.TextColor = UIColor.White;
+                var client = new HttpClient();
+                try
+                {
+                    var svgString = await client.GetStringAsync(inputUrl.Text);
+                    image.BundleString = svgString;
+                    title.Text = $"Displayed {inputUrl.Text}";
+                    inputUrl.ResignFirstResponder();
+                    //View.EndEditing(true);
+                }
+                catch (Exception e)
+                {
+                    title.Text = $"Error loading url: {e.Message.ToString()}";
+                    title.TextColor = UIColor.Red;
+                }
+            }));
+
+            inputUrl.EditingDidBegin += (sender, args) =>
+            {
+                inputUrl.SelectAll(this);
+            };
+
+            inputUrl.SetContentHuggingPriority((float)UILayoutPriority.FittingSizeLevel, UILayoutConstraintAxis.Horizontal);
+            inputOk.SetContentCompressionResistancePriority((float)UILayoutPriority.Required, UILayoutConstraintAxis.Horizontal);
+            View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
+            View.AddConstraints(
+                back.WithSameTop(inputOk).Minus(5),
+                back.AtLeftOf(View),
+                back.AtRightOf(View),
+                back.WithSameBottom(title).Plus(5),
+
+                inputUrl.AtLeftOf(View, 5),
+                inputUrl.WithSameCenterY(inputOk),
+
+                inputOk.AtTopOf(View,30),
+                inputOk.AtRightOf(View, 5),
+                inputOk.ToRightOf(inputUrl,5),
+
+                title.Below(inputUrl, 20),
+                title.AtLeftOf(View, 5),
+                title.AtRightOf(View,5),
+                //No height for title, use its intrisic height
+
+                image.AtTopOf(View),
+                image.AtLeftOf(View),
+                //Test: Width forced, free height
+                image.WithSameWidth(View),
+                //Test: Width forced, Height forced to view height
+                image.WithSameHeight(View)
+                //Test: Width forced, Height forced (50)
+                );
+#endif
+            image.FillMode = SvgFillMode.Fit;
+
+            //var t = new UIImageView(new CGRect(0, 0, 100, 100));
+            //t.Image = LoadLastSvgFromString();
+            //View.Add(t);
+
+            image.UserInteractionEnabled = true;
+            image.AddGestureRecognizer(new UITapGestureRecognizer(() =>
+            {
+                index = ++index%svgNames.Count;
+                image.BundleName = svgNames[index];
+                title.Text = $"Displaying {svgNames[index]}";
+                title.TextColor = UIColor.White;
+
+            }) { NumberOfTapsRequired = 1 });
+
+        }
+
+        //private UIImage LoadLastSvgFromString()
+        //{
+        //    const string svgString = @"<?xml version=""1.0"" encoding=""UTF-8"" standalone=""no""?><svg width=""100"" height=""100""><circle cx=""50"" cy=""50"" r=""50"" style=""fill:#ff0000"" /></svg>";
+        //    var image = SvgFactory.FromString(svgString, 100);
+        //    return image;
+        //}
+    }
+}

@@ -1,0 +1,15 @@
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" >
+
+  <defs>
+    <radialGradient id="gradient_3D_red" cx="0.2" cy="0.2" r="1" fx="0.3" fy="0.3">
+      <stop stop-color="#ffffff" offset="0"/>
+      <stop stop-color="#ff0000" offset="0.25"/>
+      <stop stop-color="#C00000" offset="0.5"/>
+      <stop stop-color="#790000" offset="0.7"/>
+      <stop stop-color="#400000" offset="0.85"/>
+      <stop stop-color="#000000" offset="1"/>
+    </radialGradient>
+  </defs>
+  <circle fill="url(#gradient_3D_red)"  cx="250" cy="250" r="150.0"/>
+</svg>

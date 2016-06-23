@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="white">#fff</color>
+  <color name="dark_grey">#858585</color>
+
+  <string name="FontName1">sans-serif</string>
+  <string name="FontName2">sans-serif-medium</string>
+  <string name="FontName3">sans-serif</string>
+  <string name="FontName4">sans-serif-light</string>
+
+  <dimen name="dimen10">10sp</dimen>
+  <dimen name="dimen12">12sp</dimen>
+  <dimen name="dimen16">16sp</dimen>
+
+  <style name="TextFont1Bold">
+    <item name="android:fontFamily">@string/FontName1</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textSize">@dimen/dimen16</item>
+  </style>
+
+  <style name="TextFont3Light">
+    <item name="android:fontFamily">@string/FontName4</item>
+    <item name="android:textSize">@dimen/dimen12</item>
+    <item name="android:textColor">@color/dark_grey</item>
+    <item name="android:textStyle">normal</item>
+  </style>
+
+  <style name="TextFont3Medium">
+    <item name="android:fontFamily">@string/FontName2</item>
+    <item name="android:textSize">@dimen/dimen12</item>
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <style name="TextFont4Bold">
+    <item name="android:fontFamily">@string/FontName1</item>
+    <item name="android:textSize">@dimen/dimen10</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textColor">@color/dark_grey</item>
+  </style>
+</resources>

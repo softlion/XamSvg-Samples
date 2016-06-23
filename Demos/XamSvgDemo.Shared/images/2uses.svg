@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<svg width="4px" height="383px" viewBox="0 0 4 383" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path id="path-1" d="M2,2 L2,381"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Line">
+            <use stroke="#C6CCD1" stroke-width="4" stroke-linecap="round" stroke-dasharray="1" xlink:href="#path-1"></use>
+            <use stroke="none" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>
+

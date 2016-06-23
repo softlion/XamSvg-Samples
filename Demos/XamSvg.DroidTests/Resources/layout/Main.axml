@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000"
+    android:padding="8dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="top">
+    <!--
+                If using Mvvmcross, you can easily bind your icon to your viewmodel.
+                Use the "res:" scheme and put the svg in the PCL project as explained in the documentation.
+                local:MvxBind="Svg Icon"
+                -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#FF0000">
+            <XamSvg.SvgImageView
+                android:background="#CCD39F"
+                android:id="@+id/icon"
+                local:svg="res:images.GoldMirror"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    <!-- This second flexible layout clean the area left by svgimageview when it shrinks. This seems a very old bug in this specific usage of LinearLayout with 0dp. -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#111111" />
+    </LinearLayout>
+<!--<ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:id="@+id/drawableAutoSizeWidth"
+            android:scaleType="fitCenter"
+            android:background="#CCD39F" />
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/drawableAutoSize"
+            android:scaleType="fitCenter"
+            android:background="#AAD39F" />
+        <TextView
+            android:text="Bitmaps"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout4"
+            android:layout_gravity="center">
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bitmap1"
+                android:layout_marginRight="8dp"
+                android:background="#CCD39F" />
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bitmap3"
+                android:background="#AAD39F" />
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bitmap2"
+                android:layout_marginLeft="8dp"
+                android:background="#CCD39F" />
+        </LinearLayout>
+        <TextView
+            android:text="Drawables"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:layout_marginBottom="8dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout1"
+            android:layout_gravity="center">
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:id="@+id/drawable16"
+                android:scaleType="fitXY"
+                android:background="#AAD39F" />
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:id="@+id/drawable24"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="#CCD39F" />
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:id="@+id/drawable32"
+                android:scaleType="fitXY"
+                android:background="#AAD39F" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/drawable50"
+                android:scaleType="fitXY"
+                android:background="#CCD39F"
+                android:layout_marginRight="8dp" />
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="71dp"
+                android:layout_height="71dp"
+                android:id="@+id/drawable71"
+                android:scaleType="fitXY"
+                android:background="#AAD39F"
+                android:layout_marginLeft="8dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout3"
+            android:layout_gravity="center">
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="20dp"
+                android:layout_height="40dp"
+                android:id="@+id/drawableHeight"
+                android:background="#CCD39F"
+                android:scaleType="fitXY" />
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="38dp"
+                android:layout_height="25dp"
+                android:id="@+id/drawableWidth"
+                android:scaleType="fitXY"
+                android:background="#AAD39F"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp" />
+            <ImageView
+                android:src="@android:drawable/ic_menu_gallery"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:id="@+id/drawable100"
+                android:background="#CCD39F"
+                android:scaleType="fitXY" />
+        </LinearLayout>-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right">
+        <Button
+            android:text="Other demo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnNextImage" />
+        <Button
+            android:text="Next SVG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnGoEmpty" />
+    </LinearLayout>
+</LinearLayout>

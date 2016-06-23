@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   width="366.28571"
+   height="366.28571"
+   id="svg2"
+   version="1.1">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient3751">
+      <stop
+         style="stop-color:#32deab;stop-opacity:1;"
+         offset="0"
+         id="stop3753" />
+      <stop
+         id="stop3759"
+         offset="0.5"
+         style="stop-color:#45b8c4;stop-opacity:1;" />
+      <stop
+         style="stop-color:#c732de;stop-opacity:1;"
+         offset="1"
+         id="stop3755" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient3751"
+       id="linearGradient3757"
+       x1="145.71429"
+       y1="549.50507"
+       x2="500"
+       y2="549.50507"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+ />
+  <g
+     id="layer1"
+     transform="translate(-139.71429,-366.36221)">
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:url(#linearGradient3757);stroke-width:12;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path2985"
+       sodipodi:cx="322.85715"
+       sodipodi:cy="549.50507"
+       sodipodi:rx="177.14285"
+       sodipodi:ry="177.14285"
+       d="m 500,549.50507 c 0,97.83329 -79.30956,177.14285 -177.14285,177.14285 -97.8333,0 -177.14286,-79.30956 -177.14286,-177.14285 0,-97.8333 79.30956,-177.14286 177.14286,-177.14286 97.83329,0 177.14285,79.30956 177.14285,177.14286 z" />
+  </g>
+</svg>

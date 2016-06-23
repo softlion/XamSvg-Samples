@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.0" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 660" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<metadata>
+<rdf:RDF>
+<cc:Work rdf:about="">
+<dc:format>image/svg+xml</dc:format>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+<dc:title/>
+</cc:Work>
+</rdf:RDF>
+</metadata>
+<desc>Flag of Canton of Valais (Wallis)</desc>
+<defs>
+<radialGradient id="radialGradient3163" gradientUnits="userSpaceOnUse" cy="226.33" cx="221.44" gradientTransform="matrix(1.353218,0,0,1.348928,-77.62935,-85.74693)" r="300">
+<stop stop-color="#FFF" stop-opacity="0.3137255" offset="0"/>
+<stop stop-color="#FFF" stop-opacity="0.25098041" offset="0.19"/>
+<stop stop-color="#6b6b6b" stop-opacity="0.1254902" offset="0.6"/>
+<stop stop-color="#000" stop-opacity="0.1254902" offset="1"/>
+</radialGradient>
+</defs>
+<g>
+<path fill-rule="evenodd" fill="#FFF" d="M300,658.5s298.5-112.32,298.5-397.77v-258.55h-597v258.55c0,285.45,298.5,397.77,298.5,397.77z"/>
+</g>
+<path fill-rule="evenodd" fill="#e20909" d="M1.4665,127.2l451.23,436.56c37.43-26.97,93.63-103.43,109.62-141.75l-432.93-420.05-127.3,1.3746-0.6238,123.86z"/>
+<g>
+<path stroke-linejoin="miter" d="M300,658.5s-298.5-112.32-298.5-397.77v-258.55h597v258.55c0,285.45-298.5,397.77-298.5,397.77z" stroke="#000" stroke-linecap="butt" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="3.00000048" fill="none"/>
+</g>
+<g transform="translate(2.9768821e-2,0.1606275)">
+<path fill-rule="evenodd" fill="url(#radialGradient3163)" d="M300,658.5s298.5-112.32,298.5-397.77v-258.55h-597v258.55c0,285.45,298.5,397.77,298.5,397.77z"/>
+</g>
+</svg>

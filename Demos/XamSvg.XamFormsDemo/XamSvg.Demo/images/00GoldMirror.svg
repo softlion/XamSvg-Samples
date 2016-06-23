@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <!-- XamSvg does not support colors by name -->
+  <linearGradient id="coin" x2="50%" y2="40%" spreadMethod="reflect">
+    <stop stop-color="gold" offset="30%" />
+    <stop stop-color="goldenrod" offset="70%" />
+    <stop stop-color="white" offset="82%" />
+    <stop stop-color="gold" offset="92%" />
+    <stop stop-color="darkgoldenrod" offset="100%" />
+  </linearGradient>
+  <g fill="url(#coin)" stroke="darkgoldenrod" stroke-width="0.5">
+    <circle r="50" transform="translate(50,50)" />
+  </g>
+</svg>
