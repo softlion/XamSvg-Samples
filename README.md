@@ -1,7 +1,7 @@
 # Samples for XamSvg
 This repository holds the samples with their complete source code for the XamSvg Xamarin component. The samples are licensed under the MIT licence. Some of the svg files are licensed under their owner's license.
 
-At the root of the repo, you'll find MvvmCrpss extensions to easily use XamSvg with mvvmcross.
+At the root of the repo, you'll find MvvmCross extensions to easily use XamSvg with mvvmcross.
 
 # Resources
 
