@@ -3,6 +3,8 @@ This repository holds the samples with their complete source code for the XamSvg
 
 At the root of the repo, you'll find MvvmCross extensions to easily use XamSvg with mvvmcross.
 
+The ios demo app has been compiled and uploaded to a live ios simulator, thanks to appetize.io. Check it here: https://appetize.io/app/amyhugx1xzurnv45h8kyp5kam0?device=iphone5s&scale=75&orientation=portrait&osVersion=9.3
+
 # Resources
 
 The XamSvg Xamarin native component can be found there:
@@ -16,3 +18,8 @@ https://github.com/MvvmCross/MvvmCross-Samples
 
 Xamarin samples:
 https://github.com/xamarin/monotouch-samples
+
+[//]: # (comments)
+[//]: # ([![Demo CountPages alpha](http://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=ek1j272iAmc))
+[//]: # (end comments)
+
