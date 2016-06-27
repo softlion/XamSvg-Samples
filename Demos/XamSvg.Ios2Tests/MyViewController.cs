@@ -5,8 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
 using Cirrious.FluentLayouts.Touch;
 using CoreGraphics;
 using CoreText;
@@ -20,10 +23,16 @@ namespace XamSvg.Ios2Tests
 {
     public class MyViewController : UIViewController
     {
+        private UILabel title;
+        private UISvgImageView image;
+
+        public static MyViewController TheViewController;
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
             View.BackgroundColor = UIColor.Blue;
+            TheViewController = this;
 
             //Enumerate SVG with BundleResource action in the Resources/svg folder
             //var path = Path.Combine(NSBundle.MainBundle.BundlePath,"svg");
@@ -42,16 +51,16 @@ namespace XamSvg.Ios2Tests
 #if !USEAUTOLAYOUT
             //Fix width, let height be changed by UISvgImageView
             var bounds = UIScreen.MainScreen.Bounds;
-            var image = new UISvgImageView(svgNames[index], bounds.Width, 0) { Frame = new CGRect(0,0,bounds.Width, bounds.Height) };
+            image = new UISvgImageView(svgNames[index], bounds.Width, 0) { Frame = new CGRect(0,0,bounds.Width, bounds.Height) };
 #else
-            var image = new UISvgImageView(svgNames[index]);
+            image = new UISvgImageView(svgNames[index]);
 #endif
 
             image.Layer.BorderWidth = 1;
             image.Layer.BorderColor = UIColor.Green.CGColor;
             View.Add(image);
 
-            var title = new UILabel
+            title = new UILabel
             {
                 TextColor=UIColor.White,
                 Font = UIFont.SystemFontOfSize(14f),
@@ -87,24 +96,10 @@ namespace XamSvg.Ios2Tests
             View.Add(inputUrl);
             View.Add(inputOk);
 
-            inputOk.AddGestureRecognizer(new UITapGestureRecognizer(async tap =>
+            inputOk.AddGestureRecognizer(new UITapGestureRecognizer(tap =>
             {
-                title.Text = $"Loading {inputUrl.Text}";
-                title.TextColor = UIColor.White;
-                var client = new HttpClient();
-                try
-                {
-                    var svgString = await client.GetStringAsync(inputUrl.Text);
-                    image.BundleString = svgString;
-                    title.Text = $"Displayed {inputUrl.Text}";
-                    inputUrl.ResignFirstResponder();
-                    //View.EndEditing(true);
-                }
-                catch (Exception e)
-                {
-                    title.Text = $"Error loading url: {e.Message.ToString()}";
-                    title.TextColor = UIColor.Red;
-                }
+                inputUrl.ResignFirstResponder();
+                var dontWait = LoadSvg(inputUrl.Text);
             }));
 
             inputUrl.EditingDidBegin += (sender, args) =>
@@ -158,6 +153,35 @@ namespace XamSvg.Ios2Tests
 
             }) { NumberOfTapsRequired = 1 });
 
+        }
+
+        CancellationTokenSource cancel = new CancellationTokenSource();
+
+        public async Task LoadSvg(string url)
+        {
+            cancel.Cancel();
+            var c = cancel = new CancellationTokenSource();
+
+            title.Text = $"Loading {url}";
+            title.TextColor = UIColor.White;
+            using (var client = new HttpClient())
+            {
+                try
+                {
+                    var result = await client.GetAsync(url, c.Token);
+                    if(!result.IsSuccessStatusCode)
+                        throw new WebException();
+                    var svgString = await result.Content.ReadAsStringAsync();
+
+                    image.BundleString = svgString;
+                    title.Text = $"Displayed {url}";
+                }
+                catch (Exception e)
+                {
+                    title.Text = $"Error loading url: {e.Message}";
+                    title.TextColor = UIColor.Red;
+                }
+            }
         }
 
         //private UIImage LoadLastSvgFromString()

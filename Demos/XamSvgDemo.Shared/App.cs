@@ -15,7 +15,7 @@ namespace XamSvgDemo.Shared
     /// <summary>
     /// Xamarin linker detects the PreserveAttribute and does not optimize away the unused class
     /// </summary>
-    public sealed class Preserve : Attribute
+    internal sealed class Preserve : Attribute
     {
     }
 }

@@ -19,10 +19,30 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>8.1</string>
+	<string>9.3</string>
 	<key>CFBundleIconFiles</key>
 	<array/>
 	<key>UIPrerenderedIcon</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+
+  <key>CFBundleURLTypes</key>
+  <array>
+    <dict>
+      <key>CFBundleURLName</key>
+      <string>deeplinks.xamsvgdemo</string>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>xamsvgdemo</string>
+      </array>
+    </dict>
+  </array>
+
+  <key>XSLaunchImageAssets</key>
+	<string>Resources/Media.xcassets/LaunchImages.launchimage</string>
 </dict>
 </plist>
