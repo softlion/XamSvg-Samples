@@ -73,7 +73,8 @@ namespace XamSvg.Ios2Tests
             View.Add(title);
 
 #if USEAUTOLAYOUT
-            var back = new UIView {BackgroundColor = UIColor.DarkGray.ColorWithAlpha(.6f)};
+            var back = new UIView { BackgroundColor = UIColor.DarkGray.ColorWithAlpha(.6f) };
+            var back2 = new UIView { BackgroundColor = UIColor.Clear };
             var inputUrl = new UITextField
             {
                 TextColor = UIColor.White, Font = UIFont.SystemFontOfSize(14f),
@@ -91,6 +92,7 @@ namespace XamSvg.Ios2Tests
             };
             //var inputOk = new UISvgImageView("", 25); //for debug
             View.Add(back);
+            View.Add(back2);
             View.SendSubviewToBack(back);
             View.SendSubviewToBack(image); //image behind back
             View.Add(inputUrl);
@@ -116,6 +118,11 @@ namespace XamSvg.Ios2Tests
                 back.AtRightOf(View),
                 back.WithSameBottom(title).Plus(5),
 
+                back2.Below(back),
+                back2.AtLeftOf(View),
+                back2.AtRightOf(View),
+                back2.AtBottomOf(View),
+
                 inputUrl.AtLeftOf(View, 5),
                 inputUrl.WithSameCenterY(inputOk),
 
@@ -126,14 +133,14 @@ namespace XamSvg.Ios2Tests
                 title.Below(inputUrl, 20),
                 title.AtLeftOf(View, 5),
                 title.AtRightOf(View,5),
-                //No height for title, use its intrisic height
+                //No height for title, use its intrinsic height
 
-                image.AtTopOf(View),
+                image.AtBottomOf(View),
                 image.AtLeftOf(View),
                 //Test: Width forced, free height
                 image.WithSameWidth(View),
                 //Test: Width forced, Height forced to view height
-                image.WithSameHeight(View)
+                image.Height().LessThanOrEqualTo().HeightOf(View)
                 //Test: Width forced, Height forced (50)
                 );
 #endif
@@ -143,8 +150,8 @@ namespace XamSvg.Ios2Tests
             //t.Image = LoadLastSvgFromString();
             //View.Add(t);
 
-            image.UserInteractionEnabled = true;
-            image.AddGestureRecognizer(new UITapGestureRecognizer(() =>
+            //image.UserInteractionEnabled = true;
+            back2.AddGestureRecognizer(new UITapGestureRecognizer(() =>
             {
                 index = ++index%svgNames.Count;
                 image.BundleName = svgNames[index];
