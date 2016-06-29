@@ -23,10 +23,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>i386</MtouchArch>
+    <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>True</MtouchDebug>
-    <MtouchSdkVersion>8.4</MtouchSdkVersion>
+    <MtouchSdkVersion>9.3</MtouchSdkVersion>
     <MtouchProfiling>False</MtouchProfiling>
     <MtouchFastDev>False</MtouchFastDev>
     <MtouchEnableGenericValueTypeSharing>True</MtouchEnableGenericValueTypeSharing>
@@ -35,7 +35,11 @@
     <MtouchUseSGen>True</MtouchUseSGen>
     <MtouchUseRefCounting>False</MtouchUseRefCounting>
     <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
-    <MtouchI18n />
+    <MtouchEnableBitcode>False</MtouchEnableBitcode>
+    <OptimizePNGs>True</OptimizePNGs>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchFloat32>False</MtouchFloat32>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <BuildIpa>False</BuildIpa>
@@ -224,11 +228,11 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="XamSvg.Ios, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Softlion.XamSvg.2.2.0\lib\Xamarin.iOS\XamSvg.Ios.dll</HintPath>
+      <HintPath>..\packages\Softlion.XamSvg.2.3.1.1\lib\Xamarin.iOS\XamSvg.Ios.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="XamSvg.Shared, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Softlion.XamSvg.2.2.0\lib\Xamarin.iOS\XamSvg.Shared.dll</HintPath>
+      <HintPath>..\packages\Softlion.XamSvg.2.3.1.1\lib\Xamarin.iOS\XamSvg.Shared.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

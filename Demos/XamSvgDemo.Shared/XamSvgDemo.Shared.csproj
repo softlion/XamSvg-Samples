@@ -184,6 +184,9 @@
     <EmbeddedResource Include="images\colors.svg">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="images\testEllipticalArc.svg" />
+    <EmbeddedResource Include="images\testFilterBlur.svg" />
+    <EmbeddedResource Include="images\car.svg" />
     <Content Include="images\iOSNav_Reciprocity-active.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

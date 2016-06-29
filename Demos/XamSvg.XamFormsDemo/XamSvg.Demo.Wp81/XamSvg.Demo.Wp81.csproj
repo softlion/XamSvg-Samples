@@ -146,20 +146,20 @@
       <HintPath>..\..\packages\Xamarin.Forms.2.3.0.49\lib\wpa81\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XamSvg.Shared">
-      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.1\lib\wpa81\XamSvg.Shared.dll</HintPath>
+    <Reference Include="XamSvg.Shared, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.4\lib\wpa81\XamSvg.Shared.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XamSvg.Wp81">
-      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.1\lib\wpa81\XamSvg.Wp81.dll</HintPath>
+    <Reference Include="XamSvg.Wp81, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.4\lib\wpa81\XamSvg.Wp81.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XamSvg.XamForms">
-      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.1\lib\wpa81\XamSvg.XamForms.dll</HintPath>
+    <Reference Include="XamSvg.XamForms, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.4\lib\wpa81\XamSvg.XamForms.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XamSvg.XamForms.Wp81">
-      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.1\lib\wpa81\XamSvg.XamForms.Wp81.dll</HintPath>
+    <Reference Include="XamSvg.XamForms.Wp81, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.4\lib\wpa81\XamSvg.XamForms.Wp81.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
