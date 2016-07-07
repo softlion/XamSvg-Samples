@@ -2,10 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:xamForms="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
+             xmlns:controls="clr-namespace:XamSvg.Demo.Controls;assembly=XamSvg.Demo"
              x:Class="XamSvg.Demo.Page2">
 
 
-  <!-- Bug test -->
+  <Grid Padding="20,10,20,0" HorizontalOptions="Fill" VerticalOptions="Fill">
+
+    <controls:RingProgress x:Name="TheProgress" HorizontalOptions="Fill" VerticalOptions="Start" />
+    <Label HorizontalOptions="Center" VerticalOptions="Start" TranslationY="60" TextColor="Green" x:Name="Seconds" FontSize="140" />
+
+    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Grid.Row="0" Grid.Column="0">
+      <Button Text="Start Timer" x:Name="Start" Clicked="Start_OnClicked" />
+      <Button Text="Stop Timer" x:Name="Stop" Clicked="Stop_OnClicked" />
+    </StackLayout>
+
+  </Grid>
+
+
+
+  <!-- Bug test --><!--
   <Grid HorizontalOptions="Fill" VerticalOptions="Fill" RowSpacing="0">
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto"/>
@@ -16,17 +31,17 @@
 
     <xamForms:SvgImage Svg="res:images.DisqueGris" HorizontalOptions="Fill" VerticalOptions="Start" />
     
-    <!-- Bug: a space appears below the image, due to some bug in Xamarin Grid Layout adjustement? -->
-    <!--<Grid HorizontalOptions="Fill" VerticalOptions="Start" BackgroundColor="Blue">
+    --><!-- Bug: a space appears below the image, due to some bug in Xamarin Grid Layout adjustement? --><!--
+    --><!--<Grid HorizontalOptions="Fill" VerticalOptions="Start" BackgroundColor="Blue">
       <xamForms:SvgImage Svg="res:images.DisqueGris" HorizontalOptions="Fill" VerticalOptions="Start" />
-    </Grid>-->
-       <!--<xamForms:Image2 HorizontalOptions="Fill" VerticalOptions="Start" Source="test.jpg" Aspect="AspectFit"  />-->
-    <!--<Label Text="Coucou&#10;Ca va ?" HorizontalOptions="Fill" VerticalOptions="Start" BackgroundColor="Aqua" TextColor="Black" />-->
+    </Grid>--><!--
+       --><!--<xamForms:Image2 HorizontalOptions="Fill" VerticalOptions="Start" Source="test.jpg" Aspect="AspectFit"  />--><!--
+    --><!--<Label Text="Coucou&#10;Ca va ?" HorizontalOptions="Fill" VerticalOptions="Start" BackgroundColor="Aqua" TextColor="Black" />--><!--
 
     <BoxView Grid.Row="1" Color="Yellow" HeightRequest="50" HorizontalOptions="Fill" />
     <BoxView Grid.Row="2" Color="Red" HeightRequest="25" HorizontalOptions="Fill" />
 
-  </Grid>
+  </Grid>-->
 
 
 </ContentPage>

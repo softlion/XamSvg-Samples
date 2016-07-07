@@ -117,19 +117,19 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="XamSvg.Droid, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.5\lib\MonoAndroid44\XamSvg.Droid.dll</HintPath>
+      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.6\lib\MonoAndroid44\XamSvg.Droid.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="XamSvg.Shared, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.5\lib\MonoAndroid44\XamSvg.Shared.dll</HintPath>
+      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.6\lib\MonoAndroid44\XamSvg.Shared.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="XamSvg.XamForms, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.5\lib\MonoAndroid44\XamSvg.XamForms.dll</HintPath>
+      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.6\lib\MonoAndroid44\XamSvg.XamForms.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="XamSvg.XamForms.Droid, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.5\lib\MonoAndroid44\XamSvg.XamForms.Droid.dll</HintPath>
+      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.6\lib\MonoAndroid44\XamSvg.XamForms.Droid.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

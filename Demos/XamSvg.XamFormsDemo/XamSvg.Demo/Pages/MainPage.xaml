@@ -73,8 +73,11 @@
 
       <!--<controls:SvgImage Grid.Column="1" Svg="res:images.refresh" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="HideIt" />
       -->
-      <controls:SvgButton x:Name="TestButton" Text=" Hello" Clicked="OnSvgClicked" />
-      
+      <StackLayout Orientation="Horizontal">
+        <controls:SvgButton x:Name="TestButton" Text=" Hello" Clicked="OnSvgClicked" />
+        <controls:SvgButton x:Name="NextPageButton" Text="Animation demo" Clicked="NextPageButton_OnClicked" />
+      </StackLayout>
+
     </Grid>
     
 

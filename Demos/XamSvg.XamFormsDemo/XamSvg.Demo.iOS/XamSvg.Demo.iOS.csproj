@@ -202,19 +202,19 @@
     </Reference>
     <Reference Include="Xamarin.iOS" />
     <Reference Include="XamSvg.Ios, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.5\lib\Xamarin.iOS\XamSvg.Ios.dll</HintPath>
+      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.6\lib\Xamarin.iOS\XamSvg.Ios.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="XamSvg.Shared, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.5\lib\Xamarin.iOS\XamSvg.Shared.dll</HintPath>
+      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.6\lib\Xamarin.iOS\XamSvg.Shared.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="XamSvg.XamForms, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.5\lib\Xamarin.iOS\XamSvg.XamForms.dll</HintPath>
+      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.6\lib\Xamarin.iOS\XamSvg.XamForms.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="XamSvg.XamForms.iOS, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.5\lib\Xamarin.iOS\XamSvg.XamForms.iOS.dll</HintPath>
+      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.0.6\lib\Xamarin.iOS\XamSvg.XamForms.iOS.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

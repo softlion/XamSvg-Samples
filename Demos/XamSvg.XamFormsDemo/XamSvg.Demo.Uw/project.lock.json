@@ -1830,7 +1830,7 @@
           }
         }
       },
-      "Vapolia.XamSvg.Forms/2.3.0.1": {
+      "Vapolia.XamSvg.Forms/2.3.0.6": {
         "dependencies": {
           "Xamarin.Forms": "2.3.0"
         },
@@ -1847,7 +1847,7 @@
           "lib/uap10.0/XamSvg.XamForms.dll": {}
         }
       },
-      "Xamarin.Forms/2.3.0.49": {
+      "Xamarin.Forms/2.3.0.107": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -3551,7 +3551,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Vapolia.XamSvg.Forms/2.3.0.1": {
+      "Vapolia.XamSvg.Forms/2.3.0.6": {
         "dependencies": {
           "Xamarin.Forms": "2.3.0"
         },
@@ -3568,7 +3568,7 @@
           "lib/uap10.0/XamSvg.XamForms.dll": {}
         }
       },
-      "Xamarin.Forms/2.3.0.49": {
+      "Xamarin.Forms/2.3.0.107": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -5230,7 +5230,7 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Vapolia.XamSvg.Forms/2.3.0.1": {
+      "Vapolia.XamSvg.Forms/2.3.0.6": {
         "dependencies": {
           "Xamarin.Forms": "2.3.0"
         },
@@ -5247,7 +5247,7 @@
           "lib/uap10.0/XamSvg.XamForms.dll": {}
         }
       },
-      "Xamarin.Forms/2.3.0.49": {
+      "Xamarin.Forms/2.3.0.107": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -6959,7 +6959,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Vapolia.XamSvg.Forms/2.3.0.1": {
+      "Vapolia.XamSvg.Forms/2.3.0.6": {
         "dependencies": {
           "Xamarin.Forms": "2.3.0"
         },
@@ -6976,7 +6976,7 @@
           "lib/uap10.0/XamSvg.XamForms.dll": {}
         }
       },
-      "Xamarin.Forms/2.3.0.49": {
+      "Xamarin.Forms/2.3.0.107": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -8638,7 +8638,7 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Vapolia.XamSvg.Forms/2.3.0.1": {
+      "Vapolia.XamSvg.Forms/2.3.0.6": {
         "dependencies": {
           "Xamarin.Forms": "2.3.0"
         },
@@ -8655,7 +8655,7 @@
           "lib/uap10.0/XamSvg.XamForms.dll": {}
         }
       },
-      "Xamarin.Forms/2.3.0.49": {
+      "Xamarin.Forms/2.3.0.107": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -10367,7 +10367,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Vapolia.XamSvg.Forms/2.3.0.1": {
+      "Vapolia.XamSvg.Forms/2.3.0.6": {
         "dependencies": {
           "Xamarin.Forms": "2.3.0"
         },
@@ -10384,7 +10384,7 @@
           "lib/uap10.0/XamSvg.XamForms.dll": {}
         }
       },
-      "Xamarin.Forms/2.3.0.49": {
+      "Xamarin.Forms/2.3.0.107": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -12046,7 +12046,7 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Vapolia.XamSvg.Forms/2.3.0.1": {
+      "Vapolia.XamSvg.Forms/2.3.0.6": {
         "dependencies": {
           "Xamarin.Forms": "2.3.0"
         },
@@ -12063,7 +12063,7 @@
           "lib/uap10.0/XamSvg.XamForms.dll": {}
         }
       },
-      "Xamarin.Forms/2.3.0.49": {
+      "Xamarin.Forms/2.3.0.107": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
           "lib/uap10.0/Xamarin.Forms.Platform.UAP.dll": {},
@@ -15395,11 +15395,11 @@
         "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll"
       ]
     },
-    "Vapolia.XamSvg.Forms/2.3.0.1": {
-      "sha512": "JD9arxUqHmw1aCVCFkHtLc4lTqK0znwZZQfYd4BDR13kIPTjWGRfH2t0XCiyJIZKnqXQqi4fik7HIZ7db6kzHA==",
+    "Vapolia.XamSvg.Forms/2.3.0.6": {
+      "sha512": "QupYqjyIUl/u2hRVLQeeaGN6k2ec/3zoT672QtPmH/Ae0HaAMs5skv8mOdN/Xcg2Fil1RybdUPmrhhfTbfYUUg==",
       "type": "package",
       "files": [
-        "Vapolia.XamSvg.Forms.2.3.0.1.nupkg.sha512",
+        "Vapolia.XamSvg.Forms.2.3.0.6.nupkg.sha512",
         "Vapolia.XamSvg.Forms.nuspec",
         "lib/MonoAndroid44/XamSvg.Droid.dll",
         "lib/MonoAndroid44/XamSvg.Shared.dll",
@@ -15423,11 +15423,11 @@
         "lib/wpa81/XamSvg.XamForms.dll"
       ]
     },
-    "Xamarin.Forms/2.3.0.49": {
-      "sha512": "fcOiRJS4zK+mPODTWQRNgHCs6N/7usjkGU1GyBr8284wQXY3GSx4WPJE0Wa4Eo/23TrByiqGDi0Nw0ptQA0a7Q==",
+    "Xamarin.Forms/2.3.0.107": {
+      "sha512": "M8PeslwD6Ngr1Qku5nRuk/kL2TmJKJx7DscHWPGH8Z9HR1hpb2vk0tKN0COqTJUtD0+458VKRMewWdQm14Zd6g==",
       "type": "package",
       "files": [
-        "Xamarin.Forms.2.3.0.49.nupkg.sha512",
+        "Xamarin.Forms.2.3.0.107.nupkg.sha512",
         "Xamarin.Forms.nuspec",
         "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/ICSharpCode.Decompiler.dll",
         "build/portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/ICSharpCode.NRefactory.CSharp.dll",
@@ -15625,8 +15625,8 @@
       "Microsoft.ApplicationInsights.PersistenceChannel >= 1.2.3",
       "Microsoft.ApplicationInsights.WindowsApps >= 1.1.1",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.1.0",
-      "Vapolia.XamSvg.Forms >= 2.3.0.1",
-      "Xamarin.Forms >= 2.3.0.49"
+      "Vapolia.XamSvg.Forms >= 2.3.0.6",
+      "Xamarin.Forms >= 2.3.0.107"
     ],
     "UAP,Version=v10.0": []
   }

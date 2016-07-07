@@ -31,15 +31,17 @@ namespace XamSvg.Demo
             this.names = names;
             InitializeComponent();
 
-            ////FileImageSource is sealed. We can currently not derive SvgImageSource from FileImageSource.
+            //FileImageSource is sealed. We can currently not derive SvgImageSource from FileImageSource.
+            //FileImageSource only references a local file path. It does not contains the methods to access it.
             //var svg = new SvgImageSource { Svg = "res:images.hand", HeightRequest = 20,  ColorMapping = "ffffff=00ff00" };
             //var image = svg.Image;
 
-            ////var image2 = SvgImageSource.CreateFile("res:images.hand", height: 20);
+            //var toolbarImage = SvgImageSource.CreateFile("res:images.hand", height: 20);
 
             //ToolbarItems.Add(new ToolbarItem
             //{
-            //    Icon = image, Order = ToolbarItemOrder.Primary, Command = new Command(() =>
+            //    Icon = toolbarImage,
+            //    Order = ToolbarItemOrder.Primary, Command = new Command(() =>
             //    {
             //        Navigation.PushAsync(new Page2());
             //    })
@@ -84,6 +86,11 @@ namespace XamSvg.Demo
         private void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
         {
             Debug.WriteLine("TapGesture Tap recognized");
+        }
+
+        private void NextPageButton_OnClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Page2());
         }
     }
 }
