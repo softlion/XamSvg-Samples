@@ -160,6 +160,7 @@
     <EmbeddedResource Include="images\homeglobal32.svg" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="images\madison.svg" />
     <EmbeddedResource Include="images\01.svg" />
     <None Include="images\2uses.svg" />
     <EmbeddedResource Include="images\deliveryicon.svg" />

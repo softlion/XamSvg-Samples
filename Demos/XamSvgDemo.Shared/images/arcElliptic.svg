@@ -1,7 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102 136">
 
   <path 
-	  d="M63,47 a10,5 30,0,1 10,10 M63,47 a10,5 30,1,0 10,10" 
+	  d="M63,47 a10,5 30,0,1 10,10" 
 	  fill="none" stroke="#BBB" stroke-width="2"/>
+  <path
+	  d="M63,47 a10,5 30,1,0 10,10"
+	  fill="none" stroke="#F88" stroke-width="2"/>
+  <path
+	  d="M63,47 a10,5 30,0,0 10,10"
+	  fill="none" stroke="#8F8" stroke-width="2"/>
+  <path
+	  d="M63,47 a10,5 30,1,1 10,10"
+	  fill="none" stroke="#88F" stroke-width="2"/>
+
+  <path 
+	  d="M20,47 a10,5 30,0,1 10,10 10,5 30,1,0 10,10" 
+	  fill="none" stroke="#BBB" stroke-width="2"/>
+  <path
+	  d="M20,47 a10,5 30,0,0 10,10 10,5 30,1,1 10,10"
+	  fill="none" stroke="#8F8" stroke-width="2"/>
 
 </svg>
