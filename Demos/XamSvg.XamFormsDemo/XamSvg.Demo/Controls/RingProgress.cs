@@ -7,10 +7,6 @@ using XamSvg.XamForms;
 
 namespace XamSvg.Demo.Controls
 {
-    /// <summary>
-    /// This class is copyrighted (c) by Vapolia SARL, all rights reserved
-    /// www.vapolia.fr
-    /// </summary>
     public class RingProgress : Grid
     {
         private readonly string svgTemplate;
