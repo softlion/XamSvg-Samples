@@ -8,6 +8,9 @@ The ios demo app has been compiled and uploaded to a live ios simulator, thanks 
 # Animated SVG
 The xamarin Forms projects contain a code demonstrating an animated svg ring. This code works on all platform: android, ios, windows universal and windows phone, and does not depend on custom renderer, it is fully contained in the PCL Forms project.
 
+Have a look at the RingProgress control here:  
+https://github.com/softlion/XamSvg-Samples/blob/master/Demos/XamSvg.XamFormsDemo/XamSvg.Demo/Controls/RingProgress.cs
+
 # Resources
 
 The XamSvg Xamarin native component can be found there:
