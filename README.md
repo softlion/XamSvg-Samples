@@ -6,7 +6,7 @@ At the root of the repo, you'll find MvvmCross extensions to easily use XamSvg w
 The ios demo app has been compiled and uploaded to a live ios simulator, thanks to appetize.io. Check it here: https://appetize.io/app/amyhugx1xzurnv45h8kyp5kam0?device=iphone5s&scale=75&orientation=portrait&osVersion=9.3
 
 # Animated SVG
-The xamarin Forms projects contain a code demonstrating an animated svg ring. This code works on all platform: android, ios, windows universal and windows phone, and does not depend on custom renderer, it is selffully contained in the PCL Forms project.
+The xamarin Forms projects contain a code demonstrating an animated svg ring. This code works on all platform: android, ios, windows universal and windows phone, and does not depend on custom renderer, it is fully contained in the PCL Forms project.
 
 # Resources
 
