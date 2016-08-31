@@ -1,44 +1,17 @@
 using System;
-using Android.Graphics.Drawables;
-using Cirrious.CrossCore.Exceptions;
-using Cirrious.CrossCore.Platform;
-using Cirrious.MvvmCross.Binding;
-using Cirrious.MvvmCross.Binding.Bindings.Target.Construction;
-using Cirrious.MvvmCross.Binding.Droid.Target;
-using XamSvg;
-
-
-/*
- * 
- * Register this binding from your mvvmcross Setup class
- * 
- * 
-    public class Setup : MvxAndroidSetup
-    {
-        ...
-
-        protected override void FillTargetFactories(IMvxTargetBindingFactoryRegistry registry)
-        {
-            base.FillTargetFactories(registry);
-            MvxImageViewSvgDrawableTargetBinding.Register(registry);
-        }
-    }
-*/
-
+using MvvmCross.Binding;
+using MvvmCross.Binding.Bindings.Target.Construction;
+using MvvmCross.Binding.Droid.Target;
+using MvvmCross.Platform.Exceptions;
+using MvvmCross.Platform.Platform;
 
 namespace XamSvg.Droid
 {
     public class MvxImageViewSvgDrawableTargetBinding : MvxAndroidTargetBinding
     {
-        protected SvgImageView ImageView
-        {
-            get { return (SvgImageView)Target; }
-        }
+        protected SvgImageView ImageView => (SvgImageView)Target;
 
-        public override MvxBindingMode DefaultMode
-        {
-            get { return MvxBindingMode.OneWay; }
-        }
+        public override MvxBindingMode DefaultMode => MvxBindingMode.OneWay;
 
         public static void Register(IMvxTargetBindingFactoryRegistry registry)
         {
@@ -49,15 +22,12 @@ namespace XamSvg.Droid
         {
         }
 
-        public override Type TargetType
-        {
-            get { return typeof(string); }
-        }
+        public override Type TargetType => typeof(string);
 
         protected override void SetValueImpl(object target, object value)
         {
             var imageView = (SvgImageView) target;
-            if (!(value is string) || String.IsNullOrWhiteSpace((string) value))
+            if (String.IsNullOrWhiteSpace(value as string))
                 return;
 
             try
@@ -84,5 +54,31 @@ namespace XamSvg.Droid
             drawable = SvgFactory.GetDrawable(ImageView.Resources, resourceId);
             return drawable != null;
         }
+
+        //public override void SetValue(object value)
+        //{
+        //    if (value == null)
+        //    {
+        //        MvxBindingTrace.Trace(MvxTraceLevel.Warning, "Null value passed to ImageView binding");
+        //        return;
+        //    }
+
+        //    var stringValue = value as string;
+        //    if (string.IsNullOrWhiteSpace(stringValue))
+        //    {
+        //        MvxBindingTrace.Trace(MvxTraceLevel.Warning, "Empty value passed to ImageView binding");
+        //        return;
+        //    }
+
+        //    var drawableResourceName = GetImageAssetName(stringValue);
+        //    var assetStream = AndroidGlobals.ApplicationContext.Assets.Open(drawableResourceName);
+        //    Drawable drawable = Drawable.CreateFromStream(assetStream, null);
+        //    _imageView.SetImageDrawable(drawable);
+        //}
+
+        //private static string GetImageAssetName(string rawImage)
+        //{
+        //    return rawImage.TrimStart('/');
+        //}
     }
 }
