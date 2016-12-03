@@ -32,7 +32,6 @@ namespace XamSvg.Demo.Uw
         }
     }
 
-
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
@@ -77,12 +76,14 @@ namespace XamSvg.Demo.Uw
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                //Initialize the cross platform color helper
-                XamSvg.Setup.InitSvgLib();
+                //Initialize xamsvg for forms
+                XamSvg.XamForms.Uw.SvgImageRenderer.InitializeForms();
 
                 //Tells XamSvg in which assembly to search for svg when "res:" is used
+                //XamSvg.Shared.Config.ResourceAssemblies = new List<Assembly> { typeof(App).GetTypeInfo().Assembly };
                 XamSvg.Shared.Config.ResourceAssembly = typeof(App).GetTypeInfo().Assembly;
 
+                //Must be called AFTER InitializeForms
                 Xamarin.Forms.Forms.Init(e);
 
                 ForceRegisterRenderer();

@@ -47,19 +47,23 @@ namespace XamSvg.Demo
             //    })
             //});
 
-            try
+            //try
+            //{
+            //    var image = SvgImageSource.Create("res:images.refresh");
+            //    var t = 0;
+            //}
+            //catch (Exception e)
+            //{
+            //    Debug.WriteLine(e);
+            //}
+
+
+
+            var svgRefresh = new SvgImageSource
             {
-                var image = SvgImageSource.Create("res:images.000nineball");
-                var t = 0;
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e);
-            }
-
-
-
-            var svgRefresh = new SvgImageSource { Svg = "res:images.000Nineball", HeightRequest = 15 };
+                Svg = "res:images.refresh", 
+                HeightRequest = 15
+            };
             TestButton.Image = svgRefresh.Image;
         }
 
