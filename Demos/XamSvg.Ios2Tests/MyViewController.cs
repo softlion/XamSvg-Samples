@@ -48,6 +48,7 @@ namespace XamSvg.Ios2Tests
                             ).ToList();
 
             var index = 0;
+
 #if !USEAUTOLAYOUT
             //Fix width, let height be changed by UISvgImageView
             var bounds = UIScreen.MainScreen.Bounds;
@@ -73,7 +74,7 @@ namespace XamSvg.Ios2Tests
             View.Add(title);
 
 #if USEAUTOLAYOUT
-            var back = new UIView { BackgroundColor = UIColor.DarkGray.ColorWithAlpha(.6f) };
+            var back = new UIView {BackgroundColor = UIColor.DarkGray.ColorWithAlpha(.6f)};
             var back2 = new UIView { BackgroundColor = UIColor.Clear };
             var inputUrl = new UITextField
             {
@@ -86,9 +87,18 @@ namespace XamSvg.Ios2Tests
                 //ReturnKeyType = UIReturnKeyType.Go,
                 //EnablesReturnKeyAutomatically = true, ShouldReturn = 
             };
-            var inputOk = new UISvgImageView("res:images.download", 25, colorMapping: "000000=FF546D", colorMappingSelected: "000000=00FF59")
+            //var inputOk = new UISvgImageView("res:images.download", 25, colorMapping: "000000=FF546D", colorMappingSelected: "000000=00FF59")
+            //{
+            //    UserInteractionEnabled = true,
+            //};
+            var inputOk = new UISvgImageView
             {
-                UserInteractionEnabled = true
+                UserInteractionEnabled = true,
+                TranslatesAutoresizingMaskIntoConstraints = false,
+                FillWidth = 25,
+                ColorMapping="000000=FF546D",
+                ColorMappingSelected="000000=00FF59",
+                BundleName = "res:images.download"
             };
             //var inputOk = new UISvgImageView("", 25); //for debug
             View.Add(back);

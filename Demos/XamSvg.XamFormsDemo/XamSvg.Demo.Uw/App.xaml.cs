@@ -1,13 +1,38 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Reflection;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.UWP;
+using XamSvg.Demo.Uw;
+using XamSvg.Shared;
+using XamSvg.XamForms;
+using XamSvg.XamForms.Uw;
+using Application = Windows.UI.Xaml.Application;
+using Frame = Windows.UI.Xaml.Controls.Frame;
+
+//Does not work in release mode ?
+[assembly:ExportRenderer(typeof(SvgImage), typeof(SvgImageRenderer))]
+[assembly: Dependency(typeof(SvgLogger))]
 
 namespace XamSvg.Demo.Uw
 {
+    class SvgLogger : ILogger
+    {
+        public bool TraceEnabled { get; set; } = true;
+
+        public void Trace(Func<string> s, string method = null, int lineNumber = 0)
+        {
+            Debug.WriteLine($"SvgTrace {method}:{lineNumber}: {s()}");
+        }
+    }
+
+
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
@@ -52,13 +77,15 @@ namespace XamSvg.Demo.Uw
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                Xamarin.Forms.Forms.Init(e);
-
                 //Initialize the cross platform color helper
                 XamSvg.Setup.InitSvgLib();
 
                 //Tells XamSvg in which assembly to search for svg when "res:" is used
                 XamSvg.Shared.Config.ResourceAssembly = typeof(App).GetTypeInfo().Assembly;
+
+                Xamarin.Forms.Forms.Init(e);
+
+                ForceRegisterRenderer();
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
@@ -78,6 +105,21 @@ namespace XamSvg.Demo.Uw
             }
             // Ensure the current window is active
             Window.Current.Activate();
+        }
+
+        private static void ForceRegisterRenderer()
+        {
+            try
+            {
+                var obj = typeof(View).GetTypeInfo().Assembly.GetType("Xamarin.Forms.Registrar").GetRuntimeProperties().FirstOrDefault(p => p.Name == "Registered").GetValue(null);
+                var dic = obj.GetType().GetRuntimeFields().FirstOrDefault(p => p.Name == "_handlers").GetValue(obj) as Dictionary<Type, Type>;
+                if (!dic.ContainsKey(typeof(SvgImage)))
+                    dic.Add(typeof(SvgImage), typeof(SvgImageRenderer));
+            }
+            catch (Exception)
+            {
+                throw new Exception("SvgImageRenderer is not registered (bug in Xamarin.Forms). Fix it by adding this line to your startup project directly below the 'usings' definitions: [assembly: ExportRenderer(typeof(SvgImage), typeof(SvgImageRenderer))]");
+            }
         }
 
         /// <summary>

@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg stroke-width="2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="-52 -53 100 99">
-	<metadata>
-		<rdf:RDF>
-			<cc:Work rdf:about="">
-				<dc:format>image/svg+xml</dc:format>
-				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-				<dc:title/>
-			</cc:Work>
-		</rdf:RDF>
-	</metadata>
+<svg stroke-width="2" viewBox="-52 -53 100 99">
+
+  <rect x="-52" y="-53" width="100" height="99" fill="#f00" />
+  
 	<g fill="none" transform="translate(-2,1)">
 		<ellipse d="M 6,0 C 6,24.300529 3.3137085,44 0,44 -3.3137085,44 -6,24.300529 -6,0 c 0,-24.300529 2.6862915,-44 6,-44 3.3137085,0 6,19.699471 6,44 z" cx="0" rx="6" ry="44" stroke="#66899a" cy="0"/>
 		<ellipse d="M 6,0 C 6,24.300529 3.3137085,44 0,44 -3.3137085,44 -6,24.300529 -6,0 c 0,-24.300529 2.6862915,-44 6,-44 3.3137085,0 6,19.699471 6,44 z" rx="6" ry="44" stroke="#e1d85d" transform="matrix(0.40673664,-0.91354546,0.91354546,0.40673664,0,0)" cy="0" cx="0"/>

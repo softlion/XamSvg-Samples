@@ -28,7 +28,7 @@ namespace XamSvg.Demo.Droid
         {
             //don't call base version. 
             //var ok=base.OnPrepareOptionsMenu(menu); 
-            SvgImageRenderer.PrepareMenu(this, menu);
+            //SvgImageRenderer.PrepareMenu(this, menu);
             return true;
         }
     }

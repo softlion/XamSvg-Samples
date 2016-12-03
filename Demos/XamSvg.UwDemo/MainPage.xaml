@@ -10,8 +10,8 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="DarkSlateGray">
-        <Button Click="Button_Click" Padding="0" Margin="0"  BorderThickness="1" BorderBrush="Black" Background="Wheat" HorizontalAlignment="Stretch" VerticalAlignment="Center">
-            <universal:Svg x:Name="MySvg" Source="res:images.madison" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+        <Button Click="Button_Click" Padding="0" Margin="0"  BorderThickness="1" BorderBrush="Black" Background="Wheat" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <universal:Svg x:Name="MySvg" Source="res:images.madison" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FillMode="Fit" Background="LightBlue" />
         </Button>
     </Grid>
 </Page>

@@ -66,8 +66,9 @@ namespace XamSvg.Demo
         [Preserve]
         private void OnSvgClicked(object sender, EventArgs args)
         {
-            
-            Svg.Svg = "res:" + names[i++];
+
+            var svgName = "res:" + names[i++];
+            Svg.Svg = svgName;
             i = i%names.Length;
         }
 
@@ -91,6 +92,14 @@ namespace XamSvg.Demo
         private void NextPageButton_OnClicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new Page2());
+        }
+
+        private void ColorMappingSelectedButton_OnClicked(object sender, EventArgs e)
+        {
+            var rand = new Random();
+            var bytes = new byte[3];
+            rand.NextBytes(bytes);
+            ColorMapping = $"ffffff=00ff00;000000={bytes[0]:X2}{bytes[1]:X2}{bytes[2]:X2}";
         }
     }
 }

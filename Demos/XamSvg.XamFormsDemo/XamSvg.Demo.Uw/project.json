@@ -4,8 +4,8 @@
     "Microsoft.ApplicationInsights.PersistenceChannel": "1.2.3",
     "Microsoft.ApplicationInsights.WindowsApps": "1.1.1",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
-    "Vapolia.XamSvg.Forms": "2.3.0.7",
-    "Xamarin.Forms": "2.3.0.107"
+    "Vapolia.XamSvg.Forms": "2.3.2.6",
+    "Xamarin.Forms": "2.3.3.168"
   },
   "frameworks": {
     "uap10.0": {}

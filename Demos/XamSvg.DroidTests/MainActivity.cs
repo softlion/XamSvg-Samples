@@ -45,7 +45,7 @@ namespace XamSvgTests
                 if (index < svgShared.Count)
                 {
                     Log.Debug("svg", "displaying res:" + svgShared[index]);
-                    svg.SetSvg(this, "res:" + svgShared[index]);
+                    svg.Svg = "res:" + svgShared[index];
                 }
                 else
                 {
