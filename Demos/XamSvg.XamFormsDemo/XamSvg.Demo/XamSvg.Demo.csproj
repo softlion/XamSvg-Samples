@@ -139,11 +139,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="XamSvg.Shared, Version=2.3.2.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.2.6\lib\portable-win8+net45+wpa81+MonoAndroid44+Xamarin.iOS10\XamSvg.Shared.dll</HintPath>
+      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.3.1\lib\portable-win8+net45+wpa81+MonoAndroid44+Xamarin.iOS10\XamSvg.Shared.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="XamSvg.XamForms, Version=2.3.2.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.2.6\lib\portable-win8+net45+wpa81+MonoAndroid44+Xamarin.iOS10\XamSvg.XamForms.dll</HintPath>
+      <HintPath>..\..\packages\Vapolia.XamSvg.Forms.2.3.3.1\lib\portable-win8+net45+wpa81+MonoAndroid44+Xamarin.iOS10\XamSvg.XamForms.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

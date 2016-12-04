@@ -71,7 +71,7 @@ namespace XamSvg.Demo
         private void OnSvgClicked(object sender, EventArgs args)
         {
 
-            var svgName = "res:" + names[i++];
+             var svgName = "res:" + names[i++];
             Svg.Svg = svgName;
             i = i%names.Length;
         }

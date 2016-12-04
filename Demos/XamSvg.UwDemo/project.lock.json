@@ -296,7 +296,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Softlion.XamSvg/2.3.2.6": {
+      "Softlion.XamSvg/2.3.3": {
         "compile": {
           "lib/uap10.0/XamSvg.Shared.dll": {},
           "lib/uap10.0/XamSvg.Uw.dll": {}
@@ -2564,7 +2564,7 @@
           "runtimes/win8-arm/native/clrcompression.dll": {}
         }
       },
-      "Softlion.XamSvg/2.3.2.6": {
+      "Softlion.XamSvg/2.3.3": {
         "compile": {
           "lib/uap10.0/XamSvg.Shared.dll": {},
           "lib/uap10.0/XamSvg.Uw.dll": {}
@@ -4723,7 +4723,7 @@
           "runtimes/win8-arm-aot/native/_._": {}
         }
       },
-      "Softlion.XamSvg/2.3.2.6": {
+      "Softlion.XamSvg/2.3.3": {
         "compile": {
           "lib/uap10.0/XamSvg.Shared.dll": {},
           "lib/uap10.0/XamSvg.Uw.dll": {}
@@ -6852,7 +6852,7 @@
           "runtimes/win/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
-      "Softlion.XamSvg/2.3.2.6": {
+      "Softlion.XamSvg/2.3.3": {
         "compile": {
           "lib/uap10.0/XamSvg.Shared.dll": {},
           "lib/uap10.0/XamSvg.Uw.dll": {}
@@ -9020,7 +9020,7 @@
           "runtimes/aot/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
-      "Softlion.XamSvg/2.3.2.6": {
+      "Softlion.XamSvg/2.3.3": {
         "compile": {
           "lib/uap10.0/XamSvg.Shared.dll": {},
           "lib/uap10.0/XamSvg.Uw.dll": {}
@@ -11149,7 +11149,7 @@
           "runtimes/win/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
-      "Softlion.XamSvg/2.3.2.6": {
+      "Softlion.XamSvg/2.3.3": {
         "compile": {
           "lib/uap10.0/XamSvg.Shared.dll": {},
           "lib/uap10.0/XamSvg.Uw.dll": {}
@@ -13317,7 +13317,7 @@
           "runtimes/aot/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
-      "Softlion.XamSvg/2.3.2.6": {
+      "Softlion.XamSvg/2.3.3": {
         "compile": {
           "lib/uap10.0/XamSvg.Shared.dll": {},
           "lib/uap10.0/XamSvg.Uw.dll": {}
@@ -16181,12 +16181,12 @@
         "runtimes/win8-arm/native/clrcompression.dll"
       ]
     },
-    "Softlion.XamSvg/2.3.2.6": {
-      "sha512": "gYWm87bgWEf3ji/kOjZSQmi6upjri/0C5bHCRJvgCcXDhEeoLp+qpZOVeiMHrkqc2OxvT3KzVj9P2ba6QTjnAA==",
+    "Softlion.XamSvg/2.3.3": {
+      "sha512": "3yEVUvcnSXMoTSkfHSroOYFq/aSs4v9jQRklTeUoGTiKb7t19Xs47GFYlbfeejWHpCBCH/DkdjIKko7rsbdq2A==",
       "type": "package",
-      "path": "Softlion.XamSvg/2.3.2.6",
+      "path": "Softlion.XamSvg/2.3.3",
       "files": [
-        "Softlion.XamSvg.2.3.2.6.nupkg.sha512",
+        "Softlion.XamSvg.2.3.3.nupkg.sha512",
         "Softlion.XamSvg.nuspec",
         "lib/MonoAndroid44/XamSvg.Droid.dll",
         "lib/MonoAndroid44/XamSvg.Shared.dll",
@@ -21106,7 +21106,7 @@
   "projectFileDependencyGroups": {
     "": [
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.2",
-      "Softlion.XamSvg >= 2.3.2.6"
+      "Softlion.XamSvg >= 2.3.3"
     ],
     "UAP,Version=v10.0": []
   }
