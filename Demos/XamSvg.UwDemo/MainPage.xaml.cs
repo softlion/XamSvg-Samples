@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 namespace XamSvg.UwDemo
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
         private readonly string[] fileNames;
@@ -22,6 +17,9 @@ namespace XamSvg.UwDemo
             #region Move this in App.xaml.cs
             var assembly = typeof(XamSvgDemo.Shared.App).GetTypeInfo().Assembly;
             XamSvg.Shared.Config.ResourceAssembly = assembly;
+#if DEBUG
+            XamSvg.Shared.Config.NativeLogger = new DebugLogger();
+#endif
             #endregion
 
             this.InitializeComponent();

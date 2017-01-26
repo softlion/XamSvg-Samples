@@ -1,7 +1,7 @@
 ﻿{
   "dependencies": {
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
-    "Vapolia.XamSvg.Forms": "2.3.3.1",
+    "Vapolia.XamSvg.Forms": "2.3.3.2",
     "Xamarin.Forms": "2.3.3.168"
   },
   "frameworks": {
