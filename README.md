@@ -29,3 +29,14 @@ https://github.com/xamarin/monotouch-samples
 [//]: # ([![Demo CountPages alpha](http://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=ek1j272iAmc))
 [//]: # (end comments)
 
+# Special notes
+
+## UW
+
+In release mode, UW projects won't detect the dependency services and renderers.  
+So you'll have to add these lines:
+
+[assembly: ExportRenderer(typeof(SvgImage), typeof(SvgImageRenderer))]
+[assembly: Dependency(typeof(SvgLogger))]
+
+The second line is optional as of version 2.3.3.4
