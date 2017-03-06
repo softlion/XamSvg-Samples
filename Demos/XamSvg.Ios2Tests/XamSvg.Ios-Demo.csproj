@@ -228,11 +228,11 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="XamSvg.Ios, Version=2.3.2.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Softlion.XamSvg.2.3.3.2\lib\Xamarin.iOS\XamSvg.Ios.dll</HintPath>
+      <HintPath>..\packages\Softlion.XamSvg.2.3.3.3\lib\Xamarin.iOS\XamSvg.Ios.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="XamSvg.Shared, Version=2.3.2.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Softlion.XamSvg.2.3.3.2\lib\Xamarin.iOS\XamSvg.Shared.dll</HintPath>
+      <HintPath>..\packages\Softlion.XamSvg.2.3.3.3\lib\Xamarin.iOS\XamSvg.Shared.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

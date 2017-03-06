@@ -313,11 +313,11 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="XamSvg.Shared, Version=2.3.2.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Softlion.XamSvg.2.3.3.2\lib\wpa81\XamSvg.Shared.dll</HintPath>
+      <HintPath>..\packages\Softlion.XamSvg.2.3.3.3\lib\wpa81\XamSvg.Shared.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="XamSvg.Wp81, Version=2.3.2.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Softlion.XamSvg.2.3.3.2\lib\wpa81\XamSvg.Wp81.dll</HintPath>
+      <HintPath>..\packages\Softlion.XamSvg.2.3.3.3\lib\wpa81\XamSvg.Wp81.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
