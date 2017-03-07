@@ -295,8 +295,9 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Softlion.XamSvg/2.3.3.3": {
+      "Softlion.XamSvg/2.3.3.5": {
         "dependencies": {
+          "System.Console": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0"
         },
         "compile": {
@@ -453,6 +454,18 @@
         },
         "runtime": {
           "lib/netcore50/System.ComponentModel.EventBasedAsync.dll": {}
+        }
+      },
+      "System.Console/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.IO": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Text.Encoding": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Console.dll": {}
         }
       },
       "System.Data.Common/4.1.0": {
@@ -2445,6 +2458,24 @@
           "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "runtime.win.System.Console/4.3.0": {
+        "dependencies": {
+          "System.IO": "4.3.0",
+          "System.IO.FileSystem.Primitives": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Text.Encoding.Extensions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard/_._": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/netcore50/System.Console.dll": {}
+        }
+      },
       "runtime.win.System.Diagnostics.Debug/4.3.0": {
         "compile": {
           "ref/netstandard/_._": {}
@@ -2576,8 +2607,9 @@
           "runtimes/win/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
-      "Softlion.XamSvg/2.3.3.3": {
+      "Softlion.XamSvg/2.3.3.5": {
         "dependencies": {
+          "System.Console": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0"
         },
         "compile": {
@@ -2729,6 +2761,19 @@
         },
         "runtime": {
           "lib/netcore50/System.ComponentModel.EventBasedAsync.dll": {}
+        }
+      },
+      "System.Console/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.IO": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "runtime.win.System.Console": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Console.dll": {}
         }
       },
       "System.Data.Common/4.1.0": {
@@ -4935,6 +4980,21 @@
         "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Primitives.dll"
       ]
     },
+    "runtime.win.System.Console/4.3.0": {
+      "sha512": "RRACWygml5dnmfgC1SW6tLGsFgwsUAKFtvhdyHnIEz4EhWyrd7pacDdY95CacQJy7BMXRDRCejC9aCRC0Y1sQA==",
+      "type": "package",
+      "path": "runtime.win.system.console/4.3.0",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "ref/netstandard/_._",
+        "runtime.win.System.Console.4.3.0.nupkg.sha512",
+        "runtime.win.System.Console.nuspec",
+        "runtimes/win/lib/net/_._",
+        "runtimes/win/lib/netcore50/System.Console.dll",
+        "runtimes/win/lib/netstandard1.3/System.Console.dll"
+      ]
+    },
     "runtime.win.System.Diagnostics.Debug/4.3.0": {
       "sha512": "hHHP0WCStene2jjeYcuDkETozUYF/3sHVRHAEOgS3L15hlip24ssqCTnJC28Z03Wpo078oMcJd0H4egD2aJI8g==",
       "type": "package",
@@ -5085,10 +5145,10 @@
         "runtimes/win/lib/netstandard1.0/System.Private.Uri.dll"
       ]
     },
-    "Softlion.XamSvg/2.3.3.3": {
-      "sha512": "VbjxoJ1/pLLUcF/lLeqmyjIOiwtzDVFmH00FDsFw1owxNvtdjEZpbqXq13EM+/K7iyzjFMSbqja+rgVp/NsfFg==",
+    "Softlion.XamSvg/2.3.3.5": {
+      "sha512": "2O39N+y0u8ubV8CtXaZfCH4ecy7M/zrVD9HlAVzq5DXlNBBqmYNGOm3wDFLczd8NSVkuuFxQmjQHb452fkPqsg==",
       "type": "package",
-      "path": "softlion.xamsvg/2.3.3.3",
+      "path": "softlion.xamsvg/2.3.3.5",
       "files": [
         "lib/MonoAndroid44/XamSvg.Droid.dll",
         "lib/MonoAndroid44/XamSvg.Shared.dll",
@@ -5100,7 +5160,7 @@
         "lib/uap10.0/XamSvg.Uw.pri",
         "lib/wpa81/XamSvg.Shared.dll",
         "lib/wpa81/XamSvg.Wp81.dll",
-        "softlion.xamsvg.2.3.3.3.nupkg.sha512",
+        "softlion.xamsvg.2.3.3.5.nupkg.sha512",
         "softlion.xamsvg.nuspec"
       ]
     },
@@ -5600,6 +5660,42 @@
         "ref/win8/_._",
         "ref/wp80/_._",
         "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "System.Console/4.3.0": {
+      "sha512": "DHDrIxiqk1h03m6khKWV2X8p/uvN79rgSqpilL6uzpmSfxfU5ng8VcPtW4qsDsQDHiTv6IPV9TmD5M/vElPNLg==",
+      "type": "package",
+      "path": "system.console/4.3.0",
+      "files": [
+        "System.Console.4.3.0.nupkg.sha512",
+        "System.Console.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Console.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Console.dll",
+        "ref/netstandard1.3/System.Console.dll",
+        "ref/netstandard1.3/System.Console.xml",
+        "ref/netstandard1.3/de/System.Console.xml",
+        "ref/netstandard1.3/es/System.Console.xml",
+        "ref/netstandard1.3/fr/System.Console.xml",
+        "ref/netstandard1.3/it/System.Console.xml",
+        "ref/netstandard1.3/ja/System.Console.xml",
+        "ref/netstandard1.3/ko/System.Console.xml",
+        "ref/netstandard1.3/ru/System.Console.xml",
+        "ref/netstandard1.3/zh-hans/System.Console.xml",
+        "ref/netstandard1.3/zh-hant/System.Console.xml",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
@@ -10239,7 +10335,7 @@
   "projectFileDependencyGroups": {
     "": [
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.2",
-      "Softlion.XamSvg >= 2.3.3.3"
+      "Softlion.XamSvg >= 2.3.3.5"
     ],
     "UAP,Version=v10.0": []
   },

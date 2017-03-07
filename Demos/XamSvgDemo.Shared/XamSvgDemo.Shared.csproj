@@ -190,6 +190,7 @@
     <EmbeddedResource Include="images\car.svg" />
     <EmbeddedResource Include="images\arcElliptic.svg" />
     <EmbeddedResource Include="images\dukechain.svg" />
+    <EmbeddedResource Include="images\000uw_non_working_svg_logo.svg" />
     <Content Include="images\iOSNav_Reciprocity-active.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
