@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using UIKit;
+using Vapolia.Ios.Lib.Effects;
 using XamSvg.XamForms.iOS;
 
 namespace XamSvg.Demo.iOS
@@ -13,6 +14,8 @@ namespace XamSvg.Demo.iOS
             //To be registered, the lib containing the custom renderer must be loaded before Forms.Init()
             //Also required by SvgImageBuilder to register its services
             SvgImageRenderer.InitializeForms();
+
+            PlatformGestureEffect.Init();
 
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());

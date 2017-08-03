@@ -1,109 +1,124 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using Xamarin.Forms;
+using XamSvg.Shared.Utils;
 using XamSvg.XamForms;
 
 namespace XamSvg.Demo
 {
-
     public partial class MainPage : ContentPage
     {
+        public MainPage()
+        {
+            InitializeComponent();
+            var model = new MainPageModel(Navigation);
+            BindingContext = model;
+
+            #region Set left icon on button (usin a svg)
+            var svgRefresh = new SvgImageSource { Svg = "res:images.refresh", Height = 15 }; //ColorMapping = "ffffff=00ff00"
+            //FileImageSource imageThatCanBeUsedInTabsWithACustomTabRenderer = svgRefresh.Image;
+            ColorMappingSelectedButton.Image = svgRefresh.CreateFileImageSource();
+            #endregion
+
+            model.PropertyChanged += (sender, args) =>
+            {
+                if (args.PropertyName == nameof(MainPageModel.Zoom))
+                {
+                    if (Math.Abs(model.ZoomValue)<float.Epsilon)
+                        TheSvg.ViewportTransform = null;
+                    else
+                    {
+                        //Rotation whose pivot point is at center
+                        var matrix1 = DependencyService.Get<IMatrixFactory>().Create();
+                        matrix1.Scale((float) (1 / model.ZoomValue), (float) (1 / model.ZoomValue));
+
+                        var innerSize = TheSvg.InnerSize;
+                        var matrix0 = DependencyService.Get<IMatrixFactory>().Create();
+                        matrix0.Translate(-(float) (innerSize.Width / 2), -(float) (innerSize.Height / 2));
+                        var matrix2 = DependencyService.Get<IMatrixFactory>().Create();
+                        matrix2.Translate((float) (innerSize.Width / 2), (float) (innerSize.Height / 2));
+                        matrix1.Concat(matrix0);
+                        matrix2.Concat(matrix1);
+
+                        TheSvg.ViewportTransform = matrix2;
+                    }
+                }
+                else if (args.PropertyName == nameof(MainPageModel.Translation))
+                {
+                    if (model.Translation.IsEmpty)
+                        TheSvg.ViewportTransform = null;
+                    else
+                    {
+                        //Rotation whose pivot point is at center
+                        var matrix = DependencyService.Get<IMatrixFactory>().Create();
+                        var innerSize = TheSvg.InnerSize;
+                        var translation = model.Translation;
+                        matrix.Translate((float)(-translation.X*innerSize.Width/TheSvg.Width), (float)(-translation.Y * innerSize.Height/ TheSvg.Height));
+                        TheSvg.ViewportTransform = matrix;
+                    }
+                }
+            };
+        }
+    }
+
+    public class MainPageModel : BindableObject
+    {
         private readonly string[] names;
+        private readonly INavigation navigation;
         private int i;
 
-        public string ColorMapping
+        public MainPageModel(INavigation navigation)
         {
-            get { return (string)GetValue(ColorMappingProperty); }
-            set { SetValue(ColorMappingProperty, value); }
+            this.navigation = navigation;
+            names = typeof(App).GetTypeInfo().Assembly.GetManifestResourceNames()
+                .Where(n => n.EndsWith(".svg")).OrderBy(n => n).ToArray();
         }
 
-        public static BindableProperty ColorMappingProperty = BindableProperty.Create(nameof(ColorMapping), typeof(string), typeof(MainPage),
-            null, BindingMode.OneWay,
-            propertyChanged: (bindable, oldValue, newValue) => ((MainPage) bindable).ColorMapping = (string)newValue);
+        #region properties
+        public string ColorMapping { get { return colorMapping; } set { colorMapping = value; OnPropertyChanged(); } }
+        private string colorMapping;
 
+        public string ImageName { get { return imageName; } set { imageName = value; OnPropertyChanged(); } }
+        private string imageName = "res:images.000myprofil";
 
-        public MainPage(string[] names)
+        public double Zoom { get { return zoom; } set { zoom = value; OnPropertyChanged(); OnPropertyChanged(nameof(ZoomText)); } }
+        private double zoom = 0;
+        public double ZoomValue => Math.Pow(10, zoom);
+
+        public string ZoomText => $"{ZoomValue:F1}";
+
+        public Point Translation { get { return translation; } set { translation = value; OnPropertyChanged(); } }
+        private Point translation;
+
+        #endregion
+
+        #region commands
+        public Command NextImageCommand => new Command(() =>
         {
-            this.names = names;
-            InitializeComponent();
+            Zoom = 0;
+            ImageName = $"res:{names[i]}";
+            i = ++i % names.Length;
+        });
 
-            //FileImageSource is sealed. We can currently not derive SvgImageSource from FileImageSource.
-            //FileImageSource only references a local file path. It does not contains the methods to access it.
-            //var svg = new SvgImageSource { Svg = "res:images.hand", HeightRequest = 20,  ColorMapping = "ffffff=00ff00" };
-            //var image = svg.Image;
-
-            //var toolbarImage = SvgImageSource.CreateFile("res:images.hand", height: 20);
-
-            //ToolbarItems.Add(new ToolbarItem
-            //{
-            //    Icon = toolbarImage,
-            //    Order = ToolbarItemOrder.Primary, Command = new Command(() =>
-            //    {
-            //        Navigation.PushAsync(new Page2());
-            //    })
-            //});
-
-            //try
-            //{
-            //    var image = SvgImageSource.Create("res:images.refresh");
-            //    var t = 0;
-            //}
-            //catch (Exception e)
-            //{
-            //    Debug.WriteLine(e);
-            //}
-
-
-
-            var svgRefresh = new SvgImageSource
-            {
-                Svg = "res:images.refresh", 
-                HeightRequest = 15
-            };
-            TestButton.Image = svgRefresh.Image;
-        }
-
-        [Preserve]
-        private void OnSvgClicked(object sender, EventArgs args)
-        {
-
-             var svgName = "res:" + names[i++];
-            Svg.Svg = svgName;
-            i = i%names.Length;
-        }
-
-        private void HideIt(object sender, EventArgs args)
-        {
-            TheGrid.IsVisible = false;
-            Task.Delay(5000).ContinueWith(t =>
-            {
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    TheGrid.IsVisible = true;
-                });
-            });
-        }
-
-        private void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
-        {
-            Debug.WriteLine("TapGesture Tap recognized");
-        }
-
-        private void NextPageButton_OnClicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new Page2());
-        }
-
-        private void ColorMappingSelectedButton_OnClicked(object sender, EventArgs e)
+        public Command ColorMappingCommand => new Command(() =>
         {
             var rand = new Random();
             var bytes = new byte[3];
             rand.NextBytes(bytes);
             ColorMapping = $"ffffff=00ff00;000000={bytes[0]:X2}{bytes[1]:X2}{bytes[2]:X2}";
-        }
+        });
+
+        public Command<Point> PanCommand => new Command<Point>(offset =>
+        {
+            Translation = offset;
+        });
+
+        public Command OpenVapoliaCommand => new Command(async () =>
+        {
+            await navigation.PushAsync(new ContentPage { Content = new WebView { Source = new UrlWebViewSource { Url = "https://vapolia.fr" } }});
+        });
+        #endregion
     }
 }

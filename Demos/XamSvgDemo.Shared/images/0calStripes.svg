@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" version="1.1">
+  <g transform="rotate(-45,50,50)">
+    <rect y="-20%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="-10%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="0" x="-50%" width="150%" height="5%" fill="#f0f" />
+		<rect y="10%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="20%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="30%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="40%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="50%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="60%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="70%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="80%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="90%" x="-50%" width="150%" height="5%" fill="#0FF" />
+		<rect y="100%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="110%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="120%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="130%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="140%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="150%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="160%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="170%" x="-50%" width="150%" height="5%" fill="#ff0" />
+		<rect y="180%" x="-50%" width="150%" height="5%" fill="#ff0" />
+	</g>
+</svg>

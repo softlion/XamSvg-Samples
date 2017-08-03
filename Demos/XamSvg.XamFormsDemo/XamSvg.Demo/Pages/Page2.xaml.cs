@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -22,7 +19,7 @@ namespace XamSvg.Demo
         {
             cancelSource.Cancel();
             cancelSource = new CancellationTokenSource();
-            var dontWait = StartAnimation(cancelSource.Token);
+            var unused = StartAnimation(cancelSource.Token);
         }
 
         private void Stop_OnClicked(object sender, EventArgs e)
@@ -32,8 +29,9 @@ namespace XamSvg.Demo
 
         private async Task StartAnimation(CancellationToken cancel)
         {
+            var totalSeconds = 10.0;
             var movePerSeconds = 10;
-            var increment = 100/60.0/movePerSeconds;
+            var increment = 100/ totalSeconds / movePerSeconds;
 
             while (!cancel.IsCancellationRequested)
             {
@@ -42,11 +40,17 @@ namespace XamSvg.Demo
                     p = 0;
                 TheProgress.Progress = p;
 
-                var seconds = ((int)(60*p/100.0)).ToString();
+                var seconds = ((int)(totalSeconds * p/100.0)).ToString();
                 if(Seconds.Text != seconds)
                     Seconds.Text = seconds;
 
-                await Task.Delay(1000/movePerSeconds); //Don't use the version with the cancel overload, as it throws an exception and we don't want 4 try/catch lines
+                try
+                {
+                    await Task.Delay(1000 / movePerSeconds, cancel);
+                }
+                catch (TaskCanceledException)
+                {
+                }
             }
         }
     }

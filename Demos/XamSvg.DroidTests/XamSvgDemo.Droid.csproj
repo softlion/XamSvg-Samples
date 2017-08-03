@@ -71,12 +71,12 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
-    <Reference Include="XamSvg.Droid, Version=2.3.2.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Softlion.XamSvg.2.3.3.5\lib\MonoAndroid44\XamSvg.Droid.dll</HintPath>
+    <Reference Include="XamSvg.Droid, Version=2.3.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Softlion.XamSvg.2.3.5-pre2\lib\MonoAndroid44\XamSvg.Droid.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XamSvg.Shared, Version=2.3.2.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Softlion.XamSvg.2.3.3.5\lib\MonoAndroid44\XamSvg.Shared.dll</HintPath>
+    <Reference Include="XamSvg.Shared, Version=2.3.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Softlion.XamSvg.2.3.5-pre2\lib\MonoAndroid44\XamSvg.Shared.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

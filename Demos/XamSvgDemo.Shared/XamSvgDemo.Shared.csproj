@@ -13,7 +13,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -191,6 +191,10 @@
     <EmbeddedResource Include="images\arcElliptic.svg" />
     <EmbeddedResource Include="images\dukechain.svg" />
     <EmbeddedResource Include="images\000uw_non_working_svg_logo.svg" />
+    <EmbeddedResource Include="images\00dukechain0.svg" />
+    <EmbeddedResource Include="images\0calStripes.svg" />
+    <EmbeddedResource Include="images\0camera.svg" />
+    <EmbeddedResource Include="images\0play.svg" />
     <Content Include="images\iOSNav_Reciprocity-active.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
