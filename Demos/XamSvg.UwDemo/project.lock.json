@@ -295,7 +295,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Softlion.XamSvg/2.3.3.5": {
+      "Softlion.XamSvg/2.3.5-pre2": {
         "dependencies": {
           "System.Console": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0"
@@ -2607,7 +2607,7 @@
           "runtimes/win/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
-      "Softlion.XamSvg/2.3.3.5": {
+      "Softlion.XamSvg/2.3.5-pre2": {
         "dependencies": {
           "System.Console": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0"
@@ -5145,10 +5145,10 @@
         "runtimes/win/lib/netstandard1.0/System.Private.Uri.dll"
       ]
     },
-    "Softlion.XamSvg/2.3.3.5": {
-      "sha512": "2O39N+y0u8ubV8CtXaZfCH4ecy7M/zrVD9HlAVzq5DXlNBBqmYNGOm3wDFLczd8NSVkuuFxQmjQHb452fkPqsg==",
+    "Softlion.XamSvg/2.3.5-pre2": {
+      "sha512": "1VYu0NXBefWpQrje8au2gZ/FKMO5VDlr9bkP/JpMtByFPbrDJrVIg2/POcZC/W94cHDFwIyqLijH4ln95rwtGQ==",
       "type": "package",
-      "path": "softlion.xamsvg/2.3.3.5",
+      "path": "softlion.xamsvg/2.3.5-pre2",
       "files": [
         "lib/MonoAndroid44/XamSvg.Droid.dll",
         "lib/MonoAndroid44/XamSvg.Shared.dll",
@@ -5158,9 +5158,7 @@
         "lib/uap10.0/XamSvg.Shared.dll",
         "lib/uap10.0/XamSvg.Uw.dll",
         "lib/uap10.0/XamSvg.Uw.pri",
-        "lib/wpa81/XamSvg.Shared.dll",
-        "lib/wpa81/XamSvg.Wp81.dll",
-        "softlion.xamsvg.2.3.3.5.nupkg.sha512",
+        "softlion.xamsvg.2.3.5-pre2.nupkg.sha512",
         "softlion.xamsvg.nuspec"
       ]
     },
@@ -10335,7 +10333,7 @@
   "projectFileDependencyGroups": {
     "": [
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.2",
-      "Softlion.XamSvg >= 2.3.3.5"
+      "Softlion.XamSvg >= 2.3.5-pre2"
     ],
     "UAP,Version=v10.0": []
   },

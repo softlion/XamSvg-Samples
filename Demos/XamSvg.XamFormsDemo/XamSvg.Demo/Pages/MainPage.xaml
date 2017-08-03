@@ -2,106 +2,48 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
+             xmlns:ui="clr-namespace:Vapolia.Lib.Ui;assembly=XamarinFormsGesture"
              x:Class="XamSvg.Demo.MainPage"
              BackgroundColor="#202020"
-             x:Name="ThePage"
              Title="XamSvg Demo">
 
-  <!-- This is not possible, because FileImageSource is sealed (and Icon is a FileImageSource) 
-  Instead we do this in code
-  -->
-  <!--
-  <ContentPage.ToolbarItems>
-    <ToolbarItem>
-      <ToolbarItem.Icon>
-        <controls:SvgImageSource Svg="res:images.hand" HeightRequest="20" ColorMapping="ffffff=00ff00" />
-      </ToolbarItem.Icon>
-    </ToolbarItem>
-  </ContentPage.ToolbarItems>
-  -->
-
-  <!-- Test with a grid. Change the VerticalOption to Center to remove fitting -->
   <Grid Padding="10, 10, 10, 10">
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
       <RowDefinition Height="*" />
       <RowDefinition Height="Auto" />
-      <RowDefinition Height="Auto" />
     </Grid.RowDefinitions>
 
-    <Label Text="Clicking the vector image will select it and switch to next image. Get more svg images at www.flaticon.com" TextColor="White" HorizontalOptions="Center" />
-    
-    <Grid Grid.Row="1" BackgroundColor="Yellow">
-      <Grid.GestureRecognizers>
-        <TapGestureRecognizer Tapped="OnSvgClicked" NumberOfTapsRequired="1" />
-      </Grid.GestureRecognizers>
+        <Label Text="Tap the image to display next svg. Get more svg at flaticon.com" TextColor="White" HorizontalOptions="Center" ui:Gesture.TapCommand="{Binding OpenVapoliaCommand}" />
+
+        <!-- When a svg does not fill the space, this background will catch the tap and display the next svg. -->
+        <Grid Grid.Row="1" BackgroundColor="Yellow" ui:Gesture.TapCommand="{Binding NextImageCommand}"/>
+
+        <controls:SvgImage Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand" BackgroundColor="Maroon"
+            Svg="{Binding ImageName}"
+            ColorMapping="{Binding ColorMapping}" 
+            ColorMappingSelected="ffffff=00ff00;000000=0000FF" 
+            x:Name="TheSvg"
+            ui:Gesture.TapCommand="{Binding NextImageCommand}"
+            ui:Gesture.PanCommand="{Binding PanCommand}"
+            />
+
+        <StackLayout Grid.Row="2" Spacing="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Zoom: " TextColor="GhostWhite" />
+                    <Label Text="{Binding ZoomText}" TextColor="GhostWhite" />
+                </StackLayout>
+                <Slider Grid.Column="1" Value="{Binding Zoom}" Minimum="-1" Maximum="1" />
     </Grid>
-    <controls:SvgImage x:Name="Svg"
-                       Grid.Row="1"
-                       HorizontalOptions="Fill" 
-                       VerticalOptions="Fill"
-                       FillMode="Fit"
-                       ColorMapping="{Binding Source={x:Reference ThePage},Path=ColorMapping}" ColorMappingSelected="ffffff=00ff00;000000=0000FF" 
-                       BackgroundColor="Maroon"
-                       Svg="res:images.buddy_add"
-                       InputTransparent="True"
-                       />
 
-
-     
-    <!--<StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End">
-      <controls:SvgImage HeightRequest="6" Svg="res:images.pointrempli" HorizontalOptions="End" VerticalOptions="Center"/>
-      <controls:SvgImage HeightRequest="6" Svg="res:images.pointrempli" HorizontalOptions="Center" VerticalOptions="Center"/>
-      <controls:SvgImage HeightRequest="6" Svg="res:images.pointvide" HorizontalOptions="Start" VerticalOptions="Center"/>
-    </StackLayout>-->
-    
-
-    <Grid Grid.Row="2"
-      x:Name="TheGrid"
-      HeightRequest="47">
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="1.6*" />
-        <ColumnDefinition Width="*" />
-        <ColumnDefinition Width="Auto" />
-        <ColumnDefinition Width="1.6*" />
-      </Grid.ColumnDefinitions>
-      
-      <!-- Bug test -->
-      <!--<ContentView Grid.Column="1">
-        --><!--
-        Using a tap gesture recognizer AND a ColorMappingSelected behaves incorrectly.
-        The Pressed state is never removed from SvgImage by Xamarin or Android.--><!--
-        <ContentView.GestureRecognizers>
-          <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped" />
-        </ContentView.GestureRecognizers>
-
-        <controls:SvgImage Svg="res:images.refresh" HorizontalOptions="Center" ColorMappingSelected="ff8268=FF0000;ff8267=00FF00"
-                           />
-      </ContentView>-->
-
-      <!--<controls:SvgImage Grid.Column="1" Svg="res:images.refresh" HorizontalOptions="Fill" VerticalOptions="Center" Clicked="HideIt" />
-      -->
-      <StackLayout Orientation="Horizontal">
-        <controls:SvgButton x:Name="TestButton" Text=" Hello" Clicked="OnSvgClicked" />
-        <controls:SvgButton x:Name="NextPageButton" Text="Animation demo" Clicked="NextPageButton_OnClicked" />
-      </StackLayout>
-    </Grid>
-    
-
-
-    <!-- Test with a stack. By default all childs of a stack have HorizontalOption to Fill and VerticalOption to Start.
-         Comment the grid and uncomment the stack to test.
-    -->
-    <StackLayout Grid.Row="3">
-      <Button x:Name="ColorMappingSelectedButton" Text="Change selected color mapping" Clicked="ColorMappingSelectedButton_OnClicked" />
-    </StackLayout>
-
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="ColorMappingSelectedButton" Text=" Change color mapping" Command="{Binding ColorMappingCommand}" />
+            </StackLayout>
+        </StackLayout>
   </Grid>
-
-  <!--<controls:SvgImage Svg="res:images.hand"
-                     WidthRequest="100"
-                     HorizontalOptions="Fill"
-                     VerticalOptions="Center"
-                     ColorMappingSelected="ffffff=00ff00;000000=0000FF" BackgroundColor="Maroon" />-->
-
 </ContentPage>

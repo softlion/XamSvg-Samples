@@ -25,7 +25,7 @@ namespace XamSvg.UwDemo
             this.InitializeComponent();
 
             var sharedSvgs = assembly.GetManifestResourceNames().Where(n => n.EndsWith(".svg")).OrderBy(n => n.Substring(n.LastIndexOf('/') + 1)).ToArray();
-            fileNames = sharedSvgs.Select(s => "res:" + s).ToArray();
+            fileNames = sharedSvgs.Select(s => "res:" + s).Concat(new [] {"res:missing"}).ToArray();
         }
 
         /// <summary>

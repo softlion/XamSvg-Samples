@@ -8,9 +8,10 @@ namespace XamSvg.UwDemo
     {
         public bool TraceEnabled { get; set; } = true;
 
-        public void Trace(Func<string> s, string method = null, int lineNumber = 0)
+        public void Trace(Func<string> s, bool traceEnabled = true, string method = null, int lineNumber = 0)
         {
-            Debug.WriteLine($"{method}@{lineNumber}: {s()}");
+            if(TraceEnabled && traceEnabled)
+                Debug.WriteLine($"{method}@{lineNumber}: {s()}");
         }
     }
 }

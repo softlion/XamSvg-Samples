@@ -2,6 +2,7 @@
 using Android.Content.PM;
 using Android.OS;
 using Android.Views;
+using Vapolia.Droid.Lib.Effects;
 using XamSvg.XamForms.Droid;
 
 
@@ -16,6 +17,8 @@ namespace XamSvg.Demo.Droid
 
             //Required by SvgImageBuilder to register its services
             SvgImageRenderer.InitializeForms();
+
+            PlatformGestureEffect.Init();
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
