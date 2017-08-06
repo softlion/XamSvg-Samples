@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamSvg.XamForms;
 
@@ -17,12 +11,9 @@ namespace XamSvg.Demo.Pages
         {
             InitializeComponent();
 
-            MainPage.Icon = new SvgImageSource
-                {
-                    Svg = "res:images.pin",
-                    Height = 30,
-                }
-                .CreateFileImageSource();
+            MainPage.Icon = new SvgImageSource { Svg = "res:images.intertwingly", Height = 30 }.CreateFileImageSource();
+
+            AnimationPage.Icon = new SvgImageSource { Svg = "res:images.0GoldMirror", Height = 30 }.CreateFileImageSource();
         }
     }
 }

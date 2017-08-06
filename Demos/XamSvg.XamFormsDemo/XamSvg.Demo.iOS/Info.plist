@@ -15,15 +15,9 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>8.0</string>
-	<key>CFBundleDisplayName</key>
-	<string>XamSvg.Demo</string>
-	<key>CFBundleIdentifier</key>
-	<string></string>
+	<string>10.3</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
-	<key>CFBundleShortVersionString</key>
-	<string></string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon-60@2x.png</string>
@@ -31,5 +25,35 @@
 	</array>
 	<key>UIPrerenderedIcon</key>
 	<true/>
+	<key>XSAppIconAssets</key>
+	<string>Resources/Media.xcassets/AppIcons.appiconset</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Resources/Media.xcassets/LaunchImages.launchimage</string>
+	<key>CFBundleDisplayName</key>
+	<string>Try XamSvg</string>
+	<key>CFBundleIdentifier</key>
+	<string>fr.vapolia.svgformtest</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleName</key>
+	<string>Try XamSvg</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>xamsvgdemo</string>
+			</array>
+			<key>CFBundleURLTypes</key>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>deeplinks.xamsvgdemo</string>
+		</dict>
+	</array>
+  <key>NSAppTransportSecurity</key>
+  <dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+  </dict>
 </dict>
 </plist>

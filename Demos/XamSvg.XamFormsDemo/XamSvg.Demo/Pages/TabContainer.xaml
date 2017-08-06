@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:demo="clr-namespace:XamSvg.Demo;assembly=XamSvg.Demo"
              x:Class="XamSvg.Demo.Pages.TabContainer"
-             Title="XamSvg Demo"
+             Title="Vapolia.fr XamSvg Demo"
             >
 
     <demo:MainPage Title="Slideshow" x:Name="MainPage" />
-    <demo:Page2 Title="Animation" />
+    <demo:Page2 Title="Animation"  x:Name="AnimationPage" />
     
 </TabbedPage>
