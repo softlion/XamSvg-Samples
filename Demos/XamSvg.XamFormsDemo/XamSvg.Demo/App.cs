@@ -16,4 +16,9 @@ namespace XamSvg.Demo
             MainPage = new NavigationPage(new TabContainer());
         }
     }
+
+    public static class MessagingCenterConst
+    {
+        public const string OpenDeepLink = nameof(OpenDeepLink);
+    }
 }

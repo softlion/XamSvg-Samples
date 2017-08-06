@@ -32,26 +32,28 @@ namespace XamSvg.Demo.Controls
             RowSpacing = 0;
             ColumnSpacing = 0;
 
-            Children.Add(new SvgImage { Svg = "res:images.greyCircle", HorizontalOptions = LayoutOptions.Fill, VerticalOptions = LayoutOptions.Start });
+            var back = new SvgImage {Svg = "res:images.0GoldMirror", HorizontalOptions = LayoutOptions.Fill, VerticalOptions = LayoutOptions.Start};
+            Children.Add(back);
             var cercleDegrade = new SvgImage { HorizontalOptions = LayoutOptions.Fill, VerticalOptions = LayoutOptions.Start };
 
             svgTemplate = XamSvg.Shared.Utils.ResourceLoader.GetEmbeddedResourceString(typeof(App).GetTypeInfo().Assembly, "images.templates.ring.svg");
-            cercleDegrade.Svg = BuildSvgRing();
+            cercleDegrade.Svg = BuildSvgRing(back);
             Children.Add(cercleDegrade);
 
             PropertyChanged += (sender, args) =>
             {
                 if (args.PropertyName == ProgressProperty.PropertyName)
-                    cercleDegrade.Svg = BuildSvgRing();
+                    cercleDegrade.Svg = BuildSvgRing(back);
             };
         }
 
-        private string BuildSvgRing()
+        private string BuildSvgRing(View back)
         {
             var angle = 360*Progress/MaxValue % 360;
             if (angle <= 0)
                 angle = 1;
 
+            back.Rotation = -angle;
             var svgString = new StringBuilder(svgTemplate);
 
             var endpoint1 = angle>180 ? new Point(200,394) : PolarToCartesian(200,200,194,angle);

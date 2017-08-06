@@ -30,7 +30,7 @@ namespace XamSvg.Demo
         private async Task StartAnimation(CancellationToken cancel)
         {
             var totalSeconds = 10.0;
-            var movePerSeconds = 10;
+            var movePerSeconds = 100;
             var increment = 100/ totalSeconds / movePerSeconds;
 
             while (!cancel.IsCancellationRequested)

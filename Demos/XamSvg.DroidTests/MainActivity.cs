@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Android.App;
@@ -18,7 +19,7 @@ namespace XamSvgTests
 
             //Initialize the cross platform color helper
 	        Setup.InitSvgLib();
-            
+
             //Tells XamSvg in which assembly to search for svg when "res:" is used
 	        var assembly = typeof (App).GetTypeInfo().Assembly;
             XamSvg.Shared.Config.ResourceAssembly = assembly;
