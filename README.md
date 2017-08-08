@@ -40,3 +40,10 @@ So you'll have to add these lines:
     [assembly: Dependency(typeof(SvgLogger))]
 
 The second line is optional as of version 2.3.3.4
+
+# Receipes
+
+Android native: set back button toolbar icon
+
+    var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+    toolbar.NavigationIcon = SvgFactory.GetDrawable(this, "res:images.backward", CancellationToken.None, SvgColorMapperFactory.FromString("000000=FFFFFF"));
