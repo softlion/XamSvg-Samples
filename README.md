@@ -3,10 +3,10 @@ This repository holds the samples with their complete source code for the XamSvg
 
 At the root of the repo, you'll find MvvmCross extensions to easily use XamSvg with mvvmcross.
 
-The ios demo app has been compiled and uploaded to a live ios simulator, thanks to appetize.io. Check it here: https://appetize.io/app/amyhugx1xzurnv45h8kyp5kam0?device=iphone5s&scale=75&orientation=portrait&osVersion=9.3
+The ios demo app has been compiled and uploaded to a live ios simulator, thanks to appetize.io. Check it here: https://appetize.io/embed/amyhugx1xzurnv45h8kyp5kam0?device=iphone7&scale=75&orientation=portrait&osVersion=10.3&xdocMsg=true&deviceColor=black
 
-# Animated SVG
-The xamarin Forms projects contain a code demonstrating an animated svg ring. This code works on all platform: android, ios, windows universal and windows phone, and does not depend on custom renderer, it is fully contained in the PCL Forms project.
+# Animating SVG
+The xamarin Forms projects contain a code demonstrating an animated svg ring. This code works on all platform: android, ios and universal windows and does not depend on any custom renderer. It is fully contained in the portable Forms project.
 
 Have a look at the RingProgress control here:  
 https://github.com/softlion/XamSvg-Samples/blob/master/Demos/XamSvg.XamFormsDemo/XamSvg.Demo/Controls/RingProgress.cs
