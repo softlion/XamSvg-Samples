@@ -13,33 +13,17 @@ https://github.com/softlion/XamSvg-Samples/blob/master/Demos/XamSvg.XamFormsDemo
 
 # Resources
 
-The XamSvg Xamarin native component can be found there:
-https://components.xamarin.com/view/xamsvg
-
-The XamSvg for Xamarin.Forms component can be found there:
+The XamSvg for Xamarin.Forms component:
 https://components.xamarin.com/view/xamsvgforms
 
-MvvmCross samples:
-https://github.com/MvvmCross/MvvmCross-Samples
+The XamSvg Xamarin native component:
+https://components.xamarin.com/view/xamsvg
 
 Xamarin samples:
 https://github.com/xamarin/monotouch-samples
 
-[//]: # (comments)
-[//]: # ([![Demo CountPages alpha](http://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=ek1j272iAmc))
-[//]: # (end comments)
-
-# Special notes
-
-## UW
-
-In release mode, UW projects won't detect the dependency services and renderers.  
-So you'll have to add these lines:
-
-    [assembly: ExportRenderer(typeof(SvgImage), typeof(SvgImageRenderer))]
-    [assembly: Dependency(typeof(SvgLogger))]
-
-The second line is optional as of version 2.3.3.4
+MvvmCross samples:
+https://github.com/MvvmCross/MvvmCross-Samples
 
 # Receipes
 
