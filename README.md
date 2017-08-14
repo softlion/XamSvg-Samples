@@ -12,7 +12,9 @@ The xamarin Forms projects contain a code demonstrating an animated svg ring. Th
 
 # Receipes
 
-**Mvvmcross** At the root of the repo you'll find MvvmCross extensions to easily use XamSvg with mvvmcross. Also check the prerelease branch of this repo for updates.
+**Mvvmcross** 
+
+Fully compatible with mvvmcross, including the bindings of image source, color mappings, and all other properties.
 
 **Android native**: set back button toolbar icon
 
