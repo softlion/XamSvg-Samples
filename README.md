@@ -52,8 +52,18 @@ Fully compatible with mvvmcross, including the bindings of image source, color m
 
 ```csharp
 var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-toolbar.NavigationIcon = SvgFactory.GetDrawable(this, "res:images.backward", CancellationToken.None, SvgColorMapperFactory.FromString("000000=FFFFFF"));
+toolbar.NavigationIcon = SvgFactory.GetDrawable("res:images.webbrowser.backward", "000000=FFFFFF");
 ```
+
+**iOS storyboard**: usage in an XCode storyboard
+
+Using Visual Studio Mac, open your storyboard file using `Open with xcode`. Add an Image view (UIImageView), set its custcom `Class` property to `UISvgImageView`, and (optional) add new `User Defined Runtime Attributes` as required:
+
+| Key Path | Type | Value
+| --------- | ----- | ----
+| BundleName | String | res:images.info
+| ColorMapping | String | 000000=e01a1a
+| ColorMappingSelected | String | 000000=ff3030
 
 # License
 
