@@ -42,6 +42,8 @@ Fully compatible with mvvmcross, including the bindings of image source, color m
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         app:colorMapping="000000=e01a1a"
+        app:colorMappingSelected="000000=ff3030"
+        app:colorMappingDisabled="000000=1a1a1a"
         app:fillMode="fit"
         app:svg="res:images.info" />
 ```
