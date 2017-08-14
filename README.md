@@ -14,11 +14,41 @@ The xamarin Forms projects contain a code demonstrating an animated svg ring. Th
 
 **Mvvmcross** 
 
-Fully compatible with mvvmcross, including the bindings of image source, color mappings, and all other properties.
+Fully compatible with mvvmcross, including the bindings of image source, color mappings, and all other properties.  
+
+**Android native**: make the svg image height the same height of a Button
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <Button
+        android:id="@+id/myinfo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/Menu_MyInfo"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        app:MvxBind="Click SettingsCommand"
+        />
+    <XamSvg.SvgImageView
+        app:layout_constraintTop_toTopOf="@+id/myinfo"
+        app:layout_constraintBottom_toBottomOf="@+id/myinfo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:colorMapping="000000=e01a1a"
+        app:fillMode="fit"
+        app:svg="res:images.info" />
+```
 
 **Android native**: set back button toolbar icon
 
-```
+```csharp
 var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
 toolbar.NavigationIcon = SvgFactory.GetDrawable(this, "res:images.backward", CancellationToken.None, SvgColorMapperFactory.FromString("000000=FFFFFF"));
 ```
