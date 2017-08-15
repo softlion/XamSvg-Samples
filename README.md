@@ -65,10 +65,6 @@ Using Visual Studio Mac, open your storyboard file using `Open with xcode`. Add 
 | ColorMapping | String | 000000=e01a1a
 | ColorMappingSelected | String | 000000=ff3030
 
-# License
-
-This repository is licensed under the MIT licence. Some of the svg files are licensed under their owner's license.
-
 [xamsvg-img]: https://img.shields.io/badge/nuget-2.3.4.8-blue.svg
 [xamsvg-link]: https://www.nuget.org/packages/Softlion.XamSvg.Free
 [xamsvglivedemo-img]: https://img.shields.io/badge/live-demo-brightgreen.svg
