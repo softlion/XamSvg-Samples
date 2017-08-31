@@ -10,7 +10,51 @@ This repository holds the samples for the [XamSvg Xamarin component](https://com
 # Animating SVG images
 The xamarin Forms project contains a code demonstrating an animated svg ring. This code works on all platforms: android, ios and universal windows and does not depend on any custom renderer. It is fully contained in the portable Forms project. Check the [RingProgress control](https://github.com/softlion/XamSvg-Samples/blob/master/Demos/XamSvg.XamFormsDemo/XamSvg.Demo/Controls/RingProgress.cs)
 
-# Receipes
+# Quick start for Xamarin Forms
+
+1. Add `SvgImageRenderer.InitializeForms();` before `global::Xamarin.Forms.Forms.Init` on each platform. SvgImageRenderer is a class in namespace `XamSvg.XamForms.Uw` for windows, `XamSvg.XamForms.Ios` for iOS, and `XamSvg.XamForms.Droid` for Android. If you use Resharper those will be added automagically.
+
+2. Tell XamSvg where the svg files are
+
+```csharp
+public class App : Application
+{
+    public App()
+    {
+        XamSvg.Shared.Config.ResourceAssembly = typeof(App).GetTypeInfo().Assembly;
+        ...
+    }
+...
+```
+
+3. Add your svg files  
+Create a folder "images" in your shared or PCL project (ie the project containing the App.cs file), put your svg files there (make sure they have the .svg extension), and set their build type to "embedded resource".
+
+4. Add an svg image control 
+
+Remark the xmlns:svg attribute on the ContentPage. If you use Resharper it will be added automagically.
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:svg="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
+             x:Class="XamSvg.Demo.MainPage">
+  <ContentView>
+    <StackLayout Orientation="Vertical" VerticalOptions="Start">
+
+        <svg:SvgImage Svg="res:images.logo" HorizontalOptions="Start" HeighRequest="32" />
+
+    </StackLayout>
+  </ContentView>
+</ContentPage>
+```
+
+5. Enjoy
+
+If nothing appears, make sure your svg is displayed correctly by the windows explorer (after you installed this [extension](https://svgextension.codeplex.com/)). Common errors include forgetting to set the build action of the svg file to "Embedded resource", missing viewBox attribute at the root of the svg file (open it using a text editor), or svg color is the same as background color (especially white or black).
+
+# Other Receipes
 
 **Mvvmcross** 
 
