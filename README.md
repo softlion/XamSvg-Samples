@@ -73,10 +73,12 @@ Fully compatible with mvvmcross, including the bindings of image source, color m
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout 
+              xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
     <Button
         android:id="@+id/myinfo"
         app:layout_constraintTop_toTopOf="parent"
@@ -94,12 +96,15 @@ Fully compatible with mvvmcross, including the bindings of image source, color m
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        tools:layout_width="30dp"
         app:colorMapping="000000=e01a1a"
         app:colorMappingSelected="000000=ff3030"
         app:colorMappingDisabled="000000=1a1a1a"
         app:fillMode="fit"
         app:svg="res:images.info" />
 ```
+
+Note that as the svg has an intrinsic width computed from its height and its aspect ratio, the width displayed by the designer is incorrect. You can correct the designer by assigning a design time only value to layout_width using the tools prefix: `tools:layout_width="30dp"` which requires the xmlns:tools namespace declaration.
 
 **Android native**: set back button toolbar icon
 
