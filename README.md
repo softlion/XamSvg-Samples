@@ -120,6 +120,15 @@ Using Visual Studio Mac, open your storyboard file using `Open with xcode`. Add 
 
 To size your svg, set contraints on one dimension only. The other dimension will be set using the first dimension and the computed aspect ration. If you set constraints on both dimensions, the svg will stretch. You can prevent this by setting FillMode to Fit (type: string)
 
+When only one dimension is constrained, the designer don't know how to set the other dimension and displays contraint errors. The solution is to set the `intrinsic size` to a manual value in the dimension which has no contraint (in the dimension property pane of the designer). From [stackoverflow](https://stackoverflow.com/questions/13727589/how-do-you-make-interface-builder-respect-a-custom-views-intrinsic-content-size):
+
+1. Select the `UISvgImageView` view.
+2. Show the size inspector (⌘Shift5).
+3. Change the "Intrinsic Size" drop-down from "Default (System Defined)" to "Placeholder."
+4. Enter reasonable guesses at your view's runtime width **or** height. Width if you set contraints on the height, height otherwise.
+
+These constraints are removed at compile-time, meaning they will have no effect on your running app, and the layout engine will add constraints as appropriate at runtime to respect your view's intrinsicContentSize.
+
 
 [xamsvg-img]: https://img.shields.io/badge/nuget-2.3.4.8-blue.svg
 [xamsvg-link]: https://www.nuget.org/packages/Softlion.XamSvg.Free
