@@ -28,7 +28,7 @@ public class App : Application
 ```
 
 3. Add your svg files  
-Create a folder "images" in your shared or PCL project (ie the project containing the App.cs file), put your svg files there (make sure they have the .svg extension), and set their build type to "embedded resource".
+Create a folder "images" at the root of your shared or PCL project (ie the project containing the App.cs file), put your svg files there (make sure they have the .svg extension), and set their build type to "embedded resource".
 
 4. Add an svg image control 
 
@@ -50,9 +50,18 @@ Remark the xmlns:svg attribute on the ContentPage. If you use Resharper it will 
 </ContentPage>
 ```
 
+Remark the Svg property: the image name is prefixed with "res:", and the extension (.svg) is removed. 'images' is the folder in which you put the file. It is the full path of the svg file from the root of your PCL or shared project.
+
 5. Enjoy
 
-If nothing appears, make sure your svg is displayed correctly by the windows explorer (after you installed this [extension](https://svgextension.codeplex.com/)). Common errors include forgetting to set the build action of the svg file to "Embedded resource", missing viewBox attribute at the root of the svg file (open it using a text editor), or svg color is the same as background color (especially white or black).
+# Common mistakes
+
+If nothing appears, make sure your svg is displayed correctly by the windows explorer (after you installed this [extension](https://svgextension.codeplex.com/)). 
+
+Common errors include
+* forgetting to set the build action of the svg file to "Embedded resource".
+* missing viewBox attribute at the root of the svg file (open it using a text editor).
+* the svg color is the same as the background color, especially white or black. Use ColorMapping to change colors, or edit your svg file with [inkscape](http://www.inkscape.org/).
 
 # Other Receipes
 
@@ -99,19 +108,18 @@ var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
 toolbar.NavigationIcon = SvgFactory.GetDrawable("res:images.webbrowser.backward", "000000=FFFFFF");
 ```
 
-**iOS storyboard**: usage in an XCode storyboard
+**iOS storyboard**: usage in an xcode storyboard
 
-Using Visual Studio Mac, open your storyboard file using `Open with xcode`. Add an Image view (UIImageView), set its custcom `Class` property to `UISvgImageView`, and (optional) add new `User Defined Runtime Attributes` as required:
+Using Visual Studio Mac, open your storyboard file using `Open with xcode`. Add an Image view (UIImageView), set its custcom `Class` property to `UISvgImageView`, and optionally add new `User Defined Runtime Attributes` as required:
 
-| Key Path | Type | Value
+| Key Path | Type | Sample Value
 | --------- | ----- | ----
 | BundleName | String | res:images.info
 | ColorMapping | String | 000000=e01a1a
 | ColorMappingSelected | String | 000000=ff3030
 
-# License
+To size your svg, set contraints on one dimension only. The other dimension will be set using the first dimension and the computed aspect ration. If you set constraints on both dimensions, the svg will stretch. You can prevent this by setting FillMode to Fit (type: string)
 
-This repository is licensed under the MIT licence. Some of the svg files are licensed under their owner's license.
 
 [xamsvg-img]: https://img.shields.io/badge/nuget-2.3.4.8-blue.svg
 [xamsvg-link]: https://www.nuget.org/packages/Softlion.XamSvg.Free
