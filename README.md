@@ -12,13 +12,13 @@ The xamarin Forms project contains a code demonstrating an animated svg ring. Th
 
 # Quick start for Xamarin Forms
 
-1. Declare extension to Xamarin Forms
+1. Declare XamSvg extension to Xamarin Forms
 
 Add `SvgImageRenderer.InitializeForms();` before `global::Xamarin.Forms.Forms.Init` on each platform. SvgImageRenderer is a class in namespace `XamSvg.XamForms.Uw` for windows, `XamSvg.XamForms.Ios` for iOS, and `XamSvg.XamForms.Droid` for Android. If you use Resharper those will be added automagically.
 
 2. Tell XamSvg where to search for svg files
 
-Svg files will be stored as embedded resources. To access an embedded resource the code needs the full assembly path of this resource. To make this process easier, you tell XamSvg in which assembly to search for the resources and you don't specify the full name of the svg file in the Svg control.
+Svg files will be stored as embedded resources. To access an embedded resource the code needs the full assembly path of this resource. To make this process easier, you tell XamSvg in which assembly to search for the resources and you don't specify the full path of the svg file in the Svg control.
 
 ```csharp
 public class App : Application
@@ -57,7 +57,7 @@ Remark the xmlns:svg attribute on the ContentPage. If you use Resharper it will 
 </ContentPage>
 ```
 
-Remark the Svg property: the image name is prefixed with "res:", and the extension (.svg) is removed. 'images' is the folder in which you put the file. It is the full path of the svg file from the root of your PCL or shared project.
+Remark the Svg property: the image name is prefixed with "res:", and the extension (.svg) is removed. 'images' is the folder in which you put the file. It is the full path of the svg file from the root of your PCL or shared project. You have other schemes like string: to load an inline svg.
 
 5. Enjoy
 
@@ -68,7 +68,7 @@ If nothing appears, make sure your svg is displayed correctly by the windows exp
 Common errors include
 * forgetting to set the build action of the svg file to "Embedded resource".
 * missing viewBox attribute at the root of the svg file (open it using a text editor).
-* the svg color is the same as the background color, especially white or black. Use ColorMapping to change colors, or edit your svg file with [inkscape](http://www.inkscape.org/).
+* the svg color is the same as the background color, especially white or black. Use ColorMapping to change colors, or edit your svg file with [inkscape](http://www.inkscape.org/) or your preferred text editor.
 
 # Other Receipes
 
