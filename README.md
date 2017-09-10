@@ -12,9 +12,13 @@ The xamarin Forms project contains a code demonstrating an animated svg ring. Th
 
 # Quick start for Xamarin Forms
 
-1. Add `SvgImageRenderer.InitializeForms();` before `global::Xamarin.Forms.Forms.Init` on each platform. SvgImageRenderer is a class in namespace `XamSvg.XamForms.Uw` for windows, `XamSvg.XamForms.Ios` for iOS, and `XamSvg.XamForms.Droid` for Android. If you use Resharper those will be added automagically.
+1. Declare extension to Xamarin Forms
 
-2. Tell XamSvg where the svg files are
+Add `SvgImageRenderer.InitializeForms();` before `global::Xamarin.Forms.Forms.Init` on each platform. SvgImageRenderer is a class in namespace `XamSvg.XamForms.Uw` for windows, `XamSvg.XamForms.Ios` for iOS, and `XamSvg.XamForms.Droid` for Android. If you use Resharper those will be added automagically.
+
+2. Tell XamSvg where to search for svg files
+
+Svg files will be stored as embedded resources. To access an embedded resource the code needs the full assembly path of this resource. To make this process easier, you tell XamSvg in which assembly to search for the resources and you don't specify the full name of the svg file in the Svg control.
 
 ```csharp
 public class App : Application
@@ -27,8 +31,11 @@ public class App : Application
 ...
 ```
 
+Trick: you can add more than one assembly by using the ResourceAssemblies property instead.
+
 3. Add your svg files  
-Create a folder "images" at the root of your shared or PCL project (ie the project containing the App.cs file), put your svg files there (make sure they have the .svg extension), and set their build type to "embedded resource".
+
+Create a folder "images" at the root of your shared or PCL project (ie the project containing the App.cs file), put your svg files there. Make sure they have the .svg extension. And set their build action type to "embedded resource".
 
 4. Add an svg image control 
 
