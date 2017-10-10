@@ -141,6 +141,10 @@ When only one dimension is constrained, the designer don't know how to set the o
 
 These constraints are removed at compile-time, meaning they will have no effect on your running app, and the layout engine will add constraints as appropriate at runtime to respect your view's intrinsicContentSize.
 
+# Community
+
+Join the svg community on our [slack channel](https://xamarinchat.slack.com/#xamsvg)
+
 
 [xamsvg-img]: https://img.shields.io/badge/nuget-2.3.4.8-blue.svg
 [xamsvg-link]: https://www.nuget.org/packages/Softlion.XamSvg.Free
