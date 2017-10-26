@@ -97,7 +97,7 @@ namespace XamSvg.Demo
         private string colorMapping;
 
         public string ImageName { get { return imageName; } set { imageName = value; OnPropertyChanged(); } }
-        private string imageName = "res:images.000myprofil";
+        private string imageName = "res:images.0Facebook";
 
         public double Zoom { get { return zoom; } set { zoom = value; OnPropertyChanged(); OnPropertyChanged(nameof(ZoomText)); } }
         private double zoom = 0;
