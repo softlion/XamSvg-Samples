@@ -2,11 +2,11 @@
   "dependencies": {
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
     "Vapolia.XamarinFormsGesture": "1.1.1-pre4",
-    "Vapolia.XamSvg.Forms": "2.3.5-pre2",
-    "Xamarin.Forms": "2.3.5.256-pre6"
+    "Vapolia.XamSvg.Forms": "2.4.3",
+    "Xamarin.Forms": "2.4.0.18342"
   },
   "frameworks": {
-    "uap10.0": {}
+    "uap10.0.10240": {}
   },
   "runtimes": {
     "win10-arm": {},

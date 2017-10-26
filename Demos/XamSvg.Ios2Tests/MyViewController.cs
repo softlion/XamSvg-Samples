@@ -98,8 +98,15 @@ namespace XamSvg.Ios2Tests
                 FillWidth = 25,
                 ColorMapping="000000=FF546D",
                 ColorMappingSelected="000000=00FF59",
-                BundleName = "res:images.download"
+                BundleName = "res:images.download",
+                IsLoadAsync = false
             };
+
+
+            var btn = new UIButton();
+            btn.SetTitle("Test1", UIControlState.Normal);
+            btn.SetContentCompressionResistancePriority((float)UILayoutPriority.Required, UILayoutConstraintAxis.Vertical);
+
             //var inputOk = new UISvgImageView("", 25); //for debug
             View.Add(back);
             View.Add(back2);
@@ -107,6 +114,7 @@ namespace XamSvg.Ios2Tests
             View.SendSubviewToBack(image); //image behind back
             View.Add(inputUrl);
             View.Add(inputOk);
+            View.Add(btn);
 
             inputOk.AddGestureRecognizer(new UITapGestureRecognizer(tap =>
             {
@@ -145,12 +153,17 @@ namespace XamSvg.Ios2Tests
                 title.AtRightOf(View,5),
                 //No height for title, use its intrinsic height
 
-                image.AtBottomOf(View),
+                btn.AtRightOf(View),
+                btn.AtLeftOf(View),
+                btn.AtBottomOf(View),
+
+                image.Below(back),
                 image.AtLeftOf(View),
                 //Test: Width forced, free height
                 image.WithSameWidth(View),
                 //Test: Width forced, Height forced to view height
-                image.Height().LessThanOrEqualTo().HeightOf(View)
+                //image.Height().LessThanOrEqualTo().HeightOf(View)
+                image.Above(btn)
                 //Test: Width forced, Height forced (50)
                 );
 #endif
@@ -170,6 +183,13 @@ namespace XamSvg.Ios2Tests
 
             }) { NumberOfTapsRequired = 1 });
 
+
+            btn.TouchUpInside += (sender, args) =>
+            {
+                var sb = UIStoryboard.FromName("TestFullWidthConstraint", null);
+                var vc = sb.InstantiateViewController("TestFullWidthConstraintViewController");
+                NavigationController.PushViewController(vc, true);
+            };
         }
 
         CancellationTokenSource cancel = new CancellationTokenSource();

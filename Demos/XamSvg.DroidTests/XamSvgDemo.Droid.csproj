@@ -14,10 +14,9 @@
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>
-    </AndroidUseLatestPlatformSdk>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
     <AssemblyName>XamSvgTests</AssemblyName>
-    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -72,12 +71,10 @@
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
     <Reference Include="XamSvg.Droid, Version=2.3.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Softlion.XamSvg.2.3.5-pre2\lib\MonoAndroid44\XamSvg.Droid.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Softlion.XamSvg.2.4.3\lib\MonoAndroid44\XamSvg.Droid.dll</HintPath>
     </Reference>
-    <Reference Include="XamSvg.Shared, Version=2.3.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Softlion.XamSvg.2.3.5-pre2\lib\MonoAndroid44\XamSvg.Shared.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="XamSvg.Shared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Softlion.XamSvg.2.4.3\lib\MonoAndroid44\XamSvg.Shared.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

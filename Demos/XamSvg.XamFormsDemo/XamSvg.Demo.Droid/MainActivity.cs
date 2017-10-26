@@ -18,6 +18,10 @@ namespace XamSvg.Demo.Droid
             //Required by SvgImageBuilder to register its services
             SvgImageRenderer.InitializeForms();
 
+#if DEBUG
+            XamSvg.Shared.Config.NativeLogger = new XamSvg.Platform.LoggerImpl {TraceEnabled = true};
+#endif
+
             PlatformGestureEffect.Init();
 
             global::Xamarin.Forms.Forms.Init(this, bundle);

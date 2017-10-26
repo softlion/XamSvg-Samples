@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#202060">
+    <XamSvg.SvgImageView
+        android:id="@+id/back"
+        local:svg="res:images.gradient4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        local:colorMappingDisabled="46cca5=FF0000"
+        local:fillMode="fill"
+        local:traceEnabled="true" />
+    <LinearLayout
     android:id="@+id/content"
     android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
     android:padding="8dp">
     <LinearLayout
         android:orientation="vertical"
@@ -42,7 +53,7 @@
             android:layout_weight="1"
             android:background="#111111" />
     </LinearLayout>
-<!--<ImageView
+    <!--<ImageView
             android:src="@android:drawable/ic_menu_gallery"
             android:layout_width="wrap_content"
             android:layout_height="150dp"
@@ -206,5 +217,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnGoEmpty" />
+      </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</FrameLayout>

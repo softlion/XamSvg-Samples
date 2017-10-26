@@ -77,7 +77,7 @@ namespace XamSvg.Demo
         private readonly string[] names;
         private readonly INavigation navigation;
         
-private int i;
+        private int currentPosition;
         private CancellationTokenSource cancelLoadSvg = new CancellationTokenSource();
 
         public MainPageModel(INavigation navigation)
@@ -118,8 +118,8 @@ private int i;
             if (isTranslationEnabled)
             {
                 ResetPosition();
-                i = FixIndex(++i);
-                ImageName = $"res:{names[i]}";
+                currentPosition = FixIndex(++currentPosition);
+                ImageName = $"res:{names[currentPosition]}";
             }
         });
 
@@ -128,8 +128,8 @@ private int i;
             if (!isTranslationEnabled)
             {
                 ResetPosition();
-                i = FixIndex(++i);
-                ImageName = $"res:{names[i]}";
+                currentPosition = FixIndex(++currentPosition);
+                ImageName = $"res:{names[currentPosition]}";
             }
         });
 
@@ -138,8 +138,8 @@ private int i;
             if (!isTranslationEnabled)
             {
                 ResetPosition();
-                i = FixIndex(--i);
-                ImageName = $"res:{names[i]}";
+                currentPosition = FixIndex(--currentPosition);
+                ImageName = $"res:{names[currentPosition]}";
             }
         });
 

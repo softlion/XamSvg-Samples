@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="223">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="222">
+            <objects>
+                <viewController id="223" sceneMemberID="viewController" storyboardIdentifier="TestFullWidthConstraintViewController" title="Test FullWidth Constraint" customClass="TestFullWidthConstraintViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="220"/>
+                        <viewControllerLayoutGuide type="bottom" id="221"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="224">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="447" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="530" width="320" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2725" customClass="UISvgImageView" translatesAutoresizingMaskIntoConstraints="NO" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="130">
+                                <rect key="frame" x="36" y="40" width="248" height="130"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="BundleName" value="res:images.bike"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="FillMode">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="IsLoadAsync" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.21176470588235294" blue="0.93333333333333335" alpha="1"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5043" customClass="UISvgImageView" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES" ambiguous="YES">
+                                <rect key="frame" x="16" y="446" width="98" height="60"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="5050"/>
+                                    </mask>
+                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.93333333333333335" green="0.86274509803921573" blue="0.23921568627450981" alpha="1"/>
+                                </variation>
+                                <constraints>
+                                    <constraint id="5050" firstItem="5043" firstAttribute="height" constant="74">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5050"/>
+                                    </mask>
+                                </variation>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="BundleName" value="res:images.bike"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="IsLoadAsync" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5044" customClass="UISvgImageView" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES" ambiguous="YES">
+                                <rect key="frame" x="198" y="446" width="98" height="60"/>
+                                <constraints>
+                                    <constraint id="5051" firstItem="5044" firstAttribute="height" constant="74">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5051"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="5051"/>
+                                    </mask>
+                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.97254901960784312" green="0.8901960784313725" blue="0.996078431372549" alpha="1"/>
+                                </variation>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="BundleName" value="res:images.bike"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="IsLoadAsync" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5554" customClass="UISvgImageView" translatesAutoresizingMaskIntoConstraints="NO" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="40">
+                                <rect key="frame" x="140" y="286" width="40" height="40"/>
+                                <variation key="heightClass=regular-widthClass=compact"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="FillWidth">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="FillHeight">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="IsLoadAsync" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="BundleName" value="res:images.bike"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="447"/>
+                                <exclude reference="2725"/>
+                                <exclude reference="5043"/>
+                                <exclude reference="5044"/>
+                                <exclude reference="5554"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="448"/>
+                                <exclude reference="449"/>
+                                <exclude reference="450"/>
+                                <exclude reference="2726"/>
+                                <exclude reference="2727"/>
+                                <exclude reference="2728"/>
+                                <exclude reference="5045"/>
+                                <exclude reference="5046"/>
+                                <exclude reference="5047"/>
+                                <exclude reference="5048"/>
+                                <exclude reference="5555"/>
+                                <exclude reference="5556"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="447"/>
+                                <include reference="2725"/>
+                                <include reference="5043"/>
+                                <include reference="5044"/>
+                                <include reference="5554"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="448"/>
+                                <include reference="449"/>
+                                <include reference="450"/>
+                                <include reference="2726"/>
+                                <include reference="2727"/>
+                                <include reference="2728"/>
+                                <include reference="5045"/>
+                                <include reference="5046"/>
+                                <include reference="5047"/>
+                                <include reference="5048"/>
+                                <include reference="5555"/>
+                                <include reference="5556"/>
+                            </mask>
+                        </variation>
+                        <constraints>
+                            <constraint id="448" firstItem="447" firstAttribute="centerX" secondItem="224" secondAttribute="centerX"/>
+                            <constraint id="449" firstItem="221" firstAttribute="top" secondItem="447" secondAttribute="bottom" constant="20" symbolic="YES">
+                                <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                            </constraint>
+                            <constraint id="450" firstItem="447" firstAttribute="width" secondItem="224" secondAttribute="width"/>
+                            <constraint id="2726" firstItem="2725" firstAttribute="leading" secondItem="224" secondAttribute="leadingMargin" constant="16">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint id="2727" firstItem="224" firstAttribute="trailingMargin" secondItem="2725" secondAttribute="trailing" constant="8">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint id="2728" firstItem="2725" firstAttribute="top" secondItem="220" secondAttribute="bottom" constant="54">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint id="5045" firstItem="5043" firstAttribute="leading" secondItem="224" secondAttribute="leadingMargin"/>
+                            <constraint id="5046" firstItem="224" firstAttribute="trailingMargin" secondItem="5044" secondAttribute="trailing" constant="8"/>
+                            <constraint id="5047" firstItem="447" firstAttribute="top" secondItem="5043" secondAttribute="bottom" constant="24"/>
+                            <constraint id="5048" firstItem="447" firstAttribute="top" secondItem="5044" secondAttribute="bottom" constant="24"/>
+                            <constraint id="5555" firstItem="5554" firstAttribute="centerX" secondItem="224" secondAttribute="centerX"/>
+                            <constraint id="5556" firstItem="5554" firstAttribute="centerY" secondItem="224" secondAttribute="centerY" constant="22"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="OkButton" destination="447" id="name-outlet-447"/>
+                        <outlet property="FullWidthFreeHeight" destination="2725" id="name-outlet-2725"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="225" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-285" y="-329"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Default-568h.png" width="320" height="568"/>
+        <image name="Default.png" width="320" height="480"/>
+        <image name="Icon-40.png" width="40" height="40"/>
+        <image name="Icon-60.png" width="60" height="60"/>
+        <image name="Icon.png" width="57" height="57"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

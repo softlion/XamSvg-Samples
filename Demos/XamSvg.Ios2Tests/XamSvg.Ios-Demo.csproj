@@ -28,7 +28,7 @@
     <MtouchDebug>True</MtouchDebug>
     <MtouchSdkVersion>9.3</MtouchSdkVersion>
     <MtouchProfiling>False</MtouchProfiling>
-    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchFastDev>true</MtouchFastDev>
     <MtouchEnableGenericValueTypeSharing>True</MtouchEnableGenericValueTypeSharing>
     <MtouchUseLlvm>False</MtouchUseLlvm>
     <MtouchUseThumb>False</MtouchUseThumb>
@@ -39,24 +39,31 @@
     <OptimizePNGs>True</OptimizePNGs>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-    <MtouchFloat32>False</MtouchFloat32>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <BuildIpa>False</BuildIpa>
-    <MtouchSdkVersion>9.1</MtouchSdkVersion>
+    <MtouchSdkVersion>10.1</MtouchSdkVersion>
     <OutputPath>bin\iPhoneSimulator\Ad-Hoc</OutputPath>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>False</MtouchDebug>
     <MtouchProfiling>False</MtouchProfiling>
     <MtouchFastDev>False</MtouchFastDev>
-    <MtouchEnableGenericValueTypeSharing>False</MtouchEnableGenericValueTypeSharing>
-    <MtouchArch>i386</MtouchArch>
+    <MtouchEnableGenericValueTypeSharing>True</MtouchEnableGenericValueTypeSharing>
+    <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchUseLlvm>False</MtouchUseLlvm>
     <MtouchUseThumb>False</MtouchUseThumb>
     <MtouchUseSGen>True</MtouchUseSGen>
     <MtouchUseRefCounting>False</MtouchUseRefCounting>
     <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
-    <MtouchI18n />
+    <MtouchEnableBitcode>False</MtouchEnableBitcode>
+    <OptimizePNGs>True</OptimizePNGs>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchFloat32>False</MtouchFloat32>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -207,12 +214,15 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <None Include="Info.plist">
-      <SubType>Designer</SubType>
-    </None>
+    <Compile Include="TestFullWidthConstraintViewController.cs" />
+    <Compile Include="TestFullWidthConstraintViewController.designer.cs">
+      <DependentUpon>TestFullWidthConstraintViewController.cs</DependentUpon>
+    </Compile>
+    <None Include="Info.plist" />
     <Compile Include="MyViewController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
+    <InterfaceDefinition Include="Resources\TestFullWidthConstraint.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h@2x.png" />
@@ -228,12 +238,10 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="XamSvg.Ios, Version=2.3.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Softlion.XamSvg.2.3.5-pre2\lib\Xamarin.iOS\XamSvg.Ios.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Softlion.XamSvg.2.4.3\lib\Xamarin.iOS\XamSvg.Ios.dll</HintPath>
     </Reference>
-    <Reference Include="XamSvg.Shared, Version=2.3.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Softlion.XamSvg.2.3.5-pre2\lib\Xamarin.iOS\XamSvg.Shared.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="XamSvg.Shared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Softlion.XamSvg.2.4.3\lib\Xamarin.iOS\XamSvg.Shared.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

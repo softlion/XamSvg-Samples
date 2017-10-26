@@ -48,8 +48,7 @@ namespace XamSvg.Demo.iOS
         {
             if (options != null)
             {
-                NSObject value;
-                if (options.TryGetValue(FromObject(UIApplication.LaunchOptionsUrlKey), out value))
+                if (options.TryGetValue(FromObject(UIApplication.LaunchOptionsUrlKey), out var value))
                     OpenDeepLink((NSUrl)value);
             }
         }

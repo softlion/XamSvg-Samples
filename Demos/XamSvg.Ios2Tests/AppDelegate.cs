@@ -22,7 +22,7 @@ namespace XamSvg.TouchTests
             //Tells XamSvg in which assembly to search for svg when "res:" is used
             XamSvg.Shared.Config.ResourceAssembly = typeof (App).GetTypeInfo().Assembly;
 
-            window = new UIWindow(UIScreen.MainScreen.Bounds) {RootViewController = new MyViewController()};
+            window = new UIWindow(UIScreen.MainScreen.Bounds) { RootViewController = new UINavigationController(new MyViewController()) };
             window.MakeKeyAndVisible();
             HandleNotifications(options);
 
