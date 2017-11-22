@@ -72,6 +72,45 @@ Common errors include
 
 # Other Receipes
 
+**Icons on TabbedPage**
+
+1. Create a TabbedPage, call it TabContainer for example.
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:demo="clr-namespace:XamSvg.Demo;assembly=XamSvg.Demo"
+             x:Class="XamSvg.Demo.Pages.TabContainer"
+             Title="Vapolia.fr XamSvg Demo"
+            >
+
+    <demo:MainPage Title="Slideshow" x:Name="MainPage" />
+    <demo:Page2 Title="Animation"  x:Name="AnimationPage" />
+    
+</TabbedPage>
+```
+
+2. In its codebehind, set the icons
+
+```csharp
+public TabContainer()
+{
+    InitializeComponent();
+
+    MainPage.Icon = new SvgImageSource { Svg = "res:images.intertwingly", Height = 30 }.CreateFileImageSource();
+    AnimationPage.Icon = new SvgImageSource { Svg = "res:images.0GoldMirror", Height = 30 }.CreateFileImageSource();
+}
+```
+
+3. Specific instructions for Android
+
+* Your android's MainActivity must inherit from FormsAppCompatActivity, not FormsApplicationActivity. Note that if you switch to FormsAppCompatActivity, your app must also use an appcompat theme. See this [xamarin guide](https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/).
+
+* Add [SvgTabbedPageRenderer](https://gist.github.com/softlion/eac96a4aae416934c3fd5a9184a1d63b) to your android project
+
+4. Enjoy icons on tabs, iOS + Android.
+
 **Mvvmcross** 
 
 Fully compatible with mvvmcross, including the bindings of image source, color mappings, and all other properties.  
