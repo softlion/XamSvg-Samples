@@ -171,7 +171,7 @@ Using Visual Studio Mac, open your storyboard file using `Open with xcode`. Add 
 | ColorMapping | String | 000000=e01a1a
 | ColorMappingSelected | String | 000000=ff3030
 
-To size your svg, set contraints on one dimension only. The other dimension will be set using the first dimension and the computed aspect ratio. If you set constraints on both dimensions, the svg will stretch. You can prevent this by setting FillMode to Fit:
+To size your svg, set contraints on one dimension only. The other dimension will be set using the first dimension and the computed aspect ratio. If you set constraints on both dimensions, the svg will stretch. You can prevent this by setting FillMode to Fit (along with ContentMode to AspectFit):
 
 | Key Path | Type | Sample Value
 | --------- | ----- | ----
