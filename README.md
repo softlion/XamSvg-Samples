@@ -163,15 +163,23 @@ toolbar.NavigationIcon = SvgFactory.GetDrawable("res:images.webbrowser.backward"
 
 Using Visual Studio Mac, open your storyboard file using `Open with xcode`. Add an Image view (UIImageView), set its custcom `Class` property to `UISvgImageView`, and optionally add new `User Defined Runtime Attributes` as required:
 
+![Attribute Inspector](https://image.ibb.co/e5N0uw/Prt_Scr_capture_11.jpg)
+
 | Key Path | Type | Sample Value
 | --------- | ----- | ----
 | BundleName | String | res:images.info
 | ColorMapping | String | 000000=e01a1a
 | ColorMappingSelected | String | 000000=ff3030
 
-To size your svg, set contraints on one dimension only. The other dimension will be set using the first dimension and the computed aspect ratio. If you set constraints on both dimensions, the svg will stretch. You can prevent this by setting FillMode to Fit (type: string)
+To size your svg, set contraints on one dimension only. The other dimension will be set using the first dimension and the computed aspect ratio. If you set constraints on both dimensions, the svg will stretch. You can prevent this by setting FillMode to Fit:
+
+| Key Path | Type | Sample Value
+| --------- | ----- | ----
+| FillMode | String | Fit
 
 When only one dimension is constrained, the designer don't know how to set the other dimension and displays contraint errors. The solution is to set the `intrinsic size` to a manual value in the dimension which has no contraint (in the dimension property pane of the designer).
+
+![Intrinsic Size](https://image.ibb.co/bzeDEw/Prt_Scr_capture_12.jpg)
 
 1. Select the `UISvgImageView` view.
 2. Show the size inspector (⌘Shift5).
