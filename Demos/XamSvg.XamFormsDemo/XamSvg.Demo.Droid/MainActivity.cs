@@ -1,18 +1,22 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using Android.Views;
 using Vapolia.Droid.Lib.Effects;
 using XamSvg.XamForms.Droid;
 
 
 namespace XamSvg.Demo.Droid
 {
+    /// <summary>
+    /// FormsAppCompatActivity required to display icons on tabs (instead of FormsApplicationActivity)
+    /// </summary>
     [Activity(Label = "XamSvg Demo", MainLauncher = true, Icon = "@drawable/icon", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
+            ToolbarResource = Resource.Layout.Toolbar;
+            TabLayoutResource = Resource.Layout.Tabbar;
             base.OnCreate(bundle);
 
             //Required by SvgImageBuilder to register its services
@@ -26,17 +30,6 @@ namespace XamSvg.Demo.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
-        }
-
-        /// <summary>
-        /// Overrides this to enable SVG in toolbar icons.
-        /// </summary>
-        public override bool OnPrepareOptionsMenu(IMenu menu)
-        {
-            //don't call base version. 
-            //var ok=base.OnPrepareOptionsMenu(menu); 
-            //SvgImageRenderer.PrepareMenu(this, menu);
-            return true;
         }
     }
 }

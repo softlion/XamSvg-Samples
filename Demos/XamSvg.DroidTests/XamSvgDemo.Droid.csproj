@@ -70,12 +70,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
-    <Reference Include="XamSvg.Droid, Version=2.3.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Softlion.XamSvg.2.4.3\lib\MonoAndroid44\XamSvg.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="XamSvg.Shared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Softlion.XamSvg.2.4.3\lib\MonoAndroid44\XamSvg.Shared.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmptyActivity.cs" />
@@ -84,7 +78,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -129,5 +122,10 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\raw\ios_app_buttons.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Softlion.XamSvg.Free">
+      <Version>2.5.0</Version>
+    </PackageReference>
   </ItemGroup>
 </Project>
