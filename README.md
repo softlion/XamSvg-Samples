@@ -63,7 +63,7 @@ Remark the Svg property: the image name is prefixed with "res:", and the extensi
 
 # Common mistakes
 
-If nothing appears, make sure your svg is displayed correctly by the windows explorer (after you installed this [extension](https://svgextension.codeplex.com/)). 
+If nothing appears, make sure your svg is displayed correctly by the windows explorer (after you installed this [extension](https://github.com/maphew/svg-explorer-extension/releases)). 
 
 Common errors include
 * forgetting to set the build action of the svg file to "Embedded resource".
