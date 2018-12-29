@@ -200,7 +200,7 @@ Layout properties:
 | --------- | ----- | ---- | ---
 app:svg | string or resource id | (required) | .net embedded resource file path and name, or android resource id
 app:colorMapping | string | (null) | example: FF000000=FF808080
-app:colorMappingSelected | string | example: FF000000=FFa0a0a0;FFFFFFFF=00000000
+app:colorMappingSelected | string | (null) | example: FF000000=FFa0a0a0;FFFFFFFF=00000000
 app:colorMappingDisabled | string | (null)
 app:traceEnabled | bool | false
 app:loadAsync | bool | true
