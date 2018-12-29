@@ -150,7 +150,9 @@ Fully compatible with mvvmcross, including the bindings of image source, color m
         app:svg="res:images.info" />
 ```
 
-Note that as the svg has an intrinsic width computed from its height and its aspect ratio, the width displayed by the designer is incorrect. You can correct the designer by assigning a design time only value to layout_width using the tools prefix: `tools:layout_width="30dp"` which requires the xmlns:tools namespace declaration.
+Note that as the svg has an intrinsic width computed from its height and its aspect ratio, the width displayed by the designer is incorrect. You can correct the designer by assigning a design time only value to `layout_width` using the `tools` prefix: `tools:layout_width="30dp"` which requires the `xmlns:tools` namespace declaration.
+
+
 
 **Android native**: set back button toolbar icon
 
@@ -187,6 +189,27 @@ When only one dimension is constrained, the designer don't know how to set the o
 4. Enter reasonable guesses at your view's runtime width **or** height. Width if you set contraints on the height, height otherwise.
 
 These constraints are removed at compile-time, meaning they will have no effect on your running app, and the layout engine will add constraints as appropriate at runtime to respect your view's intrinsicContentSize.
+
+# Reference
+
+## Android native
+
+Layout properties:
+
+| Tag | Type | Default value | Notes
+| --------- | ----- | ---- | ---
+app:svg | string or resource id | (required) | .net embedded resource file path and name, or android resource id
+app:colorMapping | string | (null) | example: FF000000=FF808080
+app:colorMappingSelected | string | example: FF000000=FFa0a0a0;FFFFFFFF=00000000
+app:colorMappingDisabled | string | (null)
+app:traceEnabled | bool | false
+app:loadAsync | bool | true
+app:fillMode | enum | Fit | Fit or Fill
+android:adjustViewBounds | bool | true
+android:gravity | GravityFlags | GravityFlags.Center
+android:autoMirrored | bool | false | true to mirror image in RTL languages
+
+`android:padding` is respected, and included in the width/height measurement.
 
 # Community
 
