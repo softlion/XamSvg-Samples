@@ -1,9 +1,9 @@
 # Samples for XamSvg enterprise cross platform and full featured Svg image control
-This repository holds the samples for the [XamSvg Xamarin component](https://components.xamarin.com/view/xamsvgforms), also available as a nuget on a private nuget server.
+This repository holds the samples for the XamSvg Xamarin control.
 
 | Xamarin.Forms | Android | Android + iOS + Windows UWP+WinRT |
 |:-------------:|:-------:|:---------------------------------:|
-| [![NuGet][xamarinstore-img]][xamarinstore-linkforms] | [![NuGet][xamsvg-img]][xamsvg-link] | [![NuGet][xamarinstore-img]][xamarinstore-link]
+| [![NuGet][xamsvg-img]][xamsvg-link] | [![NuGet][xamsvg-img]][xamsvg-link] | [![NuGet][xamsvg-img]][xamsvg-link]
 | [![][xamsvglivedemo-img]][xamsvglivedemo-link] | [![][xamsvglivedemo-img]][xamsvglivedemo-link] | [![][xamsvglivedemo-img]][xamsvglivedemo-link]
 | [![][formsdemo-img]][formsdemo-link] | [![][formsdemo-img]][droiddemo-link] | [![][formsdemo-img]][droiddemo-link] [![][formsdemo-img]][iosdemo-link] [![][formsdemo-img]][uwpdemo-link]
 
@@ -220,9 +220,6 @@ Join the svg community on our [slack channel](https://xamarinchat.slack.com/#xam
 [xamsvg-link]: https://www.nuget.org/packages/Softlion.XamSvg.Free
 [xamsvglivedemo-img]: https://img.shields.io/badge/live-demo-brightgreen.svg
 [xamsvglivedemo-link]: https://appetize.io/embed/amyhugx1xzurnv45h8kyp5kam0?device=iphone7&scale=75&orientation=portrait&osVersion=10.3&xdocMsg=true&deviceColor=black
-[xamarinstore-img]: https://img.shields.io/badge/Xamarin-Component%20Store-00FF7F.svg
-[xamarinstore-linkforms]: https://components.xamarin.com/view/XamSvgForms
-[xamarinstore-link]: https://components.xamarin.com/view/XamSvg
 
 [formsdemo-img]: https://img.shields.io/badge/demo-source%20code-lightgrey.svg
 [formsdemo-link]: https://github.com/softlion/XamSvg-Samples/tree/master/Demos/XamSvg.XamFormsDemo
