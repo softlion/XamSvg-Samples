@@ -216,7 +216,7 @@ android:autoMirrored | bool | false | true to mirror image in RTL languages
 Join the svg community on our [slack channel](https://xamarinchat.slack.com/#xamsvg)
 
 
-[xamsvg-img]: https://img.shields.io/badge/nuget-2.3.4.8-blue.svg
+[xamsvg-img]: https://img.shields.io/badge/nuget-3.0.1-blue.svg
 [xamsvg-link]: https://www.nuget.org/packages/Softlion.XamSvg.Free
 [xamsvglivedemo-img]: https://img.shields.io/badge/live-demo-brightgreen.svg
 [xamsvglivedemo-link]: https://appetize.io/embed/amyhugx1xzurnv45h8kyp5kam0?device=iphone7&scale=75&orientation=portrait&osVersion=10.3&xdocMsg=true&deviceColor=black
