@@ -204,12 +204,12 @@ app:colorMappingSelected | string | (null) | example: FF000000=FFa0a0a0;FFFFFFFF
 app:colorMappingDisabled | string | (null)
 app:traceEnabled | bool | false
 app:loadAsync | bool | true
-app:fillMode | enum | Fit | Fit or Fill
-android:adjustViewBounds | bool | true
-android:gravity | GravityFlags | GravityFlags.Center
+app:fillMode | enum | fit | fit, fill of fit_crop (new v3.1.0). fit_crop: Scale the image uniformly (maintain the image's aspect ratio) so that both dimensions (width and height) of the image will be equal to or larger than the corresponding dimension of the view (minus padding). 
+android:adjustViewBounds | bool | true | if true and fillMode is not Fill, the svg view will grow or shrink depending on the svg size.
 android:autoMirrored | bool | false | true to mirror image in RTL languages
 
-`android:padding` is respected, and included in the width/height measurement.
+`android:padding` is respected, and included in the width/height measurement.  
+`android:gravity` is respected, and included in the width/height measurement. If the svg is smaller than its view, this property controls its centering.
 
 # Community
 
