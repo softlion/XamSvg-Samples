@@ -234,8 +234,8 @@ FillHeight | number | 0 | The height the svg would like to have. 0 to let the OS
 
 # Release notes
 3.1.1  
-ios: supports SvgFillMode.FitCrop in FillMode property
-ios: fix small pixellization (MainScale not used)
+ios: supports SvgFillMode.FitCrop in FillMode property 
+ios: fix small pixellization (MainScale not used) 
 ios: fix AlignmentMode property not working as expected when svg bounds don't start at (0,0)
 
 3.1.0
@@ -246,7 +246,7 @@ android: supports fit_crop
 Join the svg community on our [slack channel](https://xamarinchat.slack.com/#xamsvg)
 
 
-[xamsvg-img]: https://img.shields.io/badge/nuget-3.0.1-blue.svg
+[xamsvg-img]: https://img.shields.io/badge/nuget-3.1.1-blue.svg
 [xamsvg-link]: https://www.nuget.org/packages/Softlion.XamSvg.Free
 [xamsvglivedemo-img]: https://img.shields.io/badge/live-demo-brightgreen.svg
 [xamsvglivedemo-link]: https://appetize.io/embed/amyhugx1xzurnv45h8kyp5kam0?device=iphone7&scale=75&orientation=portrait&osVersion=10.3&xdocMsg=true&deviceColor=black
