@@ -211,6 +211,36 @@ android:autoMirrored | bool | false | true to mirror image in RTL languages
 `android:padding` is respected, and included in the width/height measurement.  
 `android:gravity` is respected, and included in the width/height measurement. If the svg is smaller than its view, this property controls its centering.
 
+## iOS native
+
+`UISvgImageView` inherits `UIImageView`, so it's easy to use it in an xcode storyboard: drag an `UIImageView` and set its custom class to `UISvgImageView`. To set specific svg properties, add `User Defined Runtime Attributes` in the same pane where you set the custom class.
+
+Attributes (supported in `User Defined Runtime Attributes`):
+
+| Key Path | Type | Default value | Notes
+| --------- | ----- | ---- | ---
+BundleName | string | (required) | Svg path. Example: res:images.logo
+BundleString | string | (optional) | exclusive with BundleName. The svg content as a string.
+ColorMapping | string | (null) | example: FF000000=FF808080
+ColorMappingSelected | string | (null) | example: FF000000=FFa0a0a0;FFFFFFFF=00000000
+TraceEnabled | bool | false
+IsLoadAsync | bool | true | set to false to force the svg to appear immediatly, or if it disappears sometimes
+AlignmentMode | string | TopLeft | TopLeft, CenterHorizontally, CenterVertically, Center. Can be combined (in code only).
+FillMode | string | Fit | Fit, Fill, FitCrop.
+FillWidth | number | 0 | The width the svg would like to have. 0 to let the OS decides using UI constraints or Frame value.
+FillHeight | number | 0 | The height the svg would like to have. 0 to let the OS decides using UI constraints or Frame value.
+
+`UIImageView.ContentMode` is forced by `UISvgImageView`, so it has no impact. Use `FillMode` instead.
+
+# Release notes
+3.1.1  
+ios: supports SvgFillMode.FitCrop in FillMode property
+ios: fix small pixellization (MainScale not used)
+ios: fix AlignmentMode property not working as expected when svg bounds don't start at (0,0)
+
+3.1.0
+android: supports fit_crop
+
 # Community
 
 Join the svg community on our [slack channel](https://xamarinchat.slack.com/#xamsvg)
