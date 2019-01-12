@@ -1,9 +1,9 @@
 # Samples for XamSvg enterprise cross platform and full featured Svg image control
-This repository holds the samples for the [XamSvg Xamarin component](https://components.xamarin.com/view/xamsvgforms), also available as a nuget on a private nuget server.
+This repository holds the samples for the XamSvg Xamarin control.
 
 | Xamarin.Forms | Android | Android + iOS + Windows UWP+WinRT |
 |:-------------:|:-------:|:---------------------------------:|
-| [![NuGet][xamarinstore-img]][xamarinstore-linkforms] | [![NuGet][xamsvg-img]][xamsvg-link] | [![NuGet][xamarinstore-img]][xamarinstore-link]
+| [![NuGet][xamsvg-img]][xamsvg-link] | [![NuGet][xamsvg-img]][xamsvg-link] | [![NuGet][xamsvg-img]][xamsvg-link]
 | [![][xamsvglivedemo-img]][xamsvglivedemo-link] | [![][xamsvglivedemo-img]][xamsvglivedemo-link] | [![][xamsvglivedemo-img]][xamsvglivedemo-link]
 | [![][formsdemo-img]][formsdemo-link] | [![][formsdemo-img]][droiddemo-link] | [![][formsdemo-img]][droiddemo-link] [![][formsdemo-img]][iosdemo-link] [![][formsdemo-img]][uwpdemo-link]
 
@@ -63,7 +63,7 @@ Remark the Svg property: the image name is prefixed with "res:", and the extensi
 
 # Common mistakes
 
-If nothing appears, make sure your svg is displayed correctly by the windows explorer (after you installed this [extension](https://svgextension.codeplex.com/)). 
+If nothing appears, make sure your svg is displayed correctly by the windows explorer (after you installed this [extension](https://github.com/maphew/svg-explorer-extension/releases)). 
 
 Common errors include
 * forgetting to set the build action of the svg file to "Embedded resource".
@@ -71,6 +71,45 @@ Common errors include
 * the svg color is the same as the background color, especially white or black. Use ColorMapping to change colors, or edit your svg file with [inkscape](http://www.inkscape.org/) or your preferred text editor.
 
 # Other Receipes
+
+**Icons on TabbedPage**
+
+1. Create a TabbedPage, call it TabContainer for example.
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:demo="clr-namespace:XamSvg.Demo;assembly=XamSvg.Demo"
+             x:Class="XamSvg.Demo.Pages.TabContainer"
+             Title="Vapolia.fr XamSvg Demo"
+            >
+
+    <demo:MainPage Title="Slideshow" x:Name="MainPage" />
+    <demo:Page2 Title="Animation"  x:Name="AnimationPage" />
+    
+</TabbedPage>
+```
+
+2. In its codebehind, set the icons
+
+```csharp
+public TabContainer()
+{
+    InitializeComponent();
+
+    MainPage.Icon = new SvgImageSource { Svg = "res:images.intertwingly", Height = 30 }.CreateFileImageSource();
+    AnimationPage.Icon = new SvgImageSource { Svg = "res:images.0GoldMirror", Height = 30 }.CreateFileImageSource();
+}
+```
+
+3. Specific instructions for Android
+
+* Your android's MainActivity must inherit from FormsAppCompatActivity, not FormsApplicationActivity. Note that if you switch to FormsAppCompatActivity, your app must also use an appcompat theme. See this [xamarin guide](https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/).
+
+* Add [SvgTabbedPageRenderer](https://gist.github.com/softlion/eac96a4aae416934c3fd5a9184a1d63b) to your android project
+
+4. Enjoy icons on tabs, iOS + Android.
 
 **Mvvmcross** 
 
@@ -111,7 +150,9 @@ Fully compatible with mvvmcross, including the bindings of image source, color m
         app:svg="res:images.info" />
 ```
 
-Note that as the svg has an intrinsic width computed from its height and its aspect ratio, the width displayed by the designer is incorrect. You can correct the designer by assigning a design time only value to layout_width using the tools prefix: `tools:layout_width="30dp"` which requires the xmlns:tools namespace declaration.
+Note that as the svg has an intrinsic width computed from its height and its aspect ratio, the width displayed by the designer is incorrect. You can correct the designer by assigning a design time only value to `layout_width` using the `tools` prefix: `tools:layout_width="30dp"` which requires the `xmlns:tools` namespace declaration.
+
+
 
 **Android native**: set back button toolbar icon
 
@@ -124,15 +165,23 @@ toolbar.NavigationIcon = SvgFactory.GetDrawable("res:images.webbrowser.backward"
 
 Using Visual Studio Mac, open your storyboard file using `Open with xcode`. Add an Image view (UIImageView), set its custcom `Class` property to `UISvgImageView`, and optionally add new `User Defined Runtime Attributes` as required:
 
+![Attribute Inspector](https://image.ibb.co/e5N0uw/Prt_Scr_capture_11.jpg)
+
 | Key Path | Type | Sample Value
 | --------- | ----- | ----
 | BundleName | String | res:images.info
 | ColorMapping | String | 000000=e01a1a
 | ColorMappingSelected | String | 000000=ff3030
 
-To size your svg, set contraints on one dimension only. The other dimension will be set using the first dimension and the computed aspect ratio. If you set constraints on both dimensions, the svg will stretch. You can prevent this by setting FillMode to Fit (type: string)
+To size your svg, set contraints on one dimension only. The other dimension will be set using the first dimension and the computed aspect ratio. If you set constraints on both dimensions, the svg will stretch. You can prevent this by setting FillMode to Fit (along with ContentMode to AspectFit):
+
+| Key Path | Type | Sample Value
+| --------- | ----- | ----
+| FillMode | String | Fit
 
 When only one dimension is constrained, the designer don't know how to set the other dimension and displays contraint errors. The solution is to set the `intrinsic size` to a manual value in the dimension which has no contraint (in the dimension property pane of the designer).
+
+![Intrinsic Size](https://image.ibb.co/bzeDEw/Prt_Scr_capture_12.jpg)
 
 1. Select the `UISvgImageView` view.
 2. Show the size inspector (⌘Shift5).
@@ -141,18 +190,66 @@ When only one dimension is constrained, the designer don't know how to set the o
 
 These constraints are removed at compile-time, meaning they will have no effect on your running app, and the layout engine will add constraints as appropriate at runtime to respect your view's intrinsicContentSize.
 
+# Reference
+
+## Android native
+
+Layout properties:
+
+| Tag | Type | Default value | Notes
+| --------- | ----- | ---- | ---
+app:svg | string or resource id | (required) | .net embedded resource file path and name, or android resource id
+app:colorMapping | string | (null) | example: FF000000=FF808080
+app:colorMappingSelected | string | (null) | example: FF000000=FFa0a0a0;FFFFFFFF=00000000
+app:colorMappingDisabled | string | (null)
+app:traceEnabled | bool | false
+app:loadAsync | bool | true
+app:fillMode | enum | fit | fit, fill of fit_crop (new v3.1.0). fit_crop: Scale the image uniformly (maintain the image's aspect ratio) so that both dimensions (width and height) of the image will be equal to or larger than the corresponding dimension of the view (minus padding). 
+android:adjustViewBounds | bool | true | if true and fillMode is not Fill, the svg view will grow or shrink depending on the svg size.
+android:autoMirrored | bool | false | true to mirror image in RTL languages
+
+`android:padding` is respected, and included in the width/height measurement.  
+`android:gravity` is respected, and included in the width/height measurement. If the svg is smaller than its view, this property controls its centering.
+
+## iOS native
+
+`UISvgImageView` inherits `UIImageView`, so it's easy to use it in an xcode storyboard: drag an `UIImageView` and set its custom class to `UISvgImageView`. To set specific svg properties, add `User Defined Runtime Attributes` in the same pane where you set the custom class.
+
+Attributes (supported in `User Defined Runtime Attributes`):
+
+| Key Path | Type | Default value | Notes
+| --------- | ----- | ---- | ---
+BundleName | string | (required) | Svg path. Example: res:images.logo
+BundleString | string | (optional) | exclusive with BundleName. The svg content as a string.
+ColorMapping | string | (null) | example: FF000000=FF808080
+ColorMappingSelected | string | (null) | example: FF000000=FFa0a0a0;FFFFFFFF=00000000
+TraceEnabled | bool | false
+IsLoadAsync | bool | true | set to false to force the svg to appear immediatly, or if it disappears sometimes
+AlignmentMode | string | TopLeft | TopLeft, CenterHorizontally, CenterVertically, Center. Can be combined (in code only).
+FillMode | string | Fit | Fit, Fill, FitCrop.
+FillWidth | number | 0 | The width the svg would like to have. 0 to let the OS decides using UI constraints or Frame value.
+FillHeight | number | 0 | The height the svg would like to have. 0 to let the OS decides using UI constraints or Frame value.
+
+`UIImageView.ContentMode` is forced by `UISvgImageView`, so it has no impact. Use `FillMode` instead.
+
+# Release notes
+3.1.1  
+ios: supports SvgFillMode.FitCrop in FillMode property 
+ios: fix small pixellization (MainScale not used) 
+ios: fix AlignmentMode property not working as expected when svg bounds don't start at (0,0)
+
+3.1.0
+android: supports fit_crop
+
 # Community
 
 Join the svg community on our [slack channel](https://xamarinchat.slack.com/#xamsvg)
 
 
-[xamsvg-img]: https://img.shields.io/badge/nuget-2.3.4.8-blue.svg
+[xamsvg-img]: https://img.shields.io/badge/nuget-3.1.1-blue.svg
 [xamsvg-link]: https://www.nuget.org/packages/Softlion.XamSvg.Free
 [xamsvglivedemo-img]: https://img.shields.io/badge/live-demo-brightgreen.svg
 [xamsvglivedemo-link]: https://appetize.io/embed/amyhugx1xzurnv45h8kyp5kam0?device=iphone7&scale=75&orientation=portrait&osVersion=10.3&xdocMsg=true&deviceColor=black
-[xamarinstore-img]: https://img.shields.io/badge/Xamarin-Component%20Store-00FF7F.svg
-[xamarinstore-linkforms]: https://components.xamarin.com/view/XamSvgForms
-[xamarinstore-link]: https://components.xamarin.com/view/XamSvg
 
 [formsdemo-img]: https://img.shields.io/badge/demo-source%20code-lightgrey.svg
 [formsdemo-link]: https://github.com/softlion/XamSvg-Samples/tree/master/Demos/XamSvg.XamFormsDemo
