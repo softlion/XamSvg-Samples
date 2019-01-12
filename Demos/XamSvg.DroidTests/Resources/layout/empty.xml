@@ -5,16 +5,16 @@
     android:layout_height="fill_parent"
     android:background="#9000">
 
-            <XamSvg.SvgImageView
+  <XamSvg.SvgImageView
     app:svg="res:images.CercleDegrade"
     app:colorMapping="ffb9c5cf=ffFFFFFF"
     app:traceEnabled="true"
-        android:layout_marginRight="20dp"
+      android:layout_marginRight="20dp"
       android:layout_width="100dp"
       android:layout_height="50dp"
       app:fillMode="fit"
       android:gravity="center_vertical|right"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true" />
+      android:layout_centerVertical="true"
+      android:layout_alignParentRight="true" />
   
 </RelativeLayout>

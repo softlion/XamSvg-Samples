@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="226">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="4352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Test Update View Controller-->
+        <scene sceneID="225">
+            <objects>
+                <viewController storyboardIdentifier="TestUpdateViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="226" customClass="TestUpdateViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="227">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="infinite" translatesAutoresizingMaskIntoConstraints="NO" id="246" customClass="UISvgImageView">
+                                <rect key="frame" x="67.5" y="269.5" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="247"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="BundleName" value="res:images.atom"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="246" firstAttribute="centerX" secondItem="lNq-zq-4ke" secondAttribute="centerX" id="248"/>
+                            <constraint firstItem="lNq-zq-4ke" firstAttribute="centerY" secondItem="246" secondAttribute="centerY" constant="10" id="249"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lNq-zq-4ke"/>
+                    </view>
+                    <connections>
+                        <outlet property="TheSvg" destination="246" id="name-outlet-246"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="228" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-231" y="-399"/>
+        </scene>
+        <!--Test Image Factory View Controller-->
+        <scene sceneID="Nqg-ph-yeh">
+            <objects>
+                <viewController storyboardIdentifier="TestImageFactoryViewController" id="17c-MJ-ddR" customClass="TestImageFactoryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5O7-cU-LhN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gOd-Um-26d">
+                                <rect key="frame" x="94" y="138" width="187.5" height="187.5"/>
+                                <color key="backgroundColor" red="0.28235294119999998" green="0.89019607840000003" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gOd-Um-26d" secondAttribute="height" multiplier="1:1" id="S3p-qZ-18n"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="506" translatesAutoresizingMaskIntoConstraints="NO" customClass="UIButton2">
+                                <rect key="frame" x="87.5" y="539" width="200" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections/>
+                                <constraints>
+                                    <constraint id="772" firstItem="506" firstAttribute="width" constant="200"/>
+                                </constraints>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99232313368055558" green="1" blue="0.94349500868055558" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gOd-Um-26d" firstAttribute="width" secondItem="Kpc-56-bfw" secondAttribute="width" multiplier="0.5" id="25J-T6-eCT"/>
+                            <constraint firstItem="gOd-Um-26d" firstAttribute="centerX" secondItem="Kpc-56-bfw" secondAttribute="centerX" id="PjI-6H-jqI"/>
+                            <constraint firstItem="gOd-Um-26d" firstAttribute="top" secondItem="Kpc-56-bfw" secondAttribute="top" constant="118" id="y0P-YJ-1Pk"/>
+                            <constraint id="508" firstItem="Kpc-56-bfw" firstAttribute="bottom" secondItem="506" secondAttribute="bottom" constant="98"/>
+                            <constraint id="509" firstItem="506" firstAttribute="centerX" secondItem="Kpc-56-bfw" secondAttribute="centerX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kpc-56-bfw"/>
+                    </view>
+                    <connections>
+                        <outlet property="TheImage" destination="gOd-Um-26d" id="name-outlet-gOd-Um-26d"/>
+                        <outlet property="TheButton" destination="506" id="name-outlet-506"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kE4-Mi-cg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-242.4" y="272.114"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Default-568h.png" width="320" height="568"/>
+        <image name="Default.png" width="320" height="480"/>
+        <image name="Icon.png" width="57" height="57"/>
+        <image name="Icon-60.png" width="60" height="60"/>
+        <image name="Icon-40.png" width="40" height="40"/>
+    </resources>
+</document>

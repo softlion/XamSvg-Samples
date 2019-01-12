@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="?attr/actionBarSize"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:gravity="center_horizontal"
+    >
+    <XamSvg.SvgImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        tools:layout_width="30dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="2dp"
+        app:traceEnabled="true"
+        app:colorMappingSelected="ffffff=12acff"
+        />
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Tab title"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+    />
+</LinearLayout>

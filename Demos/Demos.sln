@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamSvg.Ios-Demo", "XamSvg.Ios2Tests\XamSvg.Ios-Demo.csproj", "{EDCF503F-2C08-4F8F-B251-CE23D513893F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamSvgDemo.Droid", "XamSvg.DroidTests\XamSvgDemo.Droid.csproj", "{180C0707-531A-467C-A14C-9D49BAC09CD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamSvgDemo.Shared", "XamSvgDemo.Shared\XamSvgDemo.Shared.csproj", "{D8AC967E-1B7A-472A-A4B2-7DB081837390}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamSvgDemo.Shared", "XamSvgDemo.Shared\XamSvgDemo.Shared.csproj", "{D8AC967E-1B7A-472A-A4B2-7DB081837390}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xamarin native samples", "Xamarin native samples", "{4CA3C806-2C1F-4921-950D-7027F8FC7C21}"
 EndProject
@@ -494,5 +494,8 @@ Global
 		{1CBEF5AD-05C7-4BEC-8A34-E0A0061DAE1B} = {310FF2E3-7489-48ED-8C10-B5B0774DBA88}
 		{DD70726A-161F-44AC-AD9A-A0A7E02270C3} = {310FF2E3-7489-48ED-8C10-B5B0774DBA88}
 		{3236B51E-CF18-4311-8898-E30B6A9E25F9} = {4CA3C806-2C1F-4921-950D-7027F8FC7C21}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70393DCD-F5EB-4CF0-91BF-735BF73F1BED}
 	EndGlobalSection
 EndGlobal

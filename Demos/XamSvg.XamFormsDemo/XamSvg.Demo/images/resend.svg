@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="a"
+                    x1="65.61"
+                    y1="-45.19"
+                    x2="-27.78"
+                    y2="70.01"
+                    gradientUnits="userSpaceOnUse">
+      <stop offset="0"
+            stop-color="#ff9f14"/>
+      <stop offset="1"
+            stop-color="#b16127"/>
+    </linearGradient>
+  </defs>
+  <title>resend</title>
+  <path d="M16,0A16,16,0,1,0,32,16,16,16,0,0,0,16,0ZM26.38,14.31H17.23l4-3.77A7.27,7.27,0,0,0,16,8.45a7.49,7.49,0,0,0-7.44,7.5A7.42,7.42,0,0,0,23,18.31h2.58A10.31,10.31,0,0,1,16,25.84,9.89,9.89,0,1,1,16,6.06,10.43,10.43,0,0,1,23.23,9l3.15-2.9Z"
+        style="fill:url(#a)"/>
+</svg>

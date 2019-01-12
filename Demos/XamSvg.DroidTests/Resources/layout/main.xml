@@ -1,58 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:local="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#202060">
     <XamSvg.SvgImageView
         android:id="@+id/back"
-        local:svg="res:images.gradient4"
+        app:svg="res:images.gradient4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        local:colorMappingDisabled="46cca5=FF0000"
-        local:fillMode="fill"
-        local:traceEnabled="true" />
+        app:colorMappingDisabled="46cca5=FF0000"
+        app:fillMode="fill"
+         />
     <LinearLayout
-    android:id="@+id/content"
-    android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-    android:padding="8dp">
-    <LinearLayout
-        android:orientation="vertical"
         android:id="@+id/content"
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:gravity="top">
-    <!--
-                If using Mvvmcross, you can easily bind your icon to your viewmodel.
-                Use the "res:" scheme and put the svg in the PCL project as explained in the documentation.
-                local:MvxBind="Svg Icon"
-                -->
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="#FF0000">
-            <XamSvg.SvgImageView
-                android:background="#CCD39F"
-                android:id="@+id/icon"
-                local:svg="res:images.GoldMirror"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-    <!-- This second flexible layout clean the area left by svgimageview when it shrinks. This seems a very old bug in this specific usage of LinearLayout with 0dp. -->
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
         <LinearLayout
             android:orientation="vertical"
+            android:id="@+id/content"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#111111" />
-    </LinearLayout>
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="top">
+        <!--
+                If using Mvvmcross, you can easily bind your icon to your viewmodel.
+                Use the "res:" scheme and put the svg in the PCL project as explained in the documentation.
+                app:MvxBind="Svg Icon"
+                -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#FF0000">
+                <XamSvg.SvgImageView
+                    android:background="#CCD39F"
+                    android:id="@+id/icon"
+                    app:svg="res:images.loupe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" 
+				/>
+            </LinearLayout>
+        <!-- This second flexible layout clean the area left by svgimageview when it shrinks. This seems a very old bug in this specific usage of LinearLayout with 0dp. -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#111111" />
+        </LinearLayout>
     <!--<ImageView
             android:src="@android:drawable/ic_menu_gallery"
             android:layout_width="wrap_content"
@@ -202,21 +203,109 @@
                 android:background="#CCD39F"
                 android:scaleType="fitXY" />
         </LinearLayout>-->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="right">
-        <Button
-            android:text="Other demo"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end">
+
+			<!-- Test fit crop -->
+			<!-- 
+		<XamSvg.SvgImageView
+			app:traceEnabled="true"
+            android:layout_width="35dp"
+			android:layout_height="35dp"
+			app:fillMode="fit_crop"
+            app:colorMapping="193458=FFFFFF"
+            app:svg="res:images.oeuil"
+             />
+			-->
+
+			<!-- Test padding -->
+			<!-- 
+		<XamSvg.SvgImageView
+			app:traceEnabled="true"
+            android:layout_width="35dp"
+			android:layout_height="35dp"
+			android:padding="10dp"
+            app:colorMapping="193458=FFFFFF"
+            app:svg="res:images.oeuil"
+             />
+			-->
+
+			<!-- Test vertical gravity -->
+			<!-- 
+		<XamSvg.SvgImageView
+			app:traceEnabled="true"
+            android:layout_width="35dp"
+			android:layout_height="35dp"
+			android:gravity="bottom|center_horizontal"
+			android:background="#ff0000"
+            app:colorMapping="193458=FFFFFF"
+            app:svg="res:images.oeuil"
+             />
+			-->
+
+			<!-- Test horizontal gravity -->
+		<XamSvg.SvgImageView
+			app:traceEnabled="true"
+            android:layout_width="35dp"
+			android:layout_height="35dp"
+			android:gravity="right|center_vertical"
+			android:background="#ff0000"
+            app:svg="res:images.pin"
+             />
+
+		<XamSvg.SvgImageView
+				android:id="@+id/btnLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            app:colorMapping="000000=A8A8A8"
+            app:colorMappingSelected="000000=1A86DB"
+            app:colorMappingDisabled="000000=585858"
+            app:svg="res:images.like"
+            android:autoMirrored="true"
+            tools:layout_width="30dp" />
+            <Button
+                android:text="Next SVG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnNextImage" />
+          <Button
+                android:text="Other demo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnGoEmpty" />
+          <Button
+            android:text="List demo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnNextImage" />
-        <Button
-            android:text="Next SVG"
-            android:layout_width="wrap_content"
+            android:id="@+id/btnList" />
+        </LinearLayout>
+
+        <!-- tab bar -->
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnGoEmpty" />
-      </LinearLayout>
+            android:animateLayoutChanges="true"
+            android:layout_gravity="bottom"
+            >
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tabIndicator="@null"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#353c47"
+                    app:layout_constraintTop_toTopOf="@id/tabs"
+                    />
+            </android.support.constraint.ConstraintLayout>
+        </android.support.design.widget.AppBarLayout>
     </LinearLayout>
 </FrameLayout>

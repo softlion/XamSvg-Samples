@@ -15,6 +15,7 @@ using CoreGraphics;
 using CoreText;
 using Foundation;
 using UIKit;
+using XamSvg.Platform;
 using XamSvg.Shared.Cross;
 using XamSvgDemo.Shared;
 
@@ -107,7 +108,7 @@ namespace XamSvg.Ios2Tests
             btn.SetTitle("Test1", UIControlState.Normal);
             btn.SetContentCompressionResistancePriority((float)UILayoutPriority.Required, UILayoutConstraintAxis.Vertical);
 
-            //var inputOk = new UISvgImageView("", 25); //for debug
+        //var inputOk = new UISvgImageView("", 25); //for debug
             View.Add(back);
             View.Add(back2);
             View.SendSubviewToBack(back);
@@ -166,14 +167,8 @@ namespace XamSvg.Ios2Tests
                 image.Above(btn)
                 //Test: Width forced, Height forced (50)
                 );
-#endif
-            image.FillMode = SvgFillMode.Fit;
 
-            //var t = new UIImageView(new CGRect(0, 0, 100, 100));
-            //t.Image = LoadLastSvgFromString();
-            //View.Add(t);
 
-            //image.UserInteractionEnabled = true;
             back2.AddGestureRecognizer(new UITapGestureRecognizer(() =>
             {
                 index = ++index%svgNames.Count;
@@ -186,10 +181,36 @@ namespace XamSvg.Ios2Tests
 
             btn.TouchUpInside += (sender, args) =>
             {
-                var sb = UIStoryboard.FromName("TestFullWidthConstraint", null);
-                var vc = sb.InstantiateViewController("TestFullWidthConstraintViewController");
+                //var sb = UIStoryboard.FromName("TestFullWidthConstraint", null);
+                //var vc = sb.InstantiateViewController("TestFullWidthConstraintViewController");
+                var sb = UIStoryboard.FromName("AllViews", null);
+
+                //var vc = sb.InstantiateViewController(nameof(TestUpdateViewController));
+                var vc = sb.InstantiateViewController(nameof(TestImageFactoryViewController));
+
                 NavigationController.PushViewController(vc, true);
             };
+#endif
+            image.FillMode = SvgFillMode.Fit;
+
+            NavigationItem.TitleView = new UISvgImageView("res:images.atom")
+            {
+                IsLoadAsync = false,
+                FillMode = SvgFillMode.Fit,
+                AlignmentMode = SvgAlignmentMode.Center,
+                Frame = new CGRect(0,0,NavigationController.NavigationBar.Bounds.Width, NavigationController.NavigationBar.Bounds.Height)
+            };
+
+            //var t = new UIImageView(new CGRect(0, 0, 100, 100));
+            //t.Image = LoadLastSvgFromString();
+            //View.Add(t);
+
+            //image.UserInteractionEnabled = true;
+
+
+            //var bounds = SvgFactory.GetBounds("res:images.logoImage", 100, 100, fillMode: SvgFillMode.Fit);
+            //var image = SvgFactory.FromBundle("res:images.logoImage", 100, 100, fillMode: SvgFillMode.Fit);
+
         }
 
         CancellationTokenSource cancel = new CancellationTokenSource();

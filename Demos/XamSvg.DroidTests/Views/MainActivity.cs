@@ -4,18 +4,24 @@ using System.Linq;
 using System.Reflection;
 using Android.App;
 using Android.OS;
+using Android.Support.Design.Widget;
+using Android.Text;
 using Android.Util;
+using Android.Widget;
+using Java.Lang;
 using XamSvg;
 using XamSvgDemo.Shared;
 
 namespace XamSvgTests
 {
-	[Activity (Label = "XamSvgTests", MainLauncher = true, Theme = "@android:style/Theme.Holo.Light.NoActionBar.Fullscreen")]
+	[Activity (Label = "XamSvgTests", MainLauncher = true)]
 	public class MainActivity : Activity
 	{
 	    protected override void OnCreate(Bundle bundle)
 	    {
 	        base.OnCreate(bundle);
+
+            var ok = (Application.ApplicationInfo.Flags & Android.Content.PM.ApplicationInfoFlags.SupportsRtl) != 0;
 
             //Initialize the cross platform color helper
 	        Setup.InitSvgLib();
@@ -23,8 +29,8 @@ namespace XamSvgTests
             //Tells XamSvg in which assembly to search for svg when "res:" is used
 	        var assembly = typeof (App).GetTypeInfo().Assembly;
             XamSvg.Shared.Config.ResourceAssembly = assembly;
-
-
+            //You can also set a list of assemblies
+            //XamSvg.Shared.Config.ResourceAssemblies = new List<Assembly> { assembly };
 
 	        SetContentView(Resource.Layout.Main);
 
@@ -37,11 +43,14 @@ namespace XamSvgTests
             ////Get all drawing zones in the current layout
             //var drawableViewIds = typeof(Resource.Id).GetFields().Where(f => f.IsLiteral && f.Name.StartsWith("drawable")).Select(f => (int)f.GetRawConstantValue());
 
+            //Test colorMappingDisabled
+	        var svgBack = FindViewById<SvgImageView>(Resource.Id.back);
+	        svgBack.Enabled = false;
 
-
-            int index=0;
+            int index =0;
             var svg = FindViewById<SvgImageView>(Resource.Id.icon);
-            EventHandler nextImage = (sender, e) =>
+
+	        void NextImage(object sender, EventArgs e)
             {
                 if (index < svgShared.Count)
                 {
@@ -54,22 +63,66 @@ namespace XamSvgTests
                     svg.SetSvg(this, rawIds[index - svgShared.Count].Item1);
                 }
 
-                index = (++index)%(rawIds.Count + svgShared.Count);
-            };
+	            index = (++index) % (rawIds.Count + svgShared.Count);
+	        }
 
             //When clicked, change the svg source in all zones
             var contentView = FindViewById(Resource.Id.content);
             var btnNextImage = FindViewById(Resource.Id.btnNextImage);
-            btnNextImage.Click += nextImage;
-            contentView.Click += nextImage;
+            btnNextImage.Click += NextImage;
+            contentView.Click += NextImage;
 
             //refresh demo
             var btnGoEmpty = FindViewById(Resource.Id.btnGoEmpty);
             btnGoEmpty.Click += (sender, e) => StartActivity(typeof(EmptyActivity));
 
-//            //Test using a string
-//            var bitmap = LoadLastSvgFromString();
-//            FindViewById<ImageView>(Resource.Id.bitmap1).SetImageBitmap(bitmap);
+	        var btnList = FindViewById(Resource.Id.btnList);
+	        btnList.Click += (sender, e) => StartActivity(typeof(CollectionActivity));
+
+	        int btnLeftI = -1;
+	        var btnLeft = FindViewById<SvgImageView>(Resource.Id.btnLeft);
+	        btnLeft.Click += (sender, args) =>
+	        {
+	            btnLeftI = (btnLeftI+1)%3;
+	            switch (btnLeftI)
+	            {
+	                case 0:
+	                    btnLeft.Clickable = true;
+	                    btnLeft.Selected = true;
+	                    break;
+	                case 1:
+	                    btnLeft.Selected = false;
+	                    btnLeft.Enabled = false;
+	                    break;
+	                case 2:
+	                    btnLeft.Enabled = true;
+	                    btnLeft.Clickable = false;
+	                    break;
+	            }
+	        };
+
+	        ////Test using a string
+	        //var bitmap = LoadLastSvgFromString();
+	        //FindViewById<ImageView>(Resource.Id.bitmap1).SetImageBitmap(bitmap);
+
+            //Test svg as tab icons
+            var tabIcons = new[] { "res:images.tabChannels", "res:images.tabNetwork", "res:images.tabSettings" };
+            var tabs = FindViewById<TabLayout>(Resource.Id.tabs);
+            
+            var tabView = LayoutInflater.Inflate(Resource.Layout.tab_withicon, null);
+            tabView.FindViewById<TextView>(Resource.Id.title).SetText("Tab1", TextView.BufferType.Normal);
+            tabView.FindViewById<SvgImageView>(Resource.Id.icon).Svg = tabIcons[0];
+            tabs.AddTab(tabs.NewTab().SetCustomView(tabView),true);
+
+            tabView = LayoutInflater.Inflate(Resource.Layout.tab_withicon, null);
+            tabView.FindViewById<TextView>(Resource.Id.title).SetText("Tab2", TextView.BufferType.Normal);
+            tabView.FindViewById<SvgImageView>(Resource.Id.icon).Svg = tabIcons[1];
+            tabs.AddTab(tabs.NewTab().SetCustomView(tabView),false);
+
+            tabView = LayoutInflater.Inflate(Resource.Layout.tab_withicon, null);
+            tabView.FindViewById<TextView>(Resource.Id.title).SetText("Tab3", TextView.BufferType.Normal);
+            tabView.FindViewById<SvgImageView>(Resource.Id.icon).Svg = tabIcons[2];
+            tabs.AddTab(tabs.NewTab().SetCustomView(tabView),false);
         }
 
 	    //void LoadImageTest(int rawId)

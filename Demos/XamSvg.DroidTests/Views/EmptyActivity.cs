@@ -20,6 +20,7 @@ namespace XamSvgTests
 		{
 			base.OnCreate (bundle);
 			SetContentView (Resource.Layout.empty);
+            //ActionBar.SetDisplayHomeAsUpEnabled(true);
 		}
 	}
 }
