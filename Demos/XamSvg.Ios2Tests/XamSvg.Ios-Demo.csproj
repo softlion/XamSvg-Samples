@@ -198,7 +198,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Cirrious.FluentLayout" Version="2.9.0" />
-    <PackageReference Include="Softlion.XamSvg.Free">
+    <PackageReference Include="Softlion.XamSvg">
       <Version>3.1.1</Version>
     </PackageReference>
   </ItemGroup>

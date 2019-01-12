@@ -179,7 +179,13 @@
     <IpaPackageName />
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Softlion.XamSvg">
+      <Version>3.1.1</Version>
+    </PackageReference>
     <PackageReference Include="Vapolia.XamarinFormsGesture" Version="3.0.0" />
+    <PackageReference Include="Vapolia.XamSvg.Forms">
+      <Version>3.1.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />
   </ItemGroup>
   <ItemGroup>
