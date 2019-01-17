@@ -25,21 +25,20 @@ public class App : Application
 {
     public App()
     {
-        XamSvg.Shared.Config.ResourceAssembly = typeof(App).GetTypeInfo().Assembly;
+        XamSvg.Shared.Config.ResourceAssembly = typeof(App).Assembly;
         ...
     }
 ...
 ```
 
-Trick: you can add more than one assembly by using the ResourceAssemblies property instead.
+Trick: you can add more than one assembly by using the `ResourceAssemblies` property instead.
 
 3. Add your svg files  
 
-Create a folder "images" at the root of your shared or PCL project (ie the project containing the App.cs file), put your svg files there. Make sure they have the .svg extension. And set their build action type to "embedded resource".
+Create a folder "images" at the root of your netstandard project (the project containing the App.cs file) and put your svg files there.   
+Make sure they have the .svg extension. And set their build action type to `embedded resource` (important!).
 
-4. Add an svg image control 
-
-Remark the xmlns:svg attribute on the ContentPage. If you use Resharper it will be added automagically.
+4. Add the `SvgImage` control anywhere
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -57,7 +56,12 @@ Remark the xmlns:svg attribute on the ContentPage. If you use Resharper it will 
 </ContentPage>
 ```
 
-Remark the Svg property: the image name is prefixed with "res:", and the extension (.svg) is removed. 'images' is the folder in which you put the file. It is the full path of the svg file from the root of your PCL or shared project. You have other schemes like string: to load an inline svg.
+Remarks:
+* The `xmlns:svg` attribute is required on the `ContentPage`. If you use Resharper, it will be added automagically.
+* The Svg property value is the image name. It is prefixed with "res:" (which means the svg file is searched in embedded resources), its extension (.svg) is optional. `images` is the folder in which you put the svg file.
+* All properties are bindable.
+
+Another scheme `string:` can be used to load an inline svg. Simply put the svg string after `string:`.
 
 5. Enjoy
 
