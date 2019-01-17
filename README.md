@@ -74,6 +74,19 @@ Common errors include
 * missing viewBox attribute at the root of the svg file (open it using a text editor).
 * the svg color is the same as the background color, especially white or black. Use ColorMapping to change colors, or edit your svg file with [inkscape](http://www.inkscape.org/) or your preferred text editor.
 
+The assembly in which the svg resources are must have an `assembly Name` equal to its `Default namespace`, otherwise the svg files will not be found. If you are unable to do so, you can still display an svg but you will have to specify the full name of the resource like this:
+
+```xml
+    <xamForms:SvgImage
+        Svg="res:YourDefaultNamespace.Images.getFDR_01_Ready.svg"
+        x:Name="SvgIcon" HorizontalOptions="Fill" VerticalOptions="Start" Margin="8,0,8,0" BackgroundColor="Yellow"
+        />
+```
+
+You can discover the full name of an embedded resource by opening your assembly (.dll in your bin folder) in the free tool `Telerik JustDecompile`.
+
+[![image.png](https://i.postimg.cc/8cT3hbPM/image.png)](https://postimg.cc/jwkZTPfS)
+
 # Other Receipes
 
 **Icons on TabbedPage**
