@@ -63,6 +63,8 @@ Remarks:
 
 Another scheme `string:` can be used to load an inline svg. Simply put the svg string after `string:`.
 
+[![image.png](https://i.postimg.cc/Kzj346tM/image.png)](https://postimg.cc/7GvZWQsH)
+
 5. Enjoy
 
 # Common mistakes
