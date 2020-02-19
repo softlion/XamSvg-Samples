@@ -127,15 +127,15 @@
     <AndroidResource Include="Resources\raw\ios_app_buttons.svg" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Softlion.XamSvg.Free" Version="3.1.1" />
+    <PackageReference Include="Softlion.XamSvg.Free" Version="3.1.7" />
     <PackageReference Include="Xamarin.Android.Support.Constraint.Layout">
       <Version>1.1.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Design">
-      <Version>28.0.0</Version>
+      <Version>28.0.0.3</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat">
-      <Version>28.0.0</Version>
+      <Version>28.0.0.3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
