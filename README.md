@@ -276,10 +276,6 @@ ios: fix AlignmentMode property not working as expected when svg bounds don't st
 3.1.0
 android: supports fit_crop
 
-# Community
-
-Join the svg community on our [slack channel](https://xamarinchat.slack.com/#xamsvg)
-
 
 [xamsvg-img]: https://img.shields.io/badge/nuget-3.1.1-blue.svg
 [xamsvg-link]: https://www.nuget.org/packages/Softlion.XamSvg.Free
