@@ -51,6 +51,12 @@ Make sure they have the `.svg` extension. And set their build action type to `em
 
         <svg:SvgImage Svg="res:images.logo" HorizontalOptions="Start" HeighRequest="32" />
 
+        <svg:SvgImage Svg="res:images.logo" HorizontalOptions="Start" HeighRequest="32"
+                      ColorMapping="{Binding ColorMapping}" 
+                      ColorMappingSelected="ffffff=00ff00;000000=0000FF" 
+                      ColorMappingDisabled="ffffff=002000;FF000000=80000020" 
+                      />
+
     </StackLayout>
   </ContentView>
 </ContentPage>
@@ -66,6 +72,16 @@ Another scheme `string:` can be used to load an inline svg. Simply put the svg s
 [![image.png](https://i.postimg.cc/Kzj346tM/image.png)](https://postimg.cc/7GvZWQsH)
 
 5. Enjoy
+
+# Color Mapping
+
+XamSvg supports remapping color based on a change in the control's state, like selected or disabled.
+
+To specify a color mapping, set the ColorMapping, ColorMappingSelected or ColorMappingDisabled properties to a string. This string contains a list of mapping separated by a semicolumn ";". A mapping has two parts, separated by the equal sign. The left part is the  color that should be replaced by the right part.
+
+A color is specified using standard html coding: AARRGGBB, RRGGBB, or RGB. A is the transparency (alpha channel).
+
+For example ffffff=00ff00;000000=0000FF means replace ffffff (white) by 00ff00 (green) and replace 000000 (black) by 0000FF (red).
 
 # Common mistakes
 
