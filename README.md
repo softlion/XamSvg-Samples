@@ -95,7 +95,7 @@ Svg image on a button
   </Button>
 ```  
 
-Svg image on a TabbedPage tab
+Svg image for the icon of a TabbedPage tab
 
 ```xml
   <NavigationPage Title="Home">
