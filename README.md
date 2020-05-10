@@ -12,11 +12,7 @@ The xamarin Forms project contains a code demonstrating an animated svg ring. Th
 
 # Quick start for Xamarin Forms
 
-1. Declare XamSvg extension to Xamarin Forms
-
-Add `SvgImageRenderer.InitializeForms();` before `global::Xamarin.Forms.Forms.Init` on each platform. SvgImageRenderer is a class in namespace `XamSvg.XamForms.Uw` for windows, `XamSvg.XamForms.Ios` for iOS, and `XamSvg.XamForms.Droid` for Android. If you use Resharper those will be added automagically.
-
-2. Tell XamSvg where to search for svg files
+1. Tell XamSvg where to search for svg files
 
 Svg files will be stored as embedded resources. To access an embedded resource the code needs the full assembly path of this resource. To make this process easier, you tell XamSvg in which assembly to search for the resources and you don't specify the full path of the svg file in the Svg control.
 
@@ -33,12 +29,12 @@ public class App : Application
 
 Trick: you can add more than one assembly by using the `ResourceAssemblies` property instead.
 
-3. Add your svg files  
+2. Add your svg files  
 
 Create a folder "images" at the root of your netstandard project (the project containing the `App.cs` file) and put your svg files there.   
 Make sure they have the `.svg` extension. And set their build action type to `embedded resource` (important!).
 
-4. Add the `SvgImage` control anywhere
+3. Use an `SvgImage` control
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -54,7 +50,6 @@ Make sure they have the `.svg` extension. And set their build action type to `em
         <svg:SvgImage Svg="res:images.logo" HorizontalOptions="Start" HeighRequest="32"
                       ColorMapping="{Binding ColorMapping}" 
                       ColorMappingSelected="ffffff=00ff00;000000=0000FF" 
-                      ColorMappingDisabled="ffffff=002000;FF000000=80000020" 
                       />
 
     </StackLayout>
