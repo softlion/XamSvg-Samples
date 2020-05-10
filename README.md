@@ -83,6 +83,36 @@ A color is specified using standard html coding: AARRGGBB, RRGGBB, or RGB. A is 
 
 For example ffffff=00ff00;000000=0000FF means replace ffffff (white) by 00ff00 (green) and replace 000000 (black) by 0000FF (red).
 
+# Xamarin Forms samples
+
+Simple svg image
+```xml
+   <svg:SvgImage Svg="res:images.logo" HeightRequest="70" HorizontalOptions="Center" VerticalOptions="Center" />
+```  
+
+Svg image on a button
+
+```xml
+  <Button Text="Add Contact" ContentLayout="Right,20">
+     <Button.ImageSource>
+         <svg:SvgImageSource Svg="res:images.tabHome" Height="60" ColorMapping="000000=FF0000" />
+     </Button.ImageSource>
+  </Button>
+```  
+
+Svg image on a TabbedPage tab
+
+```xml
+  <NavigationPage Title="Home">
+    <x:Arguments>
+        <views:HomePage />
+    </x:Arguments>
+    <NavigationPage.IconImageSource>
+        <svg:SvgImageSource Svg="res:images.tabHome" />
+    </NavigationPage.IconImageSource>
+  </NavigationPage>
+```
+
 # Common mistakes
 
 If nothing appears, make sure your svg is displayed correctly by the windows explorer (after you installed this [extension](https://github.com/maphew/svg-explorer-extension/releases)). 
@@ -109,46 +139,32 @@ You can discover the full name of an embedded resource by opening your assembly 
 
 **Icons on TabbedPage**
 
-1. Create a TabbedPage, call it TabContainer for example.
-
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:demo="clr-namespace:XamSvg.Demo;assembly=XamSvg.Demo"
+             xmlns:svg="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
              x:Class="XamSvg.Demo.Pages.TabContainer"
              Title="Vapolia.fr XamSvg Demo"
             >
 
-    <demo:MainPage Title="Slideshow" x:Name="MainPage" />
-    <demo:Page2 Title="Animation"  x:Name="AnimationPage" />
+  <NavigationPage Title="Home">
+    <x:Arguments>
+        <views:HomePage />
+    </x:Arguments>
+    <NavigationPage.IconImageSource>
+        <svg:SvgImageSource Svg="res:images.tabHome" />
+    </NavigationPage.IconImageSource>
+  </NavigationPage>
     
 </TabbedPage>
 ```
 
-2. In its codebehind, set the icons
-
-```csharp
-public TabContainer()
-{
-    InitializeComponent();
-
-    MainPage.Icon = new SvgImageSource { Svg = "res:images.intertwingly", Height = 30 }.CreateFileImageSource();
-    AnimationPage.Icon = new SvgImageSource { Svg = "res:images.0GoldMirror", Height = 30 }.CreateFileImageSource();
-}
-```
-
-3. Specific instructions for Android
-
-* Your android's MainActivity must inherit from FormsAppCompatActivity, not FormsApplicationActivity. Note that if you switch to FormsAppCompatActivity, your app must also use an appcompat theme. See this [xamarin guide](https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/).
-
-* Add [SvgTabbedPageRenderer](https://gist.github.com/softlion/eac96a4aae416934c3fd5a9184a1d63b) to your android project
-
-4. Enjoy icons on tabs, iOS + Android.
-
 **Mvvmcross** 
 
-Fully compatible with mvvmcross, including the bindings of image source, color mappings, and all other properties.  
+The library is fully compatible with mvvmcross bindings for all properties:  
+image source, color mappings, and all others.  
 
 **Android native**: make the svg image height the same height of a Button
 
@@ -226,6 +242,47 @@ When only one dimension is constrained, the designer don't know how to set the o
 These constraints are removed at compile-time, meaning they will have no effect on your running app, and the layout engine will add constraints as appropriate at runtime to respect your view's intrinsicContentSize.
 
 # Reference
+
+## Xamarin Forms
+
+Default namespace:
+```xml
+xmlns:svg="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
+```
+
+### SvgImage control
+```xml
+<svg:SvgImage Svg="res:images.union" HeightRequest="70" HorizontalOptions="Center" VerticalOptions="Center" />
+```
+
+| Property | Type | Notes
+| --------- | ----- | ---
+Svg | string | svg to display. Don't forget the res: prefix if loading from embedded resources
+ColorMapping | string | see color mapping reference
+ColorMappingSelected | string | color mapping when IsSelected="True"
+IsSelected | bool | used to switch color mapping
+IsSelectionEnabled | bool | True by default: the value of IsSelected is also inherited from the parent container
+Command | ICommand | if set, execute this command on tap
+CommandParameter | object | parameter to send when calling Command.Execute
+Width | double | Optional. You can also specify the width only and height will be computed from the aspect ratio
+Height | double | Optional
+FillMode | FillMode | Fit, Fill, Crop. Useful only if both width and height are forced. Default to Fit to maintain the aspect ratio.
+IsLoadAsync | bool | set to False to disable async image loading, making the image appear immediatly. Default to True.
+IsHighlightEnabled | bool | if set, ColorMappingSelected is used while the image is pressed (until the finger is released)
+ViewportTransform | IMatrix | transform the svg using any matrix before displaying it
+
+### SvgImageSource class
+```xml
+<svg:SvgImageSource Svg="res:images.tabHome" />
+```
+
+| Property | Type | Notes
+| --------- | ----- | ---
+Svg | string | svg to display. Don't forget the res: prefix if loading from embedded resources
+Width | double | Optional. You can also specify the width only and height will be computed from the aspect ratio
+Height | double | Optional
+ColorMapping | string | see color mapping reference
+SvgFillMode | FillMode | Fit, Fill, Crop. Useful only if both width and height are forced. Default to Fit to maintain the aspect ratio.
 
 ## Android native
 
