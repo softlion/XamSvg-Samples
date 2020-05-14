@@ -103,7 +103,7 @@ Svg image for the icon of a TabbedPage tab
         <views:HomePage />
     </x:Arguments>
     <NavigationPage.IconImageSource>
-        <svg:SvgImageSource Svg="res:images.tabHome" />
+        <svg:SvgImageSource Svg="res:images.tabHome" Height="50" />
     </NavigationPage.IconImageSource>
   </NavigationPage>
 ```
@@ -138,20 +138,17 @@ You can discover the full name of an embedded resource by opening your assembly 
 <?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:demo="clr-namespace:XamSvg.Demo;assembly=XamSvg.Demo"
+             xmlns:views="clr-namespace:XamSvg.Demo;assembly=XamSvg.Demo"
              xmlns:svg="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
              x:Class="XamSvg.Demo.Pages.TabContainer"
              Title="Vapolia.fr XamSvg Demo"
             >
 
-  <NavigationPage Title="Home">
-    <x:Arguments>
-        <views:HomePage />
-    </x:Arguments>
-    <NavigationPage.IconImageSource>
+  <views:HomePage Title="Home">
+    <views:HomePage.IconImageSource>
         <svg:SvgImageSource Svg="res:images.tabHome" />
-    </NavigationPage.IconImageSource>
-  </NavigationPage>
+    </views:HomePage.IconImageSource>
+  </views:HomePage>
     
 </TabbedPage>
 ```
@@ -246,6 +243,8 @@ xmlns:svg="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
 ```
 
 ### SvgImage control
+`SvgImage` displays a image in up to 2 states: normal, selected
+
 ```xml
 <svg:SvgImage Svg="res:images.union" HeightRequest="70" HorizontalOptions="Center" VerticalOptions="Center" />
 ```
@@ -253,8 +252,8 @@ xmlns:svg="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
 | Property | Type | Notes
 | --------- | ----- | ---
 Svg | string | svg to display. Don't forget the res: prefix if loading from embedded resources
-ColorMapping | string | see color mapping reference
-ColorMappingSelected | string | color mapping when IsSelected="True"
+ColorMapping | string | see color mapping reference. Default to none.
+ColorMappingSelected | string | color mapping when IsSelected="True". Default to none.
 IsSelected | bool | used to switch color mapping
 IsSelectionEnabled | bool | True by default: the value of IsSelected is also inherited from the parent container
 Command | ICommand | if set, execute this command on tap
@@ -267,17 +266,22 @@ IsHighlightEnabled | bool | if set, ColorMappingSelected is used while the image
 ViewportTransform | IMatrix | transform the svg using any matrix before displaying it
 
 ### SvgImageSource class
+
+`SvgImageSource` inherits from `ImageSource`, use it on any `ImageSource` property. For example `Page.IconImageSource`.
+It can also be transformed into a `FileImageSource` by calling `CreateFileImageSource()`.
+
 ```xml
-<svg:SvgImageSource Svg="res:images.tabHome" />
+<svg:SvgImageSource Svg="res:images.tabHome" Height="50" />
 ```
 
 | Property | Type | Notes
 | --------- | ----- | ---
-Svg | string | svg to display. Don't forget the res: prefix if loading from embedded resources
-Width | double | Optional. You can also specify the width only and height will be computed from the aspect ratio
-Height | double | Optional
-ColorMapping | string | see color mapping reference
+Svg | string | svg to display. Don't forget the res: prefix if loading from embedded resources.
+Width | double | Optional. You can also specify the width only and height will be computed from the aspect ratio.
+Height | double | Optional.
+ColorMapping | string | Optional. See color mapping reference.
 SvgFillMode | FillMode | Fit, Fill, Crop. Useful only if both width and height are forced. Default to Fit to maintain the aspect ratio.
+PreventTintOnIos | bool | Default to false. Prevents tinting on iOS, thus always displaying the original image.
 
 ## Android native
 
