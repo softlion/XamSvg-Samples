@@ -1,11 +1,11 @@
 # Samples for XamSvg enterprise cross platform and full featured Svg image control
 This repository holds the samples for the XamSvg Xamarin control.
 
-| Xamarin.Forms | Android | Android + iOS + Windows UWP+WinRT |
-|:-------------:|:-------:|:---------------------------------:|
-| [![NuGet][xamsvg-img]][xamsvg-link] | [![NuGet][xamsvg-img]][xamsvg-link] | [![NuGet][xamsvg-img]][xamsvg-link]
-| [![][xamsvglivedemo-img]][xamsvglivedemo-link] | [![][xamsvglivedemo-img]][xamsvglivedemo-link] | [![][xamsvglivedemo-img]][xamsvglivedemo-link]
-| [![][formsdemo-img]][formsdemo-link] | [![][formsdemo-img]][droiddemo-link] | [![][formsdemo-img]][droiddemo-link] [![][formsdemo-img]][iosdemo-link] [![][formsdemo-img]][uwpdemo-link]
+| Xamarin.Forms (Android, iOS, UWP) | Xamarin Native (Android, iOS, UWP) |
+|:-------------:|:-------:|
+| [![NuGet][forms-img]][forms-link] | [![NuGet][xamsvg-img]][xamsvg-link]
+| [![][xamsvglivedemo-img]][xamsvglivedemo-link] | [![][xamsvglivedemo-img]][xamsvglivedemo-link]
+| [![][formsdemo-img]][formsdemo-link] | [![][formsdemo-img]][demo-link]
 
 # Animating SVG images
 The xamarin Forms project contains a code demonstrating an animated svg ring. This code works on all platforms: android, ios and universal windows and does not depend on any custom renderer. It is fully contained in the portable Forms project. Check the [RingProgress control](https://github.com/softlion/XamSvg-Samples/blob/master/Demos/XamSvg.XamFormsDemo/XamSvg.Demo/Controls/RingProgress.cs)
@@ -333,13 +333,13 @@ ios: fix AlignmentMode property not working as expected when svg bounds don't st
 android: supports fit_crop
 
 
-[xamsvg-img]: https://img.shields.io/badge/nuget-3.1.1-blue.svg
-[xamsvg-link]: https://www.nuget.org/packages/Softlion.XamSvg.Free
+[xamsvg-img]: https://img.shields.io/nuget/vpre/Vapolia.XamSvg.Forms
+[xamsvg-link]: https://www.nuget.org/packages/Vapolia.XamSvg.Forms
+[forms-img]: https://img.shields.io/nuget/vpre/Vapolia.XamSvg.Forms
+[forms-link]: https://www.nuget.org/packages/Vapolia.XamSvg.Forms
 [xamsvglivedemo-img]: https://img.shields.io/badge/live-demo-brightgreen.svg
 [xamsvglivedemo-link]: https://appetize.io/embed/amyhugx1xzurnv45h8kyp5kam0?device=iphone7&scale=75&orientation=portrait&osVersion=10.3&xdocMsg=true&deviceColor=black
 
 [formsdemo-img]: https://img.shields.io/badge/demo-source%20code-lightgrey.svg
 [formsdemo-link]: https://github.com/softlion/XamSvg-Samples/tree/master/Demos/XamSvg.XamFormsDemo
-[droiddemo-link]: https://github.com/softlion/XamSvg-Samples/tree/master/Demos/XamSvg.DroidTests
-[iosdemo-link]: https://github.com/softlion/XamSvg-Samples/tree/master/Demos/XamSvg.Ios2Tests
-[uwpdemo-link]: https://github.com/softlion/XamSvg-Samples/tree/master/Demos/XamSvg.UwDemo
+[demo-link]: https://github.com/softlion/XamSvg-Samples/tree/master/Demos/
