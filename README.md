@@ -332,11 +332,10 @@ ios: fix AlignmentMode property not working as expected when svg bounds don't st
 3.1.0
 android: supports fit_crop
 
-
-[xamsvg-img]: https://img.shields.io/nuget/vpre/Vapolia.XamSvg.Forms
-[xamsvg-link]: https://www.nuget.org/packages/Vapolia.XamSvg.Forms
-[forms-img]: https://img.shields.io/nuget/vpre/Vapolia.XamSvg.Forms
-[forms-link]: https://www.nuget.org/packages/Vapolia.XamSvg.Forms
+[xamsvg-img]: https://img.shields.io/nuget/vpre/Vapolia.Xamarin.Svg
+[xamsvg-link]: https://www.nuget.org/packages/Vapolia.Xamarin.Svg
+[forms-img]: https://img.shields.io/nuget/vpre/Vapolia.Xamarin.Svg.Forms
+[forms-link]: https://www.nuget.org/packages/Vapolia.Xamarin.Svg.Forms
 [xamsvglivedemo-img]: https://img.shields.io/badge/live-demo-brightgreen.svg
 [xamsvglivedemo-link]: https://appetize.io/embed/amyhugx1xzurnv45h8kyp5kam0?device=iphone7&scale=75&orientation=portrait&osVersion=10.3&xdocMsg=true&deviceColor=black
 
