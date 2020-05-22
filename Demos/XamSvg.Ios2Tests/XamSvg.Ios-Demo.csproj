@@ -198,8 +198,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Cirrious.FluentLayout" Version="2.9.0" />
-    <PackageReference Include="Softlion.XamSvg">
-      <Version>3.1.7</Version>
+    <PackageReference Include="Vapolia.Xamarin.Svg">
+      <Version>3.2.1-pre9</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

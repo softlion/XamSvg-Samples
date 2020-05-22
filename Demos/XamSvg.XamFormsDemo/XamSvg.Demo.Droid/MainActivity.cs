@@ -2,7 +2,6 @@
 using Android.Content.PM;
 using Android.OS;
 using Vapolia.Droid.Lib.Effects;
-using XamSvg.XamForms.Droid;
 
 
 namespace XamSvg.Demo.Droid
@@ -18,13 +17,6 @@ namespace XamSvg.Demo.Droid
             ToolbarResource = Resource.Layout.Toolbar;
             TabLayoutResource = Resource.Layout.Tabbar;
             base.OnCreate(bundle);
-
-            //Required by SvgImageBuilder to register its services
-            SvgImageRenderer.InitializeForms();
-
-#if DEBUG
-            XamSvg.Shared.Config.NativeLogger = new XamSvg.Platform.LoggerImpl {TraceEnabled = true};
-#endif
 
             PlatformGestureEffect.Init();
 

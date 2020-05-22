@@ -15,7 +15,6 @@ using CoreGraphics;
 using CoreText;
 using Foundation;
 using UIKit;
-using XamSvg.Platform;
 using XamSvg.Shared.Cross;
 using XamSvgDemo.Shared;
 

@@ -2,11 +2,21 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:demo="clr-namespace:XamSvg.Demo;assembly=XamSvg.Demo"
+             xmlns:xamForms="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
              x:Class="XamSvg.Demo.Pages.TabContainer"
              Title="Vapolia.fr XamSvg Demo"
             >
 
-    <demo:MainPage Title="Slideshow" x:Name="MainPage" />
-    <demo:Page2 Title="Animation"  x:Name="AnimationPage" />
-    
+    <demo:MainPage Title="Slideshow">
+        <demo:MainPage.IconImageSource>
+            <xamForms:SvgImageSource Svg="res:images.intertwingly" Height="50" />
+        </demo:MainPage.IconImageSource>
+    </demo:MainPage>
+
+    <demo:Page2 Title="Animation">
+        <demo:Page2.IconImageSource>
+            <xamForms:SvgImageSource Svg="res:images.0GoldMirror" Height="50" PreventTintOnIos="True" />
+        </demo:Page2.IconImageSource>
+    </demo:Page2>
+
 </TabbedPage>

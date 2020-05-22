@@ -1,31 +1,14 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Reflection;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Navigation;
-using Xamarin.Forms;
-using XamSvg.Demo.Uw;
-using XamSvg.Shared;
 using Application = Windows.UI.Xaml.Application;
 using Frame = Windows.UI.Xaml.Controls.Frame;
 
-[assembly: Dependency(typeof(SvgLogger))]
-
 namespace XamSvg.Demo.Uw
 {
-    class SvgLogger : ILogger
-    {
-        public bool TraceEnabled { get; set; } = true;
-
-        public void Trace(Func<string> s, bool traceEnabled = true, string method = null, int lineNumber = 0)
-        {
-            if(TraceEnabled && traceEnabled)
-                Debug.WriteLine($"SvgTrace {method}:{lineNumber}: {s()}");
-        }
-    }
-
     sealed partial class App : Application
     {
         public App()
@@ -50,14 +33,9 @@ namespace XamSvg.Demo.Uw
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 #region XamSvg init
-                //Initialize xamsvg for forms
-                XamSvg.XamForms.Uw.SvgImageRenderer.InitializeForms();
-
                 //Tells XamSvg in which assembly to search for svg when "res:" is used
                 //XamSvg.Shared.Config.ResourceAssemblies = new List<Assembly> { typeof(App).GetTypeInfo().Assembly };
                 XamSvg.Shared.Config.ResourceAssembly = typeof(App).GetTypeInfo().Assembly;
-
-                XamSvg.Shared.Config.NativeLogger = new SvgLogger();
                 #endregion
 
                 Xamarin.Forms.Forms.Init(e);
