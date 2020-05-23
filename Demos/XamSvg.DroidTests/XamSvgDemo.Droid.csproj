@@ -131,7 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Vapolia.Xamarin.Svg">
-      <Version>3.2.1-pre9</Version>
+      <Version>3.2.2-pre2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.Constraint.Layout">
       <Version>1.1.2</Version>
