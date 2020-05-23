@@ -18,7 +18,7 @@ SvgPictureDrawable
 Xamarin iOS controls:  
 UISvgImageView
 
-Xamarin UWP controls:   
+Native UWP controls:   
 Svg
 
 # Quick start for Xamarin Forms
