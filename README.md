@@ -1,4 +1,4 @@
-# Samples for XamSvg enterprise cross platform and full featured Svg image control
+# Samples for the Xamarin Svg enterprise cross platform and full featured Svg image control
 This repository holds the samples for the XamSvg Xamarin control.
 
 | Xamarin.Forms (Android, iOS, UWP) | Xamarin Native (Android, iOS, UWP) |
