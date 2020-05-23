@@ -7,8 +7,19 @@ This repository holds the samples for the XamSvg Xamarin control.
 | [![][xamsvglivedemo-img]][xamsvglivedemo-link] | [![][xamsvglivedemo-img]][xamsvglivedemo-link]
 | [![][formsdemo-img]][formsdemo-link] | [![][formsdemo-img]][demo-link]
 
-# Animating SVG images
-The xamarin Forms project contains a code demonstrating an animated svg ring. This code works on all platforms: android, ios and universal windows and does not depend on any custom renderer. It is fully contained in the portable Forms project. Check the [RingProgress control](https://github.com/softlion/XamSvg-Samples/blob/master/Demos/XamSvg.XamFormsDemo/XamSvg.Demo/Controls/RingProgress.cs)
+Xamarin Forms controls:  
+SvgImageSource
+SvgImage
+
+Xamarin Android controls:  
+SvgImageView  
+SvgPictureDrawable
+
+Xamarin iOS controls:  
+UISvgImageView
+
+Xamarin UWP controls:   
+Svg
 
 # Quick start for Xamarin Forms
 
