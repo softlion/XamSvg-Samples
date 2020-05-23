@@ -8,7 +8,7 @@ This repository holds the samples for the XamSvg Xamarin control.
 | [![][formsdemo-img]][formsdemo-link] | [![][formsdemo-img]][demo-link]
 
 Xamarin Forms controls:  
-SvgImageSource
+SvgImageSource  
 SvgImage
 
 Xamarin Android controls:  
