@@ -8,18 +8,20 @@ This repository holds the samples for the XamSvg Xamarin control.
 | [![][formsdemo-img]][formsdemo-link] | [![][formsdemo-img]][demo-link]
 
 Xamarin Forms controls:  
-SvgImageSource  
-SvgImage
+`SvgImageSource`  
+`SvgImage`
 
 Xamarin Android controls:  
-SvgImageView  
-SvgPictureDrawable
+`SvgImageView`  
+`SvgPictureDrawable`
 
 Xamarin iOS controls:  
-UISvgImageView
+`UISvgImageView`
 
 Native UWP controls:   
-Svg
+`Svg`
+
+[More infos](https://vapolia.eu)
 
 # Quick start for Xamarin Forms
 
@@ -333,15 +335,6 @@ FillWidth | number | 0 | The width the svg would like to have. 0 to let the OS d
 FillHeight | number | 0 | The height the svg would like to have. 0 to let the OS decides using UI constraints or Frame value.
 
 `UIImageView.ContentMode` is forced by `UISvgImageView`, so it has no impact. Use `FillMode` instead.
-
-# Release notes
-3.1.1  
-ios: supports SvgFillMode.FitCrop in FillMode property 
-ios: fix small pixellization (MainScale not used) 
-ios: fix AlignmentMode property not working as expected when svg bounds don't start at (0,0)
-
-3.1.0
-android: supports fit_crop
 
 [xamsvg-img]: https://img.shields.io/nuget/vpre/Vapolia.Xamarin.Svg
 [xamsvg-link]: https://www.nuget.org/packages/Vapolia.Xamarin.Svg
