@@ -219,7 +219,8 @@ toolbar.NavigationIcon = SvgFactory.GetDrawable("res:images.webbrowser.backward"
 
 **Android**: link all
 
-If you set the android linker to "link all", add these lines to your linker.xml file:
+This component is compatible with the "link all" linker option which reduces you app size by removing unused classes, properties and methods.  
+If you set the android linker to "link all", add these lines to the  linker.xml file of your android application project:
 
 ```xml
   <assembly fullname="System.IdentityModel.Tokens.Jwt" preserve="all">
@@ -229,6 +230,8 @@ If you set the android linker to "link all", add these lines to your linker.xml 
     <type fullname="Microsoft.IdentityModel.Tokens.JsonWebKey" preserve="all" />
   </assembly>
 ```
+
+This is required because the xamarin tooling does not use linker.xml files from android libraries.
 
 **iOS storyboard**: usage in an xcode storyboard
 
