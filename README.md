@@ -217,6 +217,19 @@ var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
 toolbar.NavigationIcon = SvgFactory.GetDrawable("res:images.webbrowser.backward", "000000=FFFFFF");
 ```
 
+**Android**: link all
+
+If you set the android linker to "link all", add these lines to your linker.xml file:
+
+```xml
+  <assembly fullname="System.IdentityModel.Tokens.Jwt" preserve="all">
+    <type fullname="System.IdentityModel.Tokens.JwtSecurityToken" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.IdentityModel.Tokens" preserve="all">
+    <type fullname="Microsoft.IdentityModel.Tokens.JsonWebKey" preserve="all" />
+  </assembly>
+```
+
 **iOS storyboard**: usage in an xcode storyboard
 
 Using Visual Studio Mac, open your storyboard file using `Open with xcode`. Add an Image view (UIImageView), set its custcom `Class` property to `UISvgImageView`, and optionally add new `User Defined Runtime Attributes` as required:
