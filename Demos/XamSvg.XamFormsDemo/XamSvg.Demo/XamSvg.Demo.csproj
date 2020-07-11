@@ -50,8 +50,8 @@
     <EmbeddedResource Include="images\verticalGradientWithTransform.svg" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Vapolia.Xamarin.Svg.Forms" Version="3.2.2-pre2" />
+    <PackageReference Include="Vapolia.Xamarin.Svg.Forms" Version="3.2.6" />
     <PackageReference Include="Vapolia.XamarinFormsGesture" Version="3.2.3" />
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.800" />
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1080" />
   </ItemGroup>
 </Project>
