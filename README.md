@@ -1,5 +1,5 @@
 # Samples for the Xamarin Svg enterprise cross platform and full featured Svg image control
-This repository holds the samples for the XamSvg Xamarin control.
+This repository holds the samples for the XamSvg Xamarin control (Vapolia.Xamarin.Svg.Forms and Vapolia.Xamarin.Svg for UWP, Android and iOS).
 
 | Xamarin.Forms (Android, iOS, UWP) | Xamarin Native (Android, iOS, UWP) |
 |:-------------:|:-------:|
@@ -362,3 +362,7 @@ FillHeight | number | 0 | The height the svg would like to have. 0 to let the OS
 [formsdemo-img]: https://img.shields.io/badge/demo-source%20code-lightgrey.svg
 [formsdemo-link]: https://github.com/softlion/XamSvg-Samples/tree/master/Demos/XamSvg.XamFormsDemo
 [demo-link]: https://github.com/softlion/XamSvg-Samples/tree/master/Demos/
+
+## More infos
+
+[More infos](https://vapolia.eu)
