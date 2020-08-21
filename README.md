@@ -299,6 +299,8 @@ ViewportTransform | IMatrix | transform the svg using any matrix before displayi
 `SvgImageSource` inherits from `ImageSource`, use it on any `ImageSource` property. For example `Page.IconImageSource`.
 It can also be transformed into a `FileImageSource` by calling `CreateFileImageSource()`.
 
+SvgImageSource can be used in Button.ImageSource, ToolbarItem.IconImageSource, ...
+
 ```xml
 <svg:SvgImageSource Svg="res:images.tabHome" Height="50" />
 ```
@@ -313,8 +315,30 @@ SvgFillMode | FillMode | Fit, Fill, Crop. Useful only if both width and height a
 PreventTintOnIos | bool | Default to false. Prevents tinting on iOS, thus always displaying the original image.
 
 All properties are bindable, but Xamarin Forms does not support changing them after the control using this SvgImageSource is rendered.
+Alternatively, you can bind the ImageSource property on the target control, and define SvgImageSource in styles.
+Example:
+```xml
+    <svg:SvgImageSource x:Key="NormalIcon" Svg="res:resources.images.icon_normal" Height="80" />
+    <svg:SvgImageSource x:Key="SelectedIcon" Svg="res:resources.images.icon_selected" Height="80" ColorMapping="FFF=000" />
 
-SvgImageSource can be used in Button.ImageSource, ToolbarItem.IconImageSource, ...
+    <Style x:Key="NormalIconStyle" TargetType="ImageButton">
+      <Setter Property="Source" Value="{StaticResource NormalIcon}"/>
+      <Setter Property="BackgroundColor" Value="Transparent"/>
+    </Style>
+
+    <Style x:Key="SelectedIconStyle" TargetType="ImageButton">
+      <Setter Property="Source" Value="{StaticResource SelectedIcon}"/>
+      <Setter Property="BackgroundColor" Value="Transparent"/>
+   </Style>
+```
+And usage:
+```xml
+    <ImageButton Style="{Binding StyleKeyToUse}" />
+```
+```csharp
+     public string StyleKeyToUse {get;set;} = "NormalIconStyle"; 
+     //Don't forget to call OnPropertyChanged(nameof(StyleKeyToUse)) after each change.
+```
 
 ## Android native
 
