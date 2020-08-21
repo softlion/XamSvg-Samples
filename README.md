@@ -312,6 +312,10 @@ ColorMapping | string | Optional. See color mapping reference.
 SvgFillMode | FillMode | Fit, Fill, Crop. Useful only if both width and height are forced. Default to Fit to maintain the aspect ratio.
 PreventTintOnIos | bool | Default to false. Prevents tinting on iOS, thus always displaying the original image.
 
+All properties are bindable, but Xamarin Forms does not support changing them after the control using this SvgImageSource is rendered.
+
+SvgImageSource can be used in Button.ImageSource, ToolbarItem.IconImageSource, ...
+
 ## Android native
 
 Layout properties:
