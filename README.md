@@ -25,29 +25,12 @@ Native UWP controls:
 
 # Quick start for Xamarin Forms
 
-1. Tell XamSvg where to search for svg files
-
-Svg files will be stored as embedded resources. To access an embedded resource the code needs the full assembly path of this resource. To make this process easier, you tell XamSvg in which assembly to search for the resources and you don't specify the full path of the svg file in the Svg control.
-
-```csharp
-public class App : Application
-{
-    public App()
-    {
-        XamSvg.Shared.Config.ResourceAssembly = typeof(App).Assembly;
-        ...
-    }
-...
-```
-
-Trick: you can add more than one assembly by using the `ResourceAssemblies` property instead.
-
-2. Add your svg files  
+1. Add some svg files  
 
 Create a folder "images" at the root of your netstandard project (the project containing the `App.cs` file) and put your svg files there.   
-Make sure they have the `.svg` extension. And set their build action type to `embedded resource` (important!).
+Make sure they have the `.svg` extension. And set their build action type to `embedded resource` (important!) in the file property window.
 
-3. Use an `SvgImage` control
+2. Use the `SvgImage` control
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -80,6 +63,9 @@ Another scheme `string:` can be used to load an inline svg. Simply put the svg s
 [![image.png](https://i.postimg.cc/Kzj346tM/image.png)](https://postimg.cc/7GvZWQsH)
 
 5. Enjoy
+
+trick: You can also use `<SvgImageSource Svg="...." Height="50" />` as the ImageSource for tab icons.
+
 
 # Color Mapping
 
@@ -391,6 +377,26 @@ FillHeight | number | 0 | The height the svg would like to have. 0 to let the OS
 [formsdemo-link]: https://github.com/softlion/XamSvg-Samples/tree/master/Demos/XamSvg.XamFormsDemo
 [demo-link]: https://github.com/softlion/XamSvg-Samples/tree/master/Demos/
 
+
+## Advanced configuration
+
+The svg files that don't specify the full path of an assembly are searched in the embedded resources of all loaded assemblies automatically. If you have late loading assemblies that are not detected, or if you prefer to manually specify the assemblies, add this line:
+
+```csharp
+public class App : Application
+{
+    public App()
+    {
+        XamSvg.Shared.Config.ResourceAssembly = typeof(App).Assembly;
+        ...
+    }
+...
+```
+
+Trick: you can add more than one assembly by using the `ResourceAssemblies` property instead.
+
 ## More infos
 
 [More infos](https://vapolia.eu)
+
+Commercial support available.
