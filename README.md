@@ -23,6 +23,12 @@ Native UWP controls:
 
 [More infos](https://vapolia.eu)
 
+# Upcoming changes
+
+* Simplification: the "res:" prefix is now the default protocol and is not needed anymore.
+* Simplification: Setting ResourceAssembly/ResourceAssemblies is now optional.
+* New features: interaction on the SVG including tap (or any other gesture) zone detection. Upcoming demo with zone highlightning and TappedZoneId event.
+
 # Quick start for Xamarin Forms
 
 1. Add some svg files  
