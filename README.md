@@ -3,9 +3,11 @@ This repository holds the samples for the XamSvg Xamarin control (Vapolia.Xamari
 
 | Xamarin.Forms (Android, iOS, UWP) | Xamarin Native (Android, iOS, UWP) |
 |:-------------:|:-------:|
-| [![NuGet][forms-img]][forms-link] | [![NuGet][xamsvg-img]][xamsvg-link]
+| [![NuGet][forms-img]][forms-link] ![Nuget](https://img.shields.io/nuget/dt/Vapolia.Xamarin.Svg.Forms) | [![NuGet][xamsvg-img]][xamsvg-link] ![Nuget](https://img.shields.io/nuget/dt/Vapolia.Xamarin.Svg)
 | [![][xamsvglivedemo-img]][xamsvglivedemo-link] | [![][xamsvglivedemo-img]][xamsvglivedemo-link]
 | [![][formsdemo-img]][formsdemo-link] | [![][formsdemo-img]][demo-link]
+
+
 
 Xamarin Forms controls:  
 `SvgImageSource`  
