@@ -25,10 +25,14 @@ Native UWP controls:
 
 [More infos](https://vapolia.eu)
 
-# Upcoming changes
+# Changes in the prerelease nuget
 
 * Simplification: the "res:" prefix is now the default protocol and is not needed anymore.
 * Simplification: Setting ResourceAssembly/ResourceAssemblies is now optional.
+
+Coming soon (state: packing for release):
+
+* ColorMapping and ColorMappingSelected can accept standard colors from styles.
 * New features: interaction on the SVG including tap (or any other gesture) zone detection. Upcoming demo with zone highlightning and TappedZoneId event.
 
 # Quick start for Xamarin Forms
@@ -49,13 +53,17 @@ Make sure they have the `.svg` extension. And set their build action type to `em
   <ContentView>
     <StackLayout Orientation="Vertical" VerticalOptions="Start">
 
-        <svg:SvgImage Svg="res:images.logo" HorizontalOptions="Start" HeighRequest="32" />
+        <svg:SvgImage Source="logo.svg" HorizontalOptions="Start" HeighRequest="32" />
 
-        <svg:SvgImage Svg="res:images.logo" HorizontalOptions="Start" HeighRequest="32"
+        <svg:SvgImage Source="logo.svg" HorizontalOptions="Start" HeighRequest="32"
                       ColorMapping="{Binding ColorMapping}" 
                       ColorMappingSelected="ffffff=00ff00;000000=0000FF" 
                       />
+      
+        <svg:SvgImage WidthRequest="100" Source="https://upload.wikimedia.org/wikipedia/commons/1/15/Svg.svg" />
 
+        <svg:SvgImage WidthRequest="100" Source="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlb..." />
+      
     </StackLayout>
   </ContentView>
 </ContentPage>
@@ -63,16 +71,14 @@ Make sure they have the `.svg` extension. And set their build action type to `em
 
 Remarks:
 * The `xmlns:svg` attribute is required on the `ContentPage`. If you use Resharper, it will be added automagically.
-* The Svg property value is the image name. It is prefixed with `res:` (which means the svg file is searched in embedded resources), its extension (.svg) is optional. `images` is the folder in which you put the svg file.
+* The Source property value is the image name. It is searched in all embedded resources across loaded assemblies.
 * All properties are bindable.
-
-Another scheme `string:` can be used to load an inline svg. Simply put the svg string after `string:`.
 
 [![image.png](https://i.postimg.cc/Kzj346tM/image.png)](https://postimg.cc/7GvZWQsH)
 
 5. Enjoy
 
-trick: You can also use `<SvgImageSource Svg="...." Height="50" />` as the ImageSource for tab icons.
+trick: You can also use `<SvgImageSource Svg="...." Height="50" />` as the ImageSource for tab icons, button icons, navigation bar icons, ... But the Widht and/or Height is mandatory, as the Xamarin Forms controls infrastructure has a limitation: it has no way to dynamically give the target height to ImageSource objects.
 
 
 # Color Mapping
