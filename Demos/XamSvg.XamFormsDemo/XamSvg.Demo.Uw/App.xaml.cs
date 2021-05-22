@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Reflection;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Navigation;
+using XamSvg.XamForms.Uw;
 using Application = Windows.UI.Xaml.Application;
 using Frame = Windows.UI.Xaml.Controls.Frame;
 
@@ -31,12 +31,6 @@ namespace XamSvg.Demo.Uw
             {
                 rootFrame = new Frame();
                 rootFrame.NavigationFailed += OnNavigationFailed;
-
-                #region XamSvg init
-                //Tells XamSvg in which assembly to search for svg when "res:" is used
-                //XamSvg.Shared.Config.ResourceAssemblies = new List<Assembly> { typeof(App).GetTypeInfo().Assembly };
-                XamSvg.Shared.Config.ResourceAssembly = typeof(App).GetTypeInfo().Assembly;
-                #endregion
 
                 Xamarin.Forms.Forms.Init(e);
 

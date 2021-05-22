@@ -3,20 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:demo="clr-namespace:XamSvg.Demo;assembly=XamSvg.Demo"
              xmlns:xamForms="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
+             xmlns:pages="clr-namespace:XamSvg.Demo.Pages;assembly=XamSvg.Demo"
              x:Class="XamSvg.Demo.Pages.TabContainer"
              Title="Vapolia.fr XamSvg Demo"
             >
 
     <demo:MainPage Title="Slideshow">
         <demo:MainPage.IconImageSource>
-            <xamForms:SvgImageSource Svg="res:images.intertwingly" Height="50" />
+            <xamForms:SvgImageSource Svg="res:images.tabHome" Height="50" />
         </demo:MainPage.IconImageSource>
     </demo:MainPage>
-
+    
     <demo:Page2 Title="Animation">
-        <demo:Page2.IconImageSource>
-            <xamForms:SvgImageSource Svg="res:images.0GoldMirror" Height="50" PreventTintOnIos="True" />
-        </demo:Page2.IconImageSource>
+        <Page.IconImageSource>
+            <xamForms:SvgImageSource Svg="res:images.0GoldMirror" Height="50" PreventTintOnIos="True" />    
+        </Page.IconImageSource>
     </demo:Page2>
 
 </TabbedPage>

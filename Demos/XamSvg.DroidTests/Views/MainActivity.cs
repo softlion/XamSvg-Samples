@@ -1,11 +1,14 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Android.App;
 using Android.OS;
 using Android.Support.Design.Widget;
+using Android.Text;
 using Android.Util;
 using Android.Widget;
+using Java.Lang;
 using XamSvg;
 using XamSvgDemo.Shared;
 
@@ -21,12 +24,12 @@ namespace XamSvgTests
             var ok = (Application.ApplicationInfo.Flags & Android.Content.PM.ApplicationInfoFlags.SupportsRtl) != 0;
 
             //Initialize the cross platform color helper
+            Setup.InitSvgLib();
             XamSvg.Shared.Config.License = "eyJhbGciOiJSUzI1NiIsImtpZCI6InZhcG9saWFzaWciLCJ0eXAiOiJKV1QifQ.eyJodHRwczovL3NjaGVtYXMudmFwb2xpYS5ldS8yMDIwLzA1L2NsYWltcy9MaWNlbnNlc0NsYWltIjoie1wiTGljZW5zZXNcIjpbe1wiUHJvZHVjdFwiOlwieGFtc3ZnXCIsXCJPc1wiOlwiaW9zXCIsXCJBcHBJZFwiOlwiZnIudmFwb2xpYS5zdmd0ZXN0XCIsXCJNYXhCdWlsZFwiOlwiMjAyMS0wNy0xMFQxMjo1MTo1MC42MTU3MTg2KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcInhhbXN2Z1wiLFwiT3NcIjpcImFuZHJvaWRcIixcIkFwcElkXCI6XCJmci52YXBvbGlhLnN2Z3Rlc3RcIixcIk1heEJ1aWxkXCI6XCIyMDIxLTA3LTEwVDEyOjUxOjUwLjYxNTcxODYrMDI6MDBcIn0se1wiUHJvZHVjdFwiOlwieGFtc3ZnXCIsXCJPc1wiOlwidXdwXCIsXCJBcHBJZFwiOlwiZnIudmFwb2xpYS5zdmd0ZXN0XCIsXCJNYXhCdWlsZFwiOlwiMjAyMS0wNy0xMFQxMjo1MTo1MC42MTU3MTg2KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcInhhbXN2Z2Zvcm1zXCIsXCJPc1wiOlwiaW9zXCIsXCJBcHBJZFwiOlwiZnIudmFwb2xpYS5zdmd0ZXN0XCIsXCJNYXhCdWlsZFwiOlwiMjAyMS0wNy0xMFQxMjo1MTo1MC42MTU3MTg2KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcInhhbXN2Z2Zvcm1zXCIsXCJPc1wiOlwiYW5kcm9pZFwiLFwiQXBwSWRcIjpcImZyLnZhcG9saWEuc3ZndGVzdFwiLFwiTWF4QnVpbGRcIjpcIjIwMjEtMDctMTBUMTI6NTE6NTAuNjE1NzE4NiswMjowMFwifSx7XCJQcm9kdWN0XCI6XCJ4YW1zdmdmb3Jtc1wiLFwiT3NcIjpcInV3cFwiLFwiQXBwSWRcIjpcImZyLnZhcG9saWEuc3ZndGVzdFwiLFwiTWF4QnVpbGRcIjpcIjIwMjEtMDctMTBUMTI6NTE6NTAuNjE1NzE4NiswMjowMFwifSx7XCJQcm9kdWN0XCI6XCJ4YW1zdmdcIixcIk9zXCI6XCJpb3NcIixcIkFwcElkXCI6XCJmci52YXBvbGlhLnN2Z2Zvcm10ZXN0XCIsXCJNYXhCdWlsZFwiOlwiMjAyMS0wNy0xMFQxMjo1MTo1MC42MTU3MTg2KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcInhhbXN2Z1wiLFwiT3NcIjpcImFuZHJvaWRcIixcIkFwcElkXCI6XCJmci52YXBvbGlhLnN2Z2Zvcm10ZXN0XCIsXCJNYXhCdWlsZFwiOlwiMjAyMS0wNy0xMFQxMjo1MTo1MC42MTU3MTg2KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcInhhbXN2Z1wiLFwiT3NcIjpcInV3cFwiLFwiQXBwSWRcIjpcImZyLnZhcG9saWEuc3ZnZm9ybXRlc3RcIixcIk1heEJ1aWxkXCI6XCIyMDIxLTA3LTEwVDEyOjUxOjUwLjYxNTcxODYrMDI6MDBcIn0se1wiUHJvZHVjdFwiOlwieGFtc3ZnZm9ybXNcIixcIk9zXCI6XCJpb3NcIixcIkFwcElkXCI6XCJmci52YXBvbGlhLnN2Z2Zvcm10ZXN0XCIsXCJNYXhCdWlsZFwiOlwiMjAyMS0wNy0xMFQxMjo1MTo1MC42MTU3MTg2KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcInhhbXN2Z2Zvcm1zXCIsXCJPc1wiOlwiYW5kcm9pZFwiLFwiQXBwSWRcIjpcImZyLnZhcG9saWEuc3ZnZm9ybXRlc3RcIixcIk1heEJ1aWxkXCI6XCIyMDIxLTA3LTEwVDEyOjUxOjUwLjYxNTcxODYrMDI6MDBcIn0se1wiUHJvZHVjdFwiOlwieGFtc3ZnZm9ybXNcIixcIk9zXCI6XCJ1d3BcIixcIkFwcElkXCI6XCJmci52YXBvbGlhLnN2Z2Zvcm10ZXN0XCIsXCJNYXhCdWlsZFwiOlwiMjAyMS0wNy0xMFQxMjo1MTo1MC42MTU3MTg2KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcInhhbXN2Z1wiLFwiT3NcIjpcImlvc1wiLFwiQXBwSWRcIjpcInhhbXN2Zy5kcm9pZC50ZXN0c1wiLFwiTWF4QnVpbGRcIjpcIjIwMjEtMDctMTBUMTI6NTE6NTAuNjE1NzE4NiswMjowMFwifSx7XCJQcm9kdWN0XCI6XCJ4YW1zdmdcIixcIk9zXCI6XCJhbmRyb2lkXCIsXCJBcHBJZFwiOlwieGFtc3ZnLmRyb2lkLnRlc3RzXCIsXCJNYXhCdWlsZFwiOlwiMjAyMS0wNy0xMFQxMjo1MTo1MC42MTU3MTg2KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcInhhbXN2Z1wiLFwiT3NcIjpcInV3cFwiLFwiQXBwSWRcIjpcInhhbXN2Zy5kcm9pZC50ZXN0c1wiLFwiTWF4QnVpbGRcIjpcIjIwMjEtMDctMTBUMTI6NTE6NTAuNjE1NzE4NiswMjowMFwifSx7XCJQcm9kdWN0XCI6XCJ4YW1zdmdmb3Jtc1wiLFwiT3NcIjpcImlvc1wiLFwiQXBwSWRcIjpcInhhbXN2Zy5kcm9pZC50ZXN0c1wiLFwiTWF4QnVpbGRcIjpcIjIwMjEtMDctMTBUMTI6NTE6NTAuNjE1NzE4NiswMjowMFwifSx7XCJQcm9kdWN0XCI6XCJ4YW1zdmdmb3Jtc1wiLFwiT3NcIjpcImFuZHJvaWRcIixcIkFwcElkXCI6XCJ4YW1zdmcuZHJvaWQudGVzdHNcIixcIk1heEJ1aWxkXCI6XCIyMDIxLTA3LTEwVDEyOjUxOjUwLjYxNTcxODYrMDI6MDBcIn0se1wiUHJvZHVjdFwiOlwieGFtc3ZnZm9ybXNcIixcIk9zXCI6XCJ1d3BcIixcIkFwcElkXCI6XCJ4YW1zdmcuZHJvaWQudGVzdHNcIixcIk1heEJ1aWxkXCI6XCIyMDIxLTA3LTEwVDEyOjUxOjUwLjYxNTcxODYrMDI6MDBcIn0se1wiUHJvZHVjdFwiOlwieGFtc3ZnXCIsXCJPc1wiOlwiaW9zXCIsXCJBcHBJZFwiOlwiWGFtU3ZnLkRlbW8uRHJvaWRcIixcIk1heEJ1aWxkXCI6XCIyMDIxLTA3LTEwVDEyOjUxOjUwLjYxNTcxODYrMDI6MDBcIn0se1wiUHJvZHVjdFwiOlwieGFtc3ZnXCIsXCJPc1wiOlwiYW5kcm9pZFwiLFwiQXBwSWRcIjpcIlhhbVN2Zy5EZW1vLkRyb2lkXCIsXCJNYXhCdWlsZFwiOlwiMjAyMS0wNy0xMFQxMjo1MTo1MC42MTU3MTg2KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcInhhbXN2Z1wiLFwiT3NcIjpcInV3cFwiLFwiQXBwSWRcIjpcIlhhbVN2Zy5EZW1vLkRyb2lkXCIsXCJNYXhCdWlsZFwiOlwiMjAyMS0wNy0xMFQxMjo1MTo1MC42MTU3MTg2KzAyOjAwXCJ9LHtcIlByb2R1Y3RcIjpcInhhbXN2Z2Zvcm1zXCIsXCJPc1wiOlwiaW9zXCIsXCJBcHBJZFwiOlwiWGFtU3ZnLkRlbW8uRHJvaWRcIixcIk1heEJ1aWxkXCI6XCIyMDIxLTA3LTEwVDEyOjUxOjUwLjYxNTcxODYrMDI6MDBcIn0se1wiUHJvZHVjdFwiOlwieGFtc3ZnZm9ybXNcIixcIk9zXCI6XCJhbmRyb2lkXCIsXCJBcHBJZFwiOlwiWGFtU3ZnLkRlbW8uRHJvaWRcIixcIk1heEJ1aWxkXCI6XCIyMDIxLTA3LTEwVDEyOjUxOjUwLjYxNTcxODYrMDI6MDBcIn0se1wiUHJvZHVjdFwiOlwieGFtc3ZnZm9ybXNcIixcIk9zXCI6XCJ1d3BcIixcIkFwcElkXCI6XCJYYW1TdmcuRGVtby5Ecm9pZFwiLFwiTWF4QnVpbGRcIjpcIjIwMjEtMDctMTBUMTI6NTE6NTAuNjE1NzE4NiswMjowMFwifV19IiwibmJmIjoxNTk0Mzc4MzEwLCJleHAiOjE5MDk5MTExMTAsImlhdCI6MTU5NDM3ODMxMCwiaXNzIjoiaHR0cHM6Ly92YXBvbGlhLmV1L2F1dGhvcml0eSIsImF1ZCI6Imh0dHBzOi8vdmFwb2xpYS5ldS9hdXRob3JpdHkvbGljZW5zZXMifQ.FQbOEycOVjIEvMDWE2ZsfXRXo_yaDPEA4IHXqCKlpA9eHVwdj1B9wKjp-oMGWIaUw0ugHbgRAMWNXlQM30vWn5mGcqoDI_ANRyM7uQkgQ_ox_Wc9gZPXqcyM59NZnOAVBI8XjSPf6JvTStpXsjVu4I7IiP6U1TiOwVWeRO6_WqSOPbnpKXXO4DI8veAvNfeYPfBCyxCeASsewtBvY9sYbjKhYDbpbry-zrOZ8ayj178ewQ1lgeGROyArEjt9vhmeOGp0WFIM_THuiQ9oZXFf5tw54ImIuTKmfoM3yryBfVvGKhSkGfhTaC5u5ZuVPrsDLPgHDPiiXQrXknnhsSV5sg";
-	        Setup.InitSvgLib();
 
             //Tells XamSvg in which assembly to search for svg when "res:" is used
             var assembly = typeof (App).GetTypeInfo().Assembly;
-            XamSvg.Shared.Config.ResourceAssembly = assembly;
+            XamSvg.Shared.Config.AddResourceAssembly(assembly);
             //You can also set a list of assemblies
             //XamSvg.Shared.Config.ResourceAssemblies = new List<Assembly> { assembly };
 
@@ -49,17 +52,17 @@ namespace XamSvgTests
             var svg = FindViewById<SvgImageView>(Resource.Id.icon);
 
 	        void NextImage(object sender, EventArgs e)
-            {
-                if (index < svgShared.Count)
-                {
-                    Log.Debug("svg", "displaying res:" + svgShared[index]);
-                    svg.Svg = "res:" + svgShared[index];
-                }
-                else
-                {
-                    Log.Debug("svg", "displaying raw/" + rawIds[index - svgShared.Count].Item2);
-                    svg.SetSvg(this, rawIds[index - svgShared.Count].Item1);
-                }
+	        {
+	            if (index < svgShared.Count)
+	            {
+	                Log.Debug("svg", "displaying res:" + svgShared[index]);
+	                svg.Svg = "res:" + svgShared[index];
+	            }
+	            else
+	            {
+	                Log.Debug("svg", "displaying raw/" + rawIds[index - svgShared.Count].Item2);
+	                svg.SetSvg(rawIds[index - svgShared.Count].Item1);
+	            }
 
 	            index = (++index) % (rawIds.Count + svgShared.Count);
 	        }

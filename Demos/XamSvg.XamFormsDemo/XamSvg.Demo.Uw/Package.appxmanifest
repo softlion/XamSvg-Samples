@@ -7,7 +7,7 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="fr.vapolia.svgtest"
+    Name="fr.vapolia.svgformtest"
     Publisher="CN=benjamin"
     Version="1.0.0.0" />
 

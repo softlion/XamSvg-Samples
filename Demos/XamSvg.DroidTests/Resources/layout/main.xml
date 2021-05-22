@@ -284,19 +284,19 @@
         </LinearLayout>
 
         <!-- tab bar -->
-        <android.support.design.widget.AppBarLayout
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
             android:layout_gravity="bottom"
             >
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <android.support.design.widget.TabLayout
+                <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tabs"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/design_bottom_navigation_height"
                     app:tabIndicator="@null"
                     />
                 <View
@@ -305,7 +305,7 @@
                     android:background="#353c47"
                     app:layout_constraintTop_toTopOf="@id/tabs"
                     />
-            </android.support.constraint.ConstraintLayout>
-        </android.support.design.widget.AppBarLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.AppBarLayout>
     </LinearLayout>
 </FrameLayout>

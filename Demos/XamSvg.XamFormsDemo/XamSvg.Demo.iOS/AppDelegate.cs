@@ -3,7 +3,6 @@ using Foundation;
 using UIKit;
 using Vapolia.Ios.Lib.Effects;
 using Xamarin.Forms;
-using XamSvg.XamForms.iOS;
 
 namespace XamSvg.Demo.iOS
 {
@@ -13,10 +12,10 @@ namespace XamSvg.Demo.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             //To be registered by Xamarin Forms, assemblies containing xamarin forms plugins have to be loaded before Forms.Init()
-            SvgImageRenderer.InitializeForms();
             PlatformGestureEffect.Init();
 
             global::Xamarin.Forms.Forms.Init();
+            XF.Material.iOS.Material.Init();
 
             LoadApplication(new App());
             HandleNotifications(options);

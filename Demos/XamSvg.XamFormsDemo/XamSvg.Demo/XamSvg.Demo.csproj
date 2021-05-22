@@ -1,7 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>Latest</LangVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="PropertyChanged.Fody" Version="3.3.3" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.2" />
+    <PackageReference Include="Vapolia.Xamarin.Svg.Forms" Version="4.0.2" />
+    <PackageReference Include="Vapolia.XamarinFormsGesture" Version="3.3.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="XF.Material" Version="1.7.8" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="images\bike.svg" />
     <EmbeddedResource Include="images\bike_separator.svg" />
@@ -14,6 +23,7 @@
     <EmbeddedResource Include="images\star_depressed.svg" />
     <EmbeddedResource Include="images\star_off.svg" />
     <EmbeddedResource Include="images\star_on.svg" />
+    <EmbeddedResource Include="images\tabHome.svg" />
     <EmbeddedResource Include="images\tiger.svg" />
     <EmbeddedResource Include="images\templates\ring.svg" />
     <EmbeddedResource Include="images\scimitar.svg" />
@@ -38,20 +48,16 @@
     <EmbeddedResource Include="images\CercleDegrade.svg" />
     <EmbeddedResource Include="images\0GoldMirror.svg" />
     <EmbeddedResource Include="images\0Nineball.svg" />
-    <EmbeddedResource Include="images\loupe.svg" />
-    <EmbeddedResource Include="images\menu_home.svg" />
-    <EmbeddedResource Include="images\greyCircle.svg" />
-    <EmbeddedResource Include="images\arcElliptic.svg" />
-    <EmbeddedResource Include="images\calStripes.svg" />
-    <EmbeddedResource Include="images\car2.svg" />
-    <EmbeddedResource Include="images\DisqueGris.svg" />
-    <EmbeddedResource Include="images\intertwingly.svg" />
-    <EmbeddedResource Include="images\LeftGradient.svg" />
     <EmbeddedResource Include="images\verticalGradientWithTransform.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Vapolia.Xamarin.Svg.Forms" Version="3.2.6" />
-    <PackageReference Include="Vapolia.XamarinFormsGesture" Version="3.2.3" />
-    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1080" />
+    <EmbeddedResource Include="images\car2.svg" />
+    <EmbeddedResource Include="images\LeftGradient.svg" />
+    <EmbeddedResource Include="images\intertwingly.svg" />
+    <EmbeddedResource Include="images\calStripes.svg" />
+    <EmbeddedResource Include="images\arcElliptic.svg" />
+    <EmbeddedResource Include="images\greyCircle.svg" />
+    <EmbeddedResource Include="images\loupe.svg" />
+    <EmbeddedResource Include="images\facebook.svg" />
+    <EmbeddedResource Include="images\menu_home.svg" />
+    <EmbeddedResource Include="images\DisqueGris.svg" />
   </ItemGroup>
 </Project>

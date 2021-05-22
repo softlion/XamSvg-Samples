@@ -37,6 +37,8 @@
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchFloat32>true</MtouchFloat32>
+    <MtouchExtraArgs>
+    </MtouchExtraArgs>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
@@ -199,7 +201,7 @@
   <ItemGroup>
     <PackageReference Include="Cirrious.FluentLayout" Version="2.9.0" />
     <PackageReference Include="Vapolia.Xamarin.Svg">
-      <Version>3.2.6</Version>
+      <Version>4.0.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

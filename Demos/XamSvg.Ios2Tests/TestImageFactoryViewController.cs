@@ -29,7 +29,8 @@ namespace XamSvg.Ios2Tests
 		    TheImage.ContentMode = UIViewContentMode.ScaleAspectFit;
 
 		    //Test CGImage to UIImage cut
-		    var bounds = SvgFactory.GetBounds("res:images.cosmo", 0, TheImage.Bounds.Width, SvgFillMode.Fill);
+		    var bounds = SvgFactory.GetBounds("res:images.cosmo", 0, TheImage.Bounds.Width, SvgFillMode.Fill)
+                .GetAwaiter().GetResult();
             var image = SvgFactory.FromBundle("res:images.cosmo", 0, TheImage.Bounds.Width);
 		    TheImage.Image = image;
 

@@ -10,8 +10,10 @@
     app:colorMapping="ffb9c5cf=ffFFFFFF"
     app:traceEnabled="true"
       android:layout_marginRight="20dp"
-      android:layout_width="100dp"
-      android:layout_height="50dp"
+      
+android:layout_width="200dp"
+      
+android:layout_height="wrap_content"
       app:fillMode="fit"
       android:gravity="center_vertical|right"
       android:layout_centerVertical="true"

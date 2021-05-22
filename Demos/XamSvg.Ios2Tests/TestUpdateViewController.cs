@@ -25,11 +25,11 @@ namespace XamSvg.Ios2Tests
             Task.Delay(3000).ContinueWith(t =>
             {
                 TheSvg.TraceEnabled = true;
-                TheSvg.BundleString = Trial;
+                TheSvg.BundleName = Trial;
 
                 Task.Delay(6000).ContinueWith(t2 =>
                 {
-                    TheSvg.BundleString = Trial2;
+                    TheSvg.BundleName = Trial2;
 
                 }, TaskScheduler.FromCurrentSynchronizationContext());
 

@@ -483,7 +483,8 @@ namespace Vapolia.Ios.Lib
                     else
                     {
                         var imageString = LeftImage ?? rightImage;
-                        var bounds = SvgFactory.GetBounds(imageString, 0, ContentRectForBounds(Bounds).Height * ImagePercentHeight, SvgFillMode.Fit);
+                        var bounds = SvgFactory.GetBounds(imageString, 0, ContentRectForBounds(Bounds).Height * ImagePercentHeight, SvgFillMode.Fit)
+                            .GetAwaiter().GetResult();
                         size.Height += bounds.Height;
                         size.Width += bounds.Width;
                     }

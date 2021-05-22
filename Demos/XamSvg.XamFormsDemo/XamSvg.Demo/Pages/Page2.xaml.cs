@@ -19,7 +19,7 @@ namespace XamSvg.Demo
         {
             cancelSource.Cancel();
             cancelSource = new CancellationTokenSource();
-            var unused = StartAnimation(cancelSource.Token);
+            _ = StartAnimation(cancelSource.Token);
         }
 
         private void Stop_OnClicked(object sender, EventArgs e)

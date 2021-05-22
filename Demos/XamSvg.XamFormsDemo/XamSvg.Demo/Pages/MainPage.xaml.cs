@@ -7,7 +7,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using XamSvg.Shared.Utils;
-using XamSvg.XamForms;
 
 namespace XamSvg.Demo
 {
@@ -18,12 +17,6 @@ namespace XamSvg.Demo
             InitializeComponent();
             var model = new MainPageModel(Navigation);
             BindingContext = model;
-
-            #region Set left icon on button (usin a svg)
-            var svgRefresh = new SvgImageSource { Svg = "res:images.refresh", Height = 15 }; //ColorMapping = "ffffff=00ff00"
-            //FileImageSource imageThatCanBeUsedInTabsWithACustomTabRenderer = svgRefresh.Image;
-            ColorMappingSelectedButton.Image = svgRefresh.CreateFileImageSource();
-            #endregion
 
             model.PropertyChanged += (sender, args) =>
             {
@@ -70,6 +63,9 @@ namespace XamSvg.Demo
                 }
             };
         }
+
+        private void PanGestureRecognizer_OnPanUpdated(object sender, PanUpdatedEventArgs e)
+            => ((MainPageModel)BindingContext).PanCommand.Execute(new Point(e.TotalX, e.TotalY));
     }
 
     public class MainPageModel : BindableObject
@@ -84,7 +80,7 @@ namespace XamSvg.Demo
         {
             this.navigation = navigation;
             names = typeof(App).GetTypeInfo().Assembly.GetManifestResourceNames()
-                .Where(n => n.EndsWith(".svg")).OrderBy(n => n).ToArray();
+                .Where(n => n.EndsWith(".svg") && !n.Contains("templates")).OrderBy(n => n).ToArray();
 
             MessagingCenter.Subscribe<string, string>(this, MessagingCenterConst.OpenDeepLink, async (sender, args) =>
             {
@@ -93,43 +89,33 @@ namespace XamSvg.Demo
         }
 
         #region properties
-        public string ColorMapping { get { return colorMapping; } set { colorMapping = value; OnPropertyChanged(); } }
+        public string ColorMapping { get => colorMapping; set { colorMapping = value; OnPropertyChanged(); } }
         private string colorMapping;
 
-        public string ImageName { get { return imageName; } set { imageName = value; OnPropertyChanged(); } }
-        private string imageName = "res:images.0Facebook";
+        public string ImageName { get => imageName; set { imageName = value; OnPropertyChanged(); } }
+        private string imageName = "https://upload.wikimedia.org/wikipedia/commons/1/15/Svg.svg";
 
-        public double Zoom { get { return zoom; } set { zoom = value; OnPropertyChanged(); OnPropertyChanged(nameof(ZoomText)); } }
+        public double Zoom { get => zoom; set { zoom = value; OnPropertyChanged(); OnPropertyChanged(nameof(ZoomText)); } }
         private double zoom = 0;
         public double ZoomValue => Math.Pow(10, zoom);
 
         public string ZoomText => $"{ZoomValue:F1}";
 
-        public Point Translation { get { return translation; } set { translation = value; OnPropertyChanged(); } }
+        public Point Translation { get => translation; set { translation = value; OnPropertyChanged(); } }
         private Point translation;
 
-        public bool IsTranslationEnabled { get { return isTranslationEnabled; } set { isTranslationEnabled = value; OnPropertyChanged(); } }
+        public bool IsTranslationEnabled { get => isTranslationEnabled; set { isTranslationEnabled = value; OnPropertyChanged(); } }
         private bool isTranslationEnabled;        
         #endregion
 
         #region commands
-        public Command NextByTapImageCommand => new Command(() =>
-        {
-            if (isTranslationEnabled)
-            {
-                ResetPosition();
-                currentPosition = FixIndex(++currentPosition);
-                ImageName = $"res:{names[currentPosition]}";
-            }
-        });
-
         public Command NextImageCommand => new Command(() =>
         {
             if (!isTranslationEnabled)
             {
                 ResetPosition();
                 currentPosition = FixIndex(++currentPosition);
-                ImageName = $"res:{names[currentPosition]}";
+                ImageName = names[currentPosition];
             }
         });
 
@@ -139,7 +125,7 @@ namespace XamSvg.Demo
             {
                 ResetPosition();
                 currentPosition = FixIndex(--currentPosition);
-                ImageName = $"res:{names[currentPosition]}";
+                ImageName = names[currentPosition];
             }
         });
 
@@ -163,7 +149,7 @@ namespace XamSvg.Demo
         });
 
 
-        public Command OpenVapoliaCommand => new Command(async () =>
+        public Command OpenVapoliaCommand => new Command(() =>
         {
             //await navigation.PushAsync(new ContentPage { Content = new WebView
             //{
@@ -191,10 +177,12 @@ namespace XamSvg.Demo
                     var svgString = await result.Content.ReadAsStringAsync();
 
                     ResetPosition();
-                    ImageName = "string:" + svgString;
+                    ImageName = svgString;
                     //title.Text = $"Displayed {url}";
                 }
+#pragma warning disable CS0168 // Variable is declared but never used
                 catch (Exception e)
+#pragma warning restore CS0168 // Variable is declared but never used
                 {
                     //title.Text = $"Error loading url: {e.Message}";
                     //title.TextColor = UIColor.Red;

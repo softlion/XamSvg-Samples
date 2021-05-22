@@ -230,7 +230,7 @@ namespace XamSvg.Ios2Tests
                         throw new WebException();
                     var svgString = await result.Content.ReadAsStringAsync();
 
-                    image.BundleString = svgString;
+                    image.BundleName = svgString;
                     title.Text = $"Displayed {url}";
                 }
                 catch (Exception e)
