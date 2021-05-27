@@ -95,17 +95,17 @@ trick: You can also use `<SvgImageSource Svg="...." Height="50" />` as the Image
 
 XamSvg supports remapping color based on a change in the control's state, like selected or disabled.
 
-To specify a color mapping, set the ColorMapping, ColorMappingSelected or ColorMappingDisabled properties to a string. This string contains a list of mapping separated by a semicolumn ";". A mapping has two parts, separated by the equal sign. The left part is the  color that should be replaced by the right part.
+To specify a color mapping, set the ColorMapping, ColorMappingSelected or ColorMappingDisabled properties to a string. This string contains a list of mapping separated by "," or ";". A mapping has two parts, separated by "=" or "=>". The left part is the color that should be replaced by the right part.
 
 A color is specified using standard html coding: AARRGGBB, RRGGBB, or RGB. A is the transparency (alpha channel).
 
-For example ffffff=00ff00;000000=0000FF means replace ffffff (white) by 00ff00 (green) and replace 000000 (black) by 0000FF (red).
+For example ffffff=>00ff00,000000=>0000FF means replace ffffff (white) by 00ff00 (green) and replace 000000 (black) by 0000FF (red).
 
 # Xamarin Forms samples
 
 Simple svg image
 ```xml
-   <svg:SvgImage Svg="res:images.logo" HeightRequest="70" HorizontalOptions="Center" VerticalOptions="Center" />
+   <svg:SvgImage Source="logo.svg" HeightRequest="70" HorizontalOptions="Center" VerticalOptions="Center" />
 ```  
 
 Svg image on a button
@@ -113,7 +113,7 @@ Svg image on a button
 ```xml
   <Button Text="Add Contact" ContentLayout="Right,20">
      <Button.ImageSource>
-         <svg:SvgImageSource Svg="res:images.tabHome" Height="60" ColorMapping="000000=FF0000" />
+         <svg:SvgImageSource Source="tabHome.svg" Height="60" ColorMapping="000000=>FF0000" />
      </Button.ImageSource>
   </Button>
 ```  
@@ -126,7 +126,7 @@ Svg image for the icon of a TabbedPage tab
         <views:HomePage />
     </x:Arguments>
     <NavigationPage.IconImageSource>
-        <svg:SvgImageSource Svg="res:images.tabHome" Height="50" />
+        <svg:SvgImageSource Source="tabHome.svg" Height="50" />
     </NavigationPage.IconImageSource>
   </NavigationPage>
 ```
@@ -144,7 +144,7 @@ The assembly in which the svg resources are must have an `assembly Name` equal t
 
 ```xml
     <xamForms:SvgImage
-        Svg="res:YourDefaultNamespace.Images.getFDR_01_Ready.svg"
+        Source="YourDefaultNamespace.Images.getFDR_01_Ready.svg"
         x:Name="SvgIcon" HorizontalOptions="Fill" VerticalOptions="Start" Margin="8,0,8,0" BackgroundColor="Yellow"
         />
 ```
@@ -169,7 +169,7 @@ You can discover the full name of an embedded resource by opening your assembly 
 
   <views:HomePage Title="Home">
     <views:HomePage.IconImageSource>
-        <svg:SvgImageSource Svg="res:images.tabHome" />
+        <svg:SvgImageSource Source="res:images.tabHome" />
     </views:HomePage.IconImageSource>
   </views:HomePage>
     
@@ -285,14 +285,14 @@ xmlns:svg="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
 `SvgImage` displays a image in up to 2 states: normal, selected
 
 ```xml
-<svg:SvgImage Svg="res:images.union" HeightRequest="70" HorizontalOptions="Center" VerticalOptions="Center" />
+<svg:SvgImage Source="union.svg" HeightRequest="70" HorizontalOptions="Center" VerticalOptions="Center" />
 ```
 
 | Property | Type | Notes
 | --------- | ----- | ---
-Svg | string | svg to display. Don't forget the res: prefix if loading from embedded resources
-ColorMapping | string | see color mapping reference. Default to none.
-ColorMappingSelected | string | color mapping when IsSelected="True". Default to none.
+Source | string or SvgSource | svg to display.
+ColorMapping | string or ObservableCollection<ColorMapping> | see color mapping reference. Default to none.
+ColorMappingSelected | string or ObservableCollection<ColorMapping> | color mapping when IsSelected="True". Default to none.
 IsSelected | bool | used to switch color mapping
 IsSelectionEnabled | bool | True by default: the value of IsSelected is also inherited from the parent container
 Command | ICommand | if set, execute this command on tap
@@ -312,15 +312,15 @@ It can also be transformed into a `FileImageSource` by calling `CreateFileImageS
 SvgImageSource can be used in Button.ImageSource, ToolbarItem.IconImageSource, ...
 
 ```xml
-<svg:SvgImageSource Svg="res:images.tabHome" Height="50" />
+<svg:SvgImageSource Source="tabHome.svg" Height="50" />
 ```
 
 | Property | Type | Notes
 | --------- | ----- | ---
-Svg | string | svg to display. Don't forget the res: prefix if loading from embedded resources.
+Source | string or SvgSource | svg to display.
 Width | double | Optional. You can also specify the width only and height will be computed from the aspect ratio.
 Height | double | Optional.
-ColorMapping | string | Optional. See color mapping reference.
+ColorMapping | string or ObservableCollection<ColorMapping> | see color mapping reference. Default to none.
 SvgFillMode | FillMode | Fit, Fill, Crop. Useful only if both width and height are forced. Default to Fit to maintain the aspect ratio.
 PreventTintOnIos | bool | Default to false. Prevents tinting on iOS, thus always displaying the original image.
 
@@ -328,8 +328,8 @@ All properties are bindable, but Xamarin Forms does not support changing them af
 Alternatively, you can bind the ImageSource property on the target control, and define SvgImageSource in styles.
 Example:
 ```xml
-    <svg:SvgImageSource x:Key="NormalIcon" Svg="res:resources.images.icon_normal" Height="80" />
-    <svg:SvgImageSource x:Key="SelectedIcon" Svg="res:resources.images.icon_selected" Height="80" ColorMapping="FFF=000" />
+    <svg:SvgImageSource x:Key="NormalIcon" Source="icon_normal.svg" Height="80" />
+    <svg:SvgImageSource x:Key="SelectedIcon" Source="icon_selected.svg" Height="80" ColorMapping="FFF=>000" />
 
     <Style x:Key="NormalIconStyle" TargetType="ImageButton">
       <Setter Property="Source" Value="{StaticResource NormalIcon}"/>
