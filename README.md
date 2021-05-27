@@ -29,7 +29,7 @@ Native UWP controls:
 
 * Simplification: the "res:" prefix is now the default protocol and is not needed anymore. Use "zzzz.svg" that's all !
 * Simplification: Setting ResourceAssembly/ResourceAssemblies is now optional. Use "zzzz.svg" that's all !
-* ColorMapping and ColorMappingSelected accept standard colors from styles.
+* ColorMapping and ColorMappingSelected accept standard colors from styles, and can be set in a XAML collection.
 * All source are now `SvgSource` and can handle urls. The `Svg` property has been renamed `Source`.
 
 Breaking simplification:  
@@ -67,7 +67,7 @@ Make sure they have the `.svg` extension. And set their build action type to `em
 
         <svg:SvgImage Source="logo.svg" HorizontalOptions="Start" HeighRequest="32"
                       ColorMapping="{Binding ColorMapping}" 
-                      ColorMappingSelected="ffffff=00ff00;000000=0000FF" 
+                      ColorMappingSelected="ffffff=>00ff00,000000=>0000FF" 
                       />
       
         <svg:SvgImage WidthRequest="100" Source="https://upload.wikimedia.org/wikipedia/commons/1/15/Svg.svg" />
