@@ -41,12 +41,14 @@ Upcoming demo:
 
 # Quick start for Xamarin Forms
 
+Note: there is no startup code needed! Anywhere!
+
 1. Add some svg files  
 
 Create a folder "images" at the root of your netstandard project (the project containing the `App.cs` file) and put your svg files there.   
 Make sure they have the `.svg` extension. And set their build action type to `embedded resource` (important!) in the file property window.
 
-2. Use the `SvgImage` control
+2. Use the `SvgImage` control or the `SvgImageSource` control
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -54,6 +56,10 @@ Make sure they have the `.svg` extension. And set their build action type to `em
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:svg="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
              x:Class="XamSvg.Demo.MainPage">
+  <ContentPage.IconImageSource>
+    <svg:SvgImageSource Source="myicon.svg" Height="50" />
+  </ContentPage.IconImageSource>
+  
   <ContentView>
     <StackLayout Orientation="Vertical" VerticalOptions="Start">
 
@@ -80,7 +86,7 @@ Remarks:
 
 [![image.png](https://i.postimg.cc/Kzj346tM/image.png)](https://postimg.cc/7GvZWQsH)
 
-5. Enjoy
+3. Enjoy
 
 trick: You can also use `<SvgImageSource Svg="...." Height="50" />` as the ImageSource for tab icons, button icons, navigation bar icons, ... But the Widht and/or Height is mandatory, as the Xamarin Forms controls infrastructure has a limitation: it has no way to dynamically give the target height to ImageSource objects.
 
