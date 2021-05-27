@@ -290,9 +290,9 @@ xmlns:svg="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
 
 | Property | Type | Notes
 | --------- | ----- | ---
-Source | string or SvgSource | svg to display.
-ColorMapping | string or ObservableCollection<ColorMapping> | see color mapping reference. Default to none.
-ColorMappingSelected | string or ObservableCollection<ColorMapping> | color mapping when IsSelected="True". Default to none.
+Source | string or `SvgSource` | svg to display.
+ColorMapping | string or `ObservableCollection<ColorMapping>` | see color mapping reference. Default to none.
+ColorMappingSelected | string or `ObservableCollection<ColorMapping>` | color mapping when IsSelected="True". Default to none.
 IsSelected | bool | used to switch color mapping
 IsSelectionEnabled | bool | True by default: the value of IsSelected is also inherited from the parent container
 Command | ICommand | if set, execute this command on tap
@@ -317,10 +317,10 @@ SvgImageSource can be used in Button.ImageSource, ToolbarItem.IconImageSource, .
 
 | Property | Type | Notes
 | --------- | ----- | ---
-Source | string or SvgSource | svg to display.
+Source | string or `SvgSource` | svg to display.
 Width | double | Optional. You can also specify the width only and height will be computed from the aspect ratio.
 Height | double | Optional.
-ColorMapping | string or ObservableCollection<ColorMapping> | see color mapping reference. Default to none.
+ColorMapping | string or `ObservableCollection<ColorMapping>` | see color mapping reference. Default to none.
 SvgFillMode | FillMode | Fit, Fill, Crop. Useful only if both width and height are forced. Default to Fit to maintain the aspect ratio.
 PreventTintOnIos | bool | Default to false. Prevents tinting on iOS, thus always displaying the original image.
 
