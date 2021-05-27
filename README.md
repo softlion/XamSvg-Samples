@@ -25,14 +25,18 @@ Native UWP controls:
 
 [More infos](https://vapolia.eu)
 
-# Changes in the prerelease nuget
+# Changes in v4.x:
 
-* Simplification: the "res:" prefix is now the default protocol and is not needed anymore.
-* Simplification: Setting ResourceAssembly/ResourceAssemblies is now optional.
+* Simplification: the "res:" prefix is now the default protocol and is not needed anymore. Use "zzzz.svg" that's all !
+* Simplification: Setting ResourceAssembly/ResourceAssemblies is now optional. Use "zzzz.svg" that's all !
+* ColorMapping and ColorMappingSelected accept standard colors from styles.
+* All source are now `SvgSource` and can handle urls. The `Svg` property has been renamed `Source`.
 
-Coming soon (state: packing for release):
+Breaking simplification:  
+`SvgFactory.FromUri(SvgFactory.FromString("zz.svg"),w,h)` has been replaced by `SvgFactory.GetImage("zz.svg",w,h)`  
+Everywhere you see `SvgSource` you can put a string, thanks to implicit conversion.
 
-* ColorMapping and ColorMappingSelected can accept standard colors from styles.
+Upcoming demo:  
 * New features: interaction on the SVG including tap (or any other gesture) zone detection. Upcoming demo with zone highlightning and TappedZoneId event.
 
 # Quick start for Xamarin Forms
