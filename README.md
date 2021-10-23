@@ -419,6 +419,10 @@ public class App : Application
 
 Trick: you can add more than one assembly by using the `ResourceAssemblies` property instead.
 
+## Tools
+
+On Windows install the [microsoft powertoys](https://docs.microsoft.com/fr-fr/windows/powertoys/file-explorer) to preview the svg files in windows explorer.
+
 ## More infos
 
 [More infos](https://vapolia.eu)
