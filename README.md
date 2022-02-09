@@ -15,11 +15,12 @@ Xamarin iOS controls:  `UISvgImageView`
 Native UWP controls:  `Svg`
 
 
-# Changes in v4.1.x:
-* Simplification: ImageSource="{controls:Svg images.refresh.svg,Height=50}"
+# Changes in v4.1.x
+* Simplification: `ImageSource="{vapolia:Svg refresh.svg,Height=50}"`
 
-# Changes in v4.0.x:
-
+# Changes in v4.0.x
+<details>
+  <summary>Click to expand</summary>
 * Simplification: the "res:" prefix is now the default protocol and is not needed anymore. Use "zzzz.svg" that's all !
 * Simplification: Setting ResourceAssembly/ResourceAssemblies is now optional. Use "zzzz.svg" that's all !
 * ColorMapping and ColorMappingSelected accept standard colors from styles, and can be set in a XAML collection.
@@ -28,6 +29,8 @@ Native UWP controls:  `Svg`
 Breaking simplification:  
 `SvgFactory.FromUri(SvgFactory.FromString("zz.svg"),w,h)` has been replaced by `SvgFactory.GetImage("zz.svg",w,h)`  
 Everywhere you see `SvgSource` you can put a string, thanks to implicit conversion.
+</details>
+  
 
 Upcoming demo:  
 * New features: interaction on the SVG including tap (or any other gesture) zone detection. Upcoming demo with zone highlightning and TappedZoneId event.
