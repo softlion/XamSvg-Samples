@@ -278,6 +278,7 @@ These constraints are removed at compile-time, meaning they will have no effect 
 ## Xamarin Forms
 
 Default namespace:
+  
 ```xml
 xmlns:svg="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
 ```
