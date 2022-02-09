@@ -166,11 +166,7 @@ You can discover the full name of an embedded resource by opening your assembly 
              Title="Vapolia.fr XamSvg Demo"
             >
 
-  <views:HomePage Title="Home">
-    <views:HomePage.IconImageSource>
-        <svg:SvgImageSource Source="res:images.tabHome" />
-    </views:HomePage.IconImageSource>
-  </views:HomePage>
+  <views:HomePage Title="Home" IconImageSource="{svg:Svg tabHome.svg,Height=60}" >
     
 </TabbedPage>
 ```
@@ -181,7 +177,9 @@ The library is fully compatible with mvvmcross bindings for all properties:
 image source, color mappings, and all others.  
 
 **Android native**: make the svg image height the same height of a Button
-
+<details>
+  <summary>Click to expand</summary>
+  
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout 
@@ -216,7 +214,7 @@ image source, color mappings, and all others.
 ```
 
 Note that as the svg has an intrinsic width computed from its height and its aspect ratio, the width displayed by the designer is incorrect. You can correct the designer by assigning a design time only value to `layout_width` using the `tools` prefix: `tools:layout_width="30dp"` which requires the `xmlns:tools` namespace declaration.
-
+</details>
 
 
 **Android native**: set back button toolbar icon
@@ -227,7 +225,8 @@ toolbar.NavigationIcon = SvgFactory.GetDrawable("res:images.webbrowser.backward"
 ```
 
 **Android**: link all
-
+<details>
+  <summary>Click to expand</summary>
 This component is compatible with the "link all" linker option which reduces you app size by removing unused classes, properties and methods.  
 If you set the android linker to "link all", add these lines to the  linker.xml file of your android application project:
 
@@ -241,9 +240,11 @@ If you set the android linker to "link all", add these lines to the  linker.xml 
 ```
 
 This is required because the xamarin tooling does not use linker.xml files from android libraries.
+</details>
 
 **iOS storyboard**: usage in an xcode storyboard
-
+<details>
+  <summary>Click to expand</summary>
 Using Visual Studio Mac, open your storyboard file using `Open with xcode`. Add an Image view (UIImageView), set its custcom `Class` property to `UISvgImageView`, and optionally add new `User Defined Runtime Attributes` as required:
 
 ![Attribute Inspector](https://image.ibb.co/e5N0uw/Prt_Scr_capture_11.jpg)
@@ -270,7 +271,8 @@ When only one dimension is constrained, the designer don't know how to set the o
 4. Enter reasonable guesses at your view's runtime width **or** height. Width if you set contraints on the height, height otherwise.
 
 These constraints are removed at compile-time, meaning they will have no effect on your running app, and the layout engine will add constraints as appropriate at runtime to respect your view's intrinsicContentSize.
-
+</details>
+  
 # Reference
 
 ## Xamarin Forms
@@ -350,7 +352,8 @@ And usage:
 ```
 
 ## Android native
-
+<details>
+  <summary>Click to expand</summary>
 Layout properties:
 
 | Tag | Type | Default value | Notes
@@ -367,8 +370,11 @@ android:autoMirrored | bool | false | true to mirror image in RTL languages
 
 `android:padding` is respected, and included in the width/height measurement.  
 `android:gravity` is respected, and included in the width/height measurement. If the svg is smaller than its view, this property controls its centering.
+</details>
 
 ## iOS native
+<details>
+  <summary>Click to expand</summary>
 
 `UISvgImageView` inherits `UIImageView`, so it's easy to use it in an xcode storyboard: drag an `UIImageView` and set its custom class to `UISvgImageView`. To set specific svg properties, add `User Defined Runtime Attributes` in the same pane where you set the custom class.
 
@@ -399,6 +405,7 @@ FillHeight | number | 0 | The height the svg would like to have. 0 to let the OS
 [formsdemo-img]: https://img.shields.io/badge/demo-source%20code-lightgrey.svg
 [formsdemo-link]: https://github.com/softlion/XamSvg-Samples/tree/master/Demos/XamSvg.XamFormsDemo
 [demo-link]: https://github.com/softlion/XamSvg-Samples/tree/master/Demos/
+</details>
 
 
 ## Advanced configuration
