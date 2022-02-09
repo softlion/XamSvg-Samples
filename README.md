@@ -1,5 +1,6 @@
 # Samples for the Xamarin Svg enterprise cross platform and full featured Svg image control
 This repository holds the samples for the XamSvg Xamarin control (Vapolia.Xamarin.Svg.Forms and Vapolia.Xamarin.Svg for UWP, Android and iOS).
+[More infos](https://vapolia.eu)
 
 | Xamarin.Forms (Android, iOS, UWP) | Xamarin Native (Android, iOS, UWP) |
 |:-------------:|:-------:|
@@ -8,24 +9,16 @@ This repository holds the samples for the XamSvg Xamarin control (Vapolia.Xamari
 | [![][formsdemo-img]][formsdemo-link] | [![][formsdemo-img]][demo-link]
 
 
+Xamarin Forms controls:  `SvgImage` and `SvgImageSource`  
+Xamarin Android controls:  `SvgImageView` and `SvgPictureDrawable`  
+Xamarin iOS controls:  `UISvgImageView`  
+Native UWP controls:  `Svg`
 
-Xamarin Forms controls:  
-`SvgImageSource`  
-`SvgImage`
 
-Xamarin Android controls:  
-`SvgImageView`  
-`SvgPictureDrawable`
+# Changes in v4.1.x:
+* Simplification: ImageSource="{controls:Svg images.refresh.svg,Height=50}"
 
-Xamarin iOS controls:  
-`UISvgImageView`
-
-Native UWP controls:   
-`Svg`
-
-[More infos](https://vapolia.eu)
-
-# Changes in v4.x:
+# Changes in v4.0.x:
 
 * Simplification: the "res:" prefix is now the default protocol and is not needed anymore. Use "zzzz.svg" that's all !
 * Simplification: Setting ResourceAssembly/ResourceAssemblies is now optional. Use "zzzz.svg" that's all !
@@ -55,11 +48,9 @@ Make sure they have the `.svg` extension. And set their build action type to `em
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:svg="clr-namespace:XamSvg.XamForms;assembly=XamSvg.XamForms"
-             x:Class="XamSvg.Demo.MainPage">
-  <ContentPage.IconImageSource>
-    <svg:SvgImageSource Source="myicon.svg" Height="50" />
-  </ContentPage.IconImageSource>
-  
+             x:Class="XamSvg.Demo.MainPage"
+             IconImageSource="{svg:Svg myicon.svg,Height=60}">
+
   <ContentView>
     <StackLayout Orientation="Vertical" VerticalOptions="Start">
 
@@ -90,6 +81,7 @@ Remarks:
 
 trick: You can also use `<SvgImageSource Svg="...." Height="50" />` as the ImageSource for tab icons, button icons, navigation bar icons, ... But the Widht and/or Height is mandatory, as the Xamarin Forms controls infrastructure has a limitation: it has no way to dynamically give the target height to ImageSource objects.
 
+trick^2: use the compact syntax: `ImageSource="{controls:Svg refresh.svg,Height=50}"`
 
 # Color Mapping
 
@@ -97,39 +89,43 @@ XamSvg supports remapping color based on a change in the control's state, like s
 
 To specify a color mapping, set the ColorMapping, ColorMappingSelected or ColorMappingDisabled properties to a string. This string contains a list of mapping separated by "," or ";". A mapping has two parts, separated by "=" or "=>". The left part is the color that should be replaced by the right part.
 
-A color is specified using standard html coding: AARRGGBB, RRGGBB, or RGB. A is the transparency (alpha channel).
+A color is specified using standard html coding: `AARRGGBB`, `RRGGBB`, or `RGB`. A is the transparency (alpha channel).
 
-For example ffffff=>00ff00,000000=>0000FF means replace ffffff (white) by 00ff00 (green) and replace 000000 (black) by 0000FF (red).
+For example `ffffff=>00ff00,000000=>0000FF` means replace `ffffff` (white) by `00ff00` (green) and replace `000000` (black) by `0000FF` (red).
 
 # Xamarin Forms samples
 
 Simple svg image
 ```xml
-   <svg:SvgImage Source="logo.svg" HeightRequest="70" HorizontalOptions="Center" VerticalOptions="Center" />
+<svg:SvgImage Source="logo.svg" HeightRequest="70" HorizontalOptions="Center" VerticalOptions="Center" />
 ```  
 
 Svg image on a button
 
 ```xml
-  <Button Text="Add Contact" ContentLayout="Right,20">
-     <Button.ImageSource>
-         <svg:SvgImageSource Source="tabHome.svg" Height="60" ColorMapping="000000=>FF0000" />
-     </Button.ImageSource>
-  </Button>
+<Button Text="Add Contact" ContentLayout="Right,20" ImageSource="{svg:Svg tabHome.svg,Height=60,ColorMapping='000000=>FF0000'}" />
 ```  
 
 Svg image for the icon of a TabbedPage tab
 
 ```xml
-  <NavigationPage Title="Home">
-    <x:Arguments>
-        <views:HomePage />
-    </x:Arguments>
-    <NavigationPage.IconImageSource>
-        <svg:SvgImageSource Source="tabHome.svg" Height="50" />
-    </NavigationPage.IconImageSource>
-  </NavigationPage>
+<NavigationPage Title="Home" IconImageSource="{svg:Svg tabHome.svg,Height=60}">
+  <x:Arguments>
+      <views:HomePage />
+  </x:Arguments>
+</NavigationPage>
 ```
+
+Svg image with bindable color mapping
+
+```xml
+<svg:SvgImage Source="logo.svg" HeightRequest="60">
+    <svg:ColorMapping OldColor="#000" NewColor="{Binding CurrentColor}" />
+    <svg:SvgImage.ColorMappingSelected>
+        <svg:ColorMapping OldColor="#000" NewColor="{Binding CurrentColor}" />
+    </svg:SvgImage.ColorMappingSelected>
+</svg:SvgImage>
+```  
 
 # Common mistakes
 
