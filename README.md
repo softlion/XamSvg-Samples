@@ -152,6 +152,20 @@ You can discover the full name of an embedded resource by opening your assembly 
 
 [![image.png](https://i.postimg.cc/8cT3hbPM/image.png)](https://postimg.cc/jwkZTPfS)
 
+Another common error is setting the `ImageSource` of a `Button` in a style or in a trigger. Instead you must set the `Image` property.  
+This is because of [this issue](https://github.com/xamarin/Xamarin.Forms/issues/7729).
+
+```xml
+<Style x:Key="FAB" TargetType="Button">
+  <!-- correct -->
+  <Setter Property="Image" Value="{xamForms:Svg create.svg,Height=50,ColorMapping='000=>634109'}"/>
+  <!-- incorrect 
+  <Setter Property="ImageSource" Value="{xamForms:Svg create.svg,Height=50,ColorMapping='000=>634109'}"/>
+  -->
+</Style>
+```
+
+
 # Other Receipes
 
 **Icons on TabbedPage**
