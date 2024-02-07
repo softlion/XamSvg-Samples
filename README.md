@@ -1,3 +1,12 @@
+# OBSOLETE / REPLACED
+
+Replaced by:
+
+⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
+# https://github.com/vapolia/Svg-Samples
+⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️
+
+
 # Samples for the Xamarin Svg enterprise cross platform and full featured Svg image control
 This repository holds the samples for the XamSvg Xamarin control (Vapolia.Xamarin.Svg.Forms and Vapolia.Xamarin.Svg for UWP, Android and iOS).
 [More infos](https://vapolia.eu)
