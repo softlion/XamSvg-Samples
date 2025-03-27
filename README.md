@@ -3,7 +3,7 @@
 # https://github.com/vapolia/Svg-Samples
 ⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️⬆️
 
-# NEW GITHUB REPO
+# This project has been moved to a new GitHub repo
 
 ⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️
 # https://github.com/vapolia/Svg-Samples
